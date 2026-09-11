@@ -9,9 +9,10 @@
     "preview": "vite preview",
     "format": "oxfmt",
     "predeploy": "npm run build",
-"deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "lucide-react": "^1.44.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
