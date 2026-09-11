@@ -1,0 +1,10 @@
+{
+  "description": "A cybersecurity platform for microbusinesses in Pasto Nariño that evaluates risks using the NIST framework, offering tailored recommendations and accessible tools.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
