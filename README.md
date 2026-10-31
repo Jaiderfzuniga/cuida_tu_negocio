@@ -31,6 +31,13 @@ Para ver el panel del investigador en modo demo, crea una cuenta con un correo q
 3. En **Environment Variables** agrega `VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY`.
 4. **Deploy**. En Supabase → Authentication → URL Configuration, pon la dirección de Vercel como *Site URL*.
 
+## 4. Publicarla en GitHub Pages (alternativa gratuita)
+
+1. En GitHub: **Settings → Pages → Source: GitHub Actions**.
+2. Cada vez que se actualiza `main`, el flujo `.github/workflows/deploy.yml` prueba, compila y publica.
+3. Queda en https://jaiderfzuniga.github.io/cuida_tu_negocio/
+4. Para usar Supabase, agrega `VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY` en **Settings → Secrets and variables → Actions**.
+
 ## Estructura
 
 ```

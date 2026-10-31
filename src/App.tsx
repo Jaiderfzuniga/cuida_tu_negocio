@@ -26,7 +26,7 @@ function Protegida({ children, negocio, investigador }: { children: ReactNode; n
 export default function App() {
   return (
     <SesionProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Suspense fallback={<Cargando />}>
           <Routes>
             <Route path="/" element={<Inicio />} />

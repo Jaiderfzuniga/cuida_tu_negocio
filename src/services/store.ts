@@ -45,7 +45,7 @@ export async function ingresar(email: string, clave: string): Promise<void> {
 
 export async function recuperarClave(email: string): Promise<void> {
   if (!supabase) throw new Error('En modo demostración no se envían correos.');
-  const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo: location.origin });
+  const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo: location.origin + import.meta.env.BASE_URL });
   if (error) throw new Error(traducir(error.message));
 }
 
