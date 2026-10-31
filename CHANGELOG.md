@@ -5,7 +5,7 @@ Registro de la evolución de la plataforma para la trazabilidad del trabajo de g
 ## v2.0.0 — Escudo Digital (31 oct. 2026)
 
 Nueva versión construida desde cero según el documento de arquitectura y stack del objetivo 3.
-El prototipo anterior se conserva en la etiqueta `v1-prototipo`.
+El prototipo anterior se conserva en el historial de Git (commit `5173086`).
 
 **Arquitectura**
 - Código separado en capas: pantallas, componentes, lógica, datos y servicios (antes todo estaba en un solo archivo).
