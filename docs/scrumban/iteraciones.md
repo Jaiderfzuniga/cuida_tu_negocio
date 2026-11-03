@@ -6,68 +6,68 @@ Registro de cada iteración: qué se planeó, qué se entregó, qué se corrigi�
 
 > Fechas planeadas: cada actividad del cronograma (7, 8 y 9) se dividió en dos iteraciones. Las iteraciones I1 a I4 se ejecutaron en octubre, después de lo planeado; I5 e I6 mantienen las fechas de la actividad 9.
 
-## I1 · Arquitectura y stack  —  Hecho
+## I1 · Planear cómo se construye  —  Hecho
 
 - **Actividad del cronograma:** Actividad 7
 - **Planeado:** 07/09 – 18/09/2026 · **Real:** 30/10/2026
-- **Objetivo:** Definir la arquitectura, el modelo de datos y las tecnologías de la plataforma.
+- **Objetivo:** Decidir con qué tecnologías se hace la plataforma, cómo se organiza el código y qué datos se guardan.
 - **Historias:** —
-- **Entregables:** Documento «Arquitectura y stack tecnológico» (11 páginas): capas, 9 tablas, reglas de acceso y trazabilidad RF → componente.
-- **Evidencia:** Arquitectura_Stack_Escudo_Digital.docx
-- **Revisión:** Se revisó el prototipo anterior: todo el código en un solo archivo, sin base de datos y con 7 preguntas; se decidió construir un proyecto nuevo.
-- **Mejora (retrospectiva):** Definir primero la arquitectura evitó repetir los problemas del prototipo v1.
+- **Entregables:** Un documento de 11 páginas con el plan técnico: las partes del sistema, las 9 tablas de la base de datos y quién puede ver qué.
+- **Evidencia:** Documento «Arquitectura y stack tecnológico»
+- **Revisión:** Se revisó el prototipo anterior y no servía de base: todo el código estaba en un solo archivo, no guardaba datos y tenía solo 7 preguntas. Por eso se empezó un proyecto nuevo.
+- **Mejora (retrospectiva):** Planear antes de programar evitó repetir los errores del primer prototipo.
 
-## I2 · Diseño de interfaz (mockups)  —  Hecho
+## I2 · Diseñar cómo se ve  —  Hecho
 
 - **Actividad del cronograma:** Actividad 7
 - **Planeado:** 19/09 – 30/09/2026 · **Real:** 30/10/2026
-- **Objetivo:** Diseñar las pantallas antes de programar y aprobar el estilo visual.
+- **Objetivo:** Dibujar las pantallas antes de programar, para aprobar el diseño primero.
 - **Historias:** —
-- **Entregables:** 11 mockups (10 de celular y 1 de computador) en un lienzo de diseño, con estilo «Neón & Holográfico 3D».
-- **Evidencia:** Lienzo de mockups «Escudo Digital — propuesta visual»
-- **Revisión:** El primer estilo fue rechazado por el investigador; se rehízo con la referencia «Neón & Holográfico 3D». Se agregaron la ruta al 100 %, los logos y las ilustraciones 3D.
-- **Mejora (retrospectiva):** Revisar mockups antes de programar permitió corregir el diseño sin rehacer código.
+- **Entregables:** 11 pantallas de muestra (10 para celular y 1 para computador) con el estilo «Neón».
+- **Evidencia:** Lienzo de diseño «Escudo Digital — propuesta visual»
+- **Revisión:** El primer diseño no gustó y se rehízo con la referencia que eligió el investigador. Además se pidió mostrar cómo llegar al 100 %, poner el logo de cada herramienta y agregar dibujos en 3D.
+- **Mejora (retrospectiva):** Corregir un dibujo es mucho más rápido que corregir código ya hecho.
 
-## I3 · Base del proyecto, datos y lógica  —  Hecho
+## I3 · Construir la base  —  Hecho
 
 - **Actividad del cronograma:** Actividad 8
 - **Planeado:** 01/10 – 15/10/2026 · **Real:** 30/10/2026
-- **Objetivo:** Crear el proyecto, cargar el catálogo y el cuestionario, y programar el cálculo y el motor de reglas.
+- **Objetivo:** Crear el proyecto, cargar las preguntas y las 33 herramientas, y programar cómo se calcula el puntaje y qué se recomienda.
 - **Historias:** HU-01, HU-02, HU-03, HU-04
-- **Entregables:** Proyecto React + TypeScript; catálogo de 33 herramientas; motor de reglas sin IA; esquema de base de datos con RLS; pruebas automáticas.
-- **Evidencia:** Commits 8f4d84c, f428e4b, ede64af, 4c5e831
-- **Revisión:** Las pruebas automáticas del cálculo y del motor pasaron (3 de 3).
-- **Mejora (retrospectiva):** Mantener el cuestionario y el catálogo como datos separados del código facilita cambiarlos sin reprogramar.
+- **Entregables:** El proyecto funcionando con el catálogo, el cuestionario, el cálculo del puntaje y las reglas de recomendación (sin inteligencia artificial).
+- **Evidencia:** Cambios guardados en GitHub: 8f4d84c, f428e4b, ede64af y 4c5e831
+- **Revisión:** Se crearon pruebas automáticas que revisan solas que el puntaje se calcule bien. Las 3 pasaron.
+- **Mejora (retrospectiva):** Guardar las preguntas y las herramientas aparte del resto del código permite cambiarlas sin reprogramar.
 
-## I4 · Pantallas y ajustes de la revisión  —  Hecho
+## I4 · Armar las pantallas y corregir  —  Hecho
 
 - **Actividad del cronograma:** Actividad 8
 - **Planeado:** 16/10 – 30/10/2026 · **Real:** 30–31/10/2026
-- **Objetivo:** Construir el flujo completo de pantallas y aplicar las correcciones del investigador.
+- **Objetivo:** Construir todas las pantallas y aplicar las correcciones que pidió el investigador al probarlas.
 - **Historias:** HU-05, HU-06, HU-07, HU-08, HU-09, HU-10, HU-11, HU-12, HU-13, HU-14
-- **Entregables:** 9 pantallas; anillos animados; cuestionario reducido de 18 a 13 preguntas como máximo; filtro por equipo; herramientas de refuerzo con 100 %; diseño para PC y celular.
-- **Evidencia:** Commits 5713fa0, 1ddd3bc
-- **Revisión:** El investigador detectó que con 100 % no se recomendaba nada (el mismo error del prototipo v1); se corrigió y se agregó una prueba para que no vuelva a ocurrir.
-- **Mejora (retrospectiva):** Probar casos extremos (todo «sí», todo «no») debe ser parte de la definición de hecho.
+- **Entregables:** 9 pantallas funcionando. Cambios pedidos: porcentajes que se cargan con animación, cuestionario más corto (de 18 a 13 preguntas), filtro por celular o computador, herramientas recomendadas aunque se saque 100 % y diseño que se adapta a PC y celular.
+- **Evidencia:** Cambios guardados en GitHub: 5713fa0 y 1ddd3bc
+- **Revisión:** Al responder todo «sí», la plataforma no recomendaba nada: el mismo error del primer prototipo. Se corrigió y se agregó una prueba para que no vuelva a pasar.
+- **Mejora (retrospectiva):** Siempre hay que probar los casos extremos: responder todo «sí» y todo «no».
 
-## I5 · Publicación e integración  —  En curso
+## I5 · Publicar y conectar  —  En curso
 
 - **Actividad del cronograma:** Actividad 9
 - **Planeado:** 01/11 – 13/11/2026 · **Real:** 31/10/2026 – en curso
-- **Objetivo:** Subir el código a GitHub, publicar la plataforma y conectar la base de datos.
+- **Objetivo:** Subir el código a GitHub, publicar la plataforma en internet y conectar la base de datos.
 - **Historias:** HU-15, HU-16, HU-17
-- **Entregables:** Rama version-2 en GitHub con commits por etapa; CHANGELOG; publicación en GitHub Pages.
-- **Evidencia:** Commits 884a9c1, d36e85a, 834fa3f; https://jaiderfzuniga.github.io/cuida_tu_negocio/
-- **Revisión:** Pendiente: unir version-2 con main, conectar Supabase y validar el cuestionario con el asesor.
-- **Mejora (retrospectiva):** Desde esta iteración, cada historia de usuario se sube en su propio commit.
+- **Entregables:** Código en GitHub guardado por etapas, historial de cambios y la plataforma publicada en GitHub Pages.
+- **Evidencia:** https://jaiderfzuniga.github.io/cuida_tu_negocio/
+- **Revisión:** Falta: unir la versión 2 con la rama principal de GitHub, conectar la base de datos y revisar las preguntas con el asesor.
+- **Mejora (retrospectiva):** Desde ahora, cada historia terminada se guarda en GitHub por separado.
 
-## I6 · Pruebas internas y ajustes finales  —  Por hacer
+## I6 · Probar y dejar lista  —  Por hacer
 
 - **Actividad del cronograma:** Actividad 9
 - **Planeado:** 14/11 – 27/11/2026 · **Real:** Nov. 2026 (planeada)
-- **Objetivo:** Probar la plataforma en los equipos del objetivo 2 y corregir antes de aplicarla a los microcomercios.
+- **Objetivo:** Probar la plataforma en el celular y el computador del objetivo 2 y corregir lo necesario antes de llevarla a los microcomercios.
 - **Historias:** HU-18, HU-19, HU-20
-- **Entregables:** Pruebas de usabilidad internas (ISO/IEC 25010), enlaces oficiales corregidos, guías de Recuperar y versión estable para la Fase 4.
+- **Entregables:** Pruebas de facilidad de uso (norma ISO/IEC 25010), enlaces oficiales corregidos, guías para hacer copias de seguridad y una versión estable para la Fase 4.
 - **Evidencia:** —
 - **Revisión:** —
 - **Mejora (retrospectiva):** —
