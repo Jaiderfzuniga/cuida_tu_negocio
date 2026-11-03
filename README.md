@@ -1,42 +1,70 @@
-# Plataforma Web de Diagnóstico y Recomendaciones de Ciberseguridad (NIST CSF)
+# Escudo Digital
 
-> **Institución:** Universidad CESMAG  
-> **Programa:** Ingeniería de Sistemas  
-> **Autor:** Jaider Matta 
+Plataforma web de diagnóstico y recomendaciones de ciberseguridad basada en NIST CSF (Identificar, Proteger y Recuperar) para microcomercios de San Juan de Pasto.
+Trabajo de grado · Ingeniería de Sistemas · Universidad CESMAG.
 
+## 1. Probarla en tu computador
 
----
+Necesitas Node.js 18 o superior.
 
-## 📋 Descripción del Proyecto
-
-Esta plataforma web es una solución de software orientada a evaluar y fortalecer la ciberseguridad de **microcomercios** ubicados en el sector Suroriental de San Juan de Pasto. Trabajando con una muestra intencional de 8 microcomercios, la herramienta permite realizar un diagnóstico del estado de seguridad digital de cada negocio mediante un **cuestionario integrado**.
-
-A partir de las respuestas, el sistema genera recomendaciones automatizadas de herramientas de ciberseguridad, basándose de manera estricta y simplificada en tres funciones específicas del marco **NIST CSF**: **Identificar, Proteger y Recuperar** (limitando esta última a prácticas básicas de respaldo y restauración de información). 
-
-**Delimitación del alcance:** Quedan explícitamente fuera del alcance de esta plataforma las funciones de *Gobernar, Detectar y Responder* (como detección de amenazas en tiempo real o respuesta automatizada a incidentes). El proyecto se enfoca en proporcionar una herramienta inicial accesible para usuarios no especializados.
-
----
-
-## 🛠️ Arquitectura y Stack Tecnológico
-
----
-
-## 📂 Estructura del Repositorio
-
-```text
-cuida_tu_negocio/
-│
-├── .figma/          # Recursos de diseño y prototipado visual
-├── img/             # Activos gráficos e imágenes de la interfaz
-├── src/             # Código fuente principal de la aplicación (Lógica y componentes)
-├── index.html       # Documento HTML principal de entrada
-├── package.json     # Metadatos del proyecto y dependencias del sistema
-├── tsconfig.json    # Configuración del compilador de TypeScript
-└── vite.config.ts   # Configuración de optimización y construcción con Vite
-```
-## 🚀 Guía de Instalación y Ejecución Local
 ```bash
-git clone [https://github.com/Jaiderfzuniga/cuida_tu_negocio.git](https://github.com/Jaiderfzuniga/cuida_tu_negocio.git)
-cd cuida_tu_negocio
 npm install
-npm run dev
+npm run dev        # abre http://localhost:5173
+npm test           # pruebas del cálculo y del motor de reglas
+```
+
+Sin archivo `.env` funciona en **modo demostración** (guarda en el navegador).
+Para ver el panel del investigador en modo demo, crea una cuenta con un correo que contenga la palabra `investigador`.
+
+## 2. Base de datos (Supabase) — ya conectada
+
+El proyecto Supabase `escudo-digital` ya tiene las tablas, el catálogo y el cuestionario. Sus datos públicos están en `.env.production`.
+Para que los enlaces de los correos (confirmar cuenta, cambiar contraseña) lleven a la plataforma, en Supabase → **Authentication → URL Configuration**:
+- **Site URL:** `https://jaiderfzuniga.github.io/cuida_tu_negocio/`
+- **Redirect URLs:** `https://jaiderfzuniga.github.io/cuida_tu_negocio/**` y `http://localhost:5173/**`
+
+Para montar la base de datos desde cero en otro proyecto:
+
+1. Crea un proyecto gratis en https://supabase.com.
+2. En **SQL Editor** ejecuta `supabase/migrations/001_esquema.sql` y luego `supabase/seed.sql`.
+3. En **Project Settings → API** copia la URL y la clave `anon public`.
+4. Copia `.env.example` como `.env` y pega esos dos valores.
+5. Crea tu cuenta en la plataforma y date el rol de investigador (última línea del archivo SQL).
+
+## 3. Publicarla (Vercel)
+
+1. Sube la carpeta a un repositorio de GitHub (el `.gitignore` ya excluye `node_modules` y `.env`).
+2. En https://vercel.com → **Add New Project** → elige el repositorio (Vercel detecta Vite).
+3. En **Environment Variables** agrega `VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY`.
+4. **Deploy**. En Supabase → Authentication → URL Configuration, pon la dirección de Vercel como *Site URL*.
+
+## 4. Publicarla en GitHub Pages (alternativa gratuita)
+
+1. En GitHub: **Settings → Pages → Source: GitHub Actions**.
+2. Cada vez que se actualiza `main`, el flujo `.github/workflows/deploy.yml` prueba, compila y publica.
+3. Queda en https://jaiderfzuniga.github.io/cuida_tu_negocio/
+4. Para usar Supabase, agrega `VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY` en **Settings → Secrets and variables → Actions**.
+
+## Estructura
+
+```
+src/
+├── pages/        Pantallas (Inicio, Ingresar, Negocio, Cuestionario, Resultado, Ruta, Catálogo, Historial, Panel)
+├── components/   Escudo 3D, anillos, logo de herramientas, tarjetas, diseño de página
+├── lib/          puntaje.ts (nivel por función) y motor.ts (reglas y ruta al 100 %)
+├── data/         Cuestionario (13 preguntas como máximo) y catálogo (33 herramientas)
+├── services/     Conexión con Supabase o modo demostración
+├── hooks/        Sesión y tema claro/oscuro
+├── styles/       Identidad visual
+└── types/        Tipos de TypeScript
+supabase/         Esquema (9 tablas + RLS) y datos iniciales
+scripts/seed.ts   Regenera supabase/seed.sql si cambias src/data (npx vite-node scripts/seed.ts > supabase/seed.sql)
+tests/            Pruebas automáticas
+```
+
+## Cómo se calcula
+
+- Cada respuesta vale 2 (práctica completa), 1 (parcial) o 0. Las preguntas que no aplican al negocio (sin computador, sin Facebook, etc.) no cuentan.
+- Nivel por función = puntos obtenidos ÷ puntos posibles. Nivel general = promedio de las tres funciones.
+- Ruta al 100 %: cada respuesta sin el puntaje máximo activa la primera herramienta compatible con los equipos del negocio; los puntos que faltan se reparten entre esas herramientas y se ordenan empezando por la función más baja.
+- Sin inteligencia artificial: todas las reglas están en `src/data/preguntas.ts`.
