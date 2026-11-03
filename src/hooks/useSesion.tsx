@@ -12,15 +12,23 @@ export function SesionProvider({ children }: { children: ReactNode }) {
   const [cargando, setCargando] = useState(true);
 
   const refrescar = useCallback(async () => {
-    const p = await perfilActual();
-    setPerfil(p);
-    setNegocio(p ? await miNegocio(p) : null);
-    setCargando(false);
+    try {
+      const p = await perfilActual();
+      setPerfil(p);
+      setNegocio(p ? await miNegocio(p) : null);
+    } finally {
+      setCargando(false); // nunca dejar la pantalla en «Cargando…» si algo falla
+    }
   }, []);
 
   useEffect(() => {
     refrescar();
-    const sub = supabase?.auth.onAuthStateChange(() => { refrescar(); });
+    // Supabase se bloquea si dentro de este aviso se hacen otras consultas a la base de datos;
+    // por eso la recarga de la sesión se hace un instante después (setTimeout).
+    const sub = supabase?.auth.onAuthStateChange((evento) => {
+      if (evento === 'INITIAL_SESSION') return; // la primera carga ya la hace refrescar()
+      setTimeout(() => { refrescar(); }, 0);
+    });
     return () => sub?.data.subscription.unsubscribe();
   }, [refrescar]);
 

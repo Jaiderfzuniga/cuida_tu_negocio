@@ -64,10 +64,11 @@ export async function salir(): Promise<void> {
 
 export async function perfilActual(): Promise<Perfil | null> {
   if (supabase) {
-    const { data } = await supabase.auth.getUser();
-    if (!data.user) return null;
-    const { data: p } = await supabase.from('perfil').select('rol').eq('id', data.user.id).maybeSingle();
-    return { id: data.user.id, email: data.user.email ?? '', rol: (p?.rol as Perfil['rol']) ?? 'propietario' };
+    const { data } = await supabase.auth.getSession();
+    const user = data.session?.user;
+    if (!user) return null;
+    const { data: p } = await supabase.from('perfil').select('rol').eq('id', user.id).maybeSingle();
+    return { id: user.id, email: user.email ?? '', rol: (p?.rol as Perfil['rol']) ?? 'propietario' };
   }
   const d = leer();
   const u = d.usuarios.find((x) => x.id === d.sesion);
