@@ -2,6 +2,10 @@
 
 Registro de la evolución de la plataforma para la trazabilidad del trabajo de grado.
 
+## Rama principal (2 nov. 2026)
+
+- La versión 2 se unió a la rama principal `main` con el pull request #1 (27 commits). Desde ahora se trabaja en `version-2` y cada etapa se cierra con un pull request hacia `main`.
+
 ## v2.1.2 — Corrección (2 nov. 2026)
 
 - **HU-24 (continuación):** con una cuenta nueva, el cuestionario quedaba en blanco. Ahora el cuestionario espera a que carguen los datos del negocio, la sesión nunca queda vacía al recargar en desarrollo y, si una pantalla falla, se muestra un mensaje con el error y un botón «Recargar» en lugar de una página en blanco.
