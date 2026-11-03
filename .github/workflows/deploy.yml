@@ -32,9 +32,9 @@ jobs:
       - run: npm run build
         env:
           GITHUB_PAGES: 'true'
-          # Opcional: agrégalos en Settings → Secrets and variables → Actions para usar Supabase
-          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
-          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          # Los datos públicos de Supabase se leen de .env.production.
+          # No poner aquí variables VITE_SUPABASE_* vacías: reemplazan a las del archivo
+          # y la plataforma queda en «modo demostración».
       # Para que las rutas (/catalogo, /resultado/...) funcionen al recargar la página
       - run: cp dist/index.html dist/404.html
       - uses: actions/configure-pages@v5

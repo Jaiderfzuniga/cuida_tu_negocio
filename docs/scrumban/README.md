@@ -14,7 +14,7 @@ El desarrollo de la plataforma (objetivo específico 3) se gestiona con **Scrumb
 | Iteraciones | 6 iteraciones (I1–I6) dentro de las actividades 7, 8 y 9 del cronograma → [iteraciones.md](iteraciones.md) |
 | Revisión | Al cerrar cada iteración, el investigador prueba la plataforma y registra correcciones |
 | Retrospectiva | Una mejora del proceso por iteración (columna «Mejora» en iteraciones.md) |
-| Trazabilidad | Cada HU terminada se sube en un commit que menciona su código (ej.: `HU-16: conectar Supabase`) |
+| Trazabilidad | Cada HU terminada se sube en un commit que menciona su código (ej.: `HU-16: conectar Supabase`); se trabaja en `version-2` y cada etapa se cierra con un pull request hacia `main` |
 
 ## Definición de hecho
 
