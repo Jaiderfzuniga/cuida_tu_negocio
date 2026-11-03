@@ -12,6 +12,7 @@ Registro de la evolución de la plataforma para la trazabilidad del trabajo de g
 - Se quitaron de las descripciones de las herramientas las citas internas del Excel ([60], [61]…).
 - Seguridad: las funciones internas de la base de datos ya no se pueden llamar desde fuera (migración 002).
 - Prueba: dos usuarios simulados; cada uno ve solo su negocio y el consentimiento queda guardado.
+- Primera cuenta real creada (investigador): correo confirmado, consentimiento guardado y rol de investigador asignado.
 
 ## v2.0.0 — Escudo Digital (31 oct. 2026)
 
