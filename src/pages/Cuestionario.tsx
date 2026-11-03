@@ -6,6 +6,7 @@ import { useSesion } from '../hooks/useSesion';
 import { calcularNiveles, preguntasPara } from '../lib/puntaje';
 import { COLOR } from '../lib/colores';
 import { guardarDiagnostico } from '../services/store';
+import { refuerzo, rutaAl100 } from '../lib/motor';
 import { FUNCIONES, type Funcion, type Respuestas } from '../types';
 
 export default function Cuestionario() {
@@ -30,7 +31,11 @@ export default function Cuestionario() {
     if (i < preguntas.length - 1) { setI(i + 1); return; }
     setGuardando(true);
     try {
-      const d = await guardarDiagnostico(negocio!.id!, r, calcularNiveles(r, negocio!));
+      const niveles = calcularNiveles(r, negocio!);
+      const ruta = rutaAl100(r, negocio!, niveles);
+      const extra = refuerzo(negocio!, ruta.map((p) => p.herramienta.id), ruta.length ? 1 : 2);
+      const recs = [...ruta.map((p) => ({ herramientaId: p.herramienta.id, puntos: p.puntos })), ...extra.map((h) => ({ herramientaId: h.id, puntos: 0 }))];
+      const d = await guardarDiagnostico(negocio!.id!, r, niveles, recs);
       nav(`/resultado/${d.id}`);
     } catch (e) { alert((e as Error).message); setGuardando(false); }
   }

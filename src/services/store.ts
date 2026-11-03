@@ -19,7 +19,9 @@ const uid = () => (crypto.randomUUID ? crypto.randomUUID() : String(Date.now() +
 // ───────── Sesión ─────────
 export async function registrar(email: string, clave: string): Promise<void> {
   if (supabase) {
-    const { error } = await supabase.auth.signUp({ email, password: clave });
+    // El consentimiento (Ley 1581) queda registrado con fecha en la tabla perfil.
+    const { error } = await supabase.auth.signUp({ email, password: clave,
+      options: { data: { consentimiento: true }, emailRedirectTo: location.origin + import.meta.env.BASE_URL } });
     if (error) throw new Error(traducir(error.message));
     return;
   }
@@ -45,7 +47,13 @@ export async function ingresar(email: string, clave: string): Promise<void> {
 
 export async function recuperarClave(email: string): Promise<void> {
   if (!supabase) throw new Error('En modo demostración no se envían correos.');
-  const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo: location.origin + import.meta.env.BASE_URL });
+  const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo: location.origin + import.meta.env.BASE_URL + 'nueva-clave' });
+  if (error) throw new Error(traducir(error.message));
+}
+
+export async function cambiarClave(clave: string): Promise<void> {
+  if (!supabase) throw new Error('En modo demostración no se cambian contraseñas.');
+  const { error } = await supabase.auth.updateUser({ password: clave });
   if (error) throw new Error(traducir(error.message));
 }
 
@@ -91,7 +99,9 @@ export async function guardarNegocio(perfil: Perfil, n: Negocio): Promise<Negoci
 }
 
 // ───────── Diagnósticos ─────────
-export async function guardarDiagnostico(negocioId: string, respuestas: Respuestas, niveles: Niveles): Promise<Diagnostico> {
+/** Guarda el diagnóstico, sus respuestas y las recomendaciones que generó (para el análisis del OE4). */
+export async function guardarDiagnostico(negocioId: string, respuestas: Respuestas, niveles: Niveles,
+  recomendaciones: { herramientaId: string; puntos: number }[] = []): Promise<Diagnostico> {
   const previos = await diagnosticosDe(negocioId);
   const momento: Diagnostico['momento'] = previos.length ? 'post' : 'pre';
   if (supabase) {
@@ -103,6 +113,11 @@ export async function guardarDiagnostico(negocioId: string, respuestas: Respuest
     const filas = Object.entries(respuestas).map(([pregunta_id, opcion_id]) => ({ diagnostico_id: data.id, pregunta_id, opcion_id }));
     const r = await supabase.from('respuesta').insert(filas);
     if (r.error) throw new Error(r.error.message);
+    if (recomendaciones.length) {
+      const rec = await supabase.from('recomendacion').insert(recomendaciones.map((x, i) => ({
+        diagnostico_id: data.id, herramienta_id: x.herramientaId, puntos: x.puntos, orden: i + 1 })));
+      if (rec.error) throw new Error(rec.error.message);
+    }
     return { ...diagDesdeFila(data), respuestas };
   }
   const d = leer();

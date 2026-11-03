@@ -12,6 +12,7 @@ const Ruta = lazy(() => import('./pages/Ruta'));
 const Catalogo = lazy(() => import('./pages/Catalogo'));
 const Historial = lazy(() => import('./pages/Historial'));
 const Panel = lazy(() => import('./pages/Panel'));
+const NuevaClave = lazy(() => import('./pages/NuevaClave'));
 
 /** Exige sesión; con `negocio` exige además haber registrado el negocio; con `investigador`, ese rol. */
 function Protegida({ children, negocio, investigador }: { children: ReactNode; negocio?: boolean; investigador?: boolean }) {
@@ -32,6 +33,7 @@ export default function App() {
             <Route path="/" element={<Inicio />} />
             <Route path="/ingresar" element={<Ingresar />} />
             <Route path="/catalogo" element={<Catalogo />} />
+            <Route path="/nueva-clave" element={<NuevaClave />} />
             <Route path="/negocio" element={<Protegida><Negocio /></Protegida>} />
             <Route path="/cuestionario" element={<Protegida negocio><Cuestionario /></Protegida>} />
             <Route path="/resultado/:id" element={<Protegida negocio><Resultado /></Protegida>} />
