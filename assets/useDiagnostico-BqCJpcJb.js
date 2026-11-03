@@ -1,1 +1,0 @@
-import{a as l,r as n,h as r}from"./index-BKtOb3ba.js";function c(a){const{negocio:s}=l(),[t,u]=n.useState(null);n.useEffect(()=>{s!=null&&s.id&&r(s.id).then(u)},[s==null?void 0:s.id]);const e=t?(a?t.find(i=>i.id===a):t[t.length-1])??null:null;return{lista:t,actual:e,cargando:t===null}}export{c as u};
