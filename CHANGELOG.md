@@ -2,6 +2,10 @@
 
 Registro de la evolución de la plataforma para la trazabilidad del trabajo de grado.
 
+## v2.1.1 — Corrección (2 nov. 2026)
+
+- **HU-24:** al iniciar sesión con la base de datos real, la plataforma se quedaba en «Cargando…». Causa: se consultaba la base de datos dentro del aviso de cambio de sesión de Supabase, lo que la bloquea. Ahora la consulta se hace un instante después y la pantalla nunca queda cargando si algo falla. Lo encontró el investigador al probar con su cuenta.
+
 ## v2.1.0 — Base de datos conectada (2 nov. 2026)
 
 - **HU-16:** la plataforma publicada usa la base de datos Supabase (proyecto `escudo-digital`): cuentas reales, negocios, diagnósticos y respuestas quedan guardados y el panel del investigador ve a todos los negocios.
