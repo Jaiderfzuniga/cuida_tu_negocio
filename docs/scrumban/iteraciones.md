@@ -9,7 +9,7 @@ Registro de cada iteración: qué se planeó, qué se entregó, qué se corrigi�
 ## I1 · Arquitectura y stack  —  Hecho
 
 - **Actividad del cronograma:** Actividad 7
-- **Planeado:** 07/09 – 18/09/2026 · **Real:** Oct. 2026
+- **Planeado:** 07/09 – 18/09/2026 · **Real:** 30/10/2026
 - **Objetivo:** Definir la arquitectura, el modelo de datos y las tecnologías de la plataforma.
 - **Historias:** —
 - **Entregables:** Documento «Arquitectura y stack tecnológico» (11 páginas): capas, 9 tablas, reglas de acceso y trazabilidad RF → componente.
