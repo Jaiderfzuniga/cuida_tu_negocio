@@ -2,6 +2,17 @@
 
 Registro de la evolución de la plataforma para la trazabilidad del trabajo de grado.
 
+## v2.1.0 — Base de datos conectada (2 nov. 2026)
+
+- **HU-16:** la plataforma publicada usa la base de datos Supabase (proyecto `escudo-digital`): cuentas reales, negocios, diagnósticos y respuestas quedan guardados y el panel del investigador ve a todos los negocios.
+- **HU-21:** se guarda la fecha en que cada propietario aceptó el uso de sus datos (Ley 1581 de 2012).
+- **HU-22:** se guardan las herramientas recomendadas en cada diagnóstico, para el análisis del objetivo 4.
+- **HU-23:** nueva pantalla para crear una contraseña nueva desde el enlace de «Olvidé mi contraseña».
+- Catálogo y cuestionario cargados en la base de datos (33 herramientas, 13 preguntas, 40 opciones, 29 reglas).
+- Se quitaron de las descripciones de las herramientas las citas internas del Excel ([60], [61]…).
+- Seguridad: las funciones internas de la base de datos ya no se pueden llamar desde fuera (migración 002).
+- Prueba: dos usuarios simulados; cada uno ve solo su negocio y el consentimiento queda guardado.
+
 ## v2.0.0 — Escudo Digital (31 oct. 2026)
 
 Nueva versión construida desde cero según el documento de arquitectura y stack del objetivo 3.
