@@ -35,4 +35,6 @@ export function SesionProvider({ children }: { children: ReactNode }) {
   return <SesionCtx.Provider value={{ perfil, negocio, cargando, refrescar, setNegocio }}>{children}</SesionCtx.Provider>;
 }
 
-export const useSesion = () => useContext(SesionCtx);
+const VACIO: Ctx = { perfil: null, negocio: null, cargando: true, refrescar: async () => {}, setNegocio: () => {} };
+/** Nunca devuelve null: si el contexto se pierde (por ejemplo al recargar en desarrollo), muestra «Cargando…». */
+export const useSesion = () => useContext(SesionCtx) ?? VACIO;

@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Pagina } from '../components/Pagina';
+import { Pagina, Cargando } from '../components/Pagina';
 import { Escudo3D } from '../components/Escudo3D';
 import { useSesion } from '../hooks/useSesion';
 import { calcularNiveles, preguntasPara } from '../lib/puntaje';
@@ -12,12 +12,12 @@ import { FUNCIONES, type Funcion, type Respuestas } from '../types';
 export default function Cuestionario() {
   const { negocio } = useSesion();
   const nav = useNavigate();
-  const preguntas = useMemo(() => preguntasPara(negocio!), [negocio]);
+  const preguntas = useMemo(() => (negocio ? preguntasPara(negocio) : []), [negocio]);
   const [i, setI] = useState(0);
   const [r, setR] = useState<Respuestas>({});
   const [ayuda, setAyuda] = useState(false);
   const [guardando, setGuardando] = useState(false);
-  const p = preguntas[i];
+  const p = preguntas[Math.min(i, Math.max(0, preguntas.length - 1))];
 
   // El escudo se llena según las preguntas respondidas de cada función.
   const conteo = Object.fromEntries(FUNCIONES.map((f) => {
@@ -39,6 +39,8 @@ export default function Cuestionario() {
       nav(`/resultado/${d.id}`);
     } catch (e) { alert((e as Error).message); setGuardando(false); }
   }
+
+  if (!negocio || !p) return <Cargando />;
 
   return (
     <Pagina>

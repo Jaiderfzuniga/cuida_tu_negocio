@@ -3,6 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { SesionProvider, useSesion } from './hooks/useSesion';
 import { Cargando } from './components/Pagina';
 import Inicio from './pages/Inicio';
+import { Fallo } from './components/Fallo';
 
 const Ingresar = lazy(() => import('./pages/Ingresar'));
 const Negocio = lazy(() => import('./pages/Negocio'));
@@ -28,6 +29,7 @@ export default function App() {
   return (
     <SesionProvider>
       <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <Fallo>
         <Suspense fallback={<Cargando />}>
           <Routes>
             <Route path="/" element={<Inicio />} />
@@ -43,6 +45,7 @@ export default function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Suspense>
+        </Fallo>
       </BrowserRouter>
     </SesionProvider>
   );
