@@ -6,6 +6,7 @@ Registro de la evolución de la plataforma para la trazabilidad del trabajo de g
 
 - **HU-24 (continuación):** con una cuenta nueva, el cuestionario quedaba en blanco. Ahora el cuestionario espera a que carguen los datos del negocio, la sesión nunca queda vacía al recargar en desarrollo y, si una pantalla falla, se muestra un mensaje con el error y un botón «Recargar» en lugar de una página en blanco.
 - Prueba: inicio de sesión, cuestionario completo y resultado, simulando las respuestas de la base de datos.
+- El investigador confirmó que el diagnóstico funciona con la base de datos real. El error de «refuerzo» en su computador venía de un archivo viejo en su carpeta; se sincronizó todo el código.
 
 ## v2.1.1 — Corrección (2 nov. 2026)
 

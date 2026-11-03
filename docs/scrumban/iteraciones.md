@@ -58,8 +58,8 @@ Registro de cada iteración: qué se planeó, qué se entregó, qué se corrigi�
 - **Historias:** HU-15, HU-16, HU-17, HU-21, HU-22, HU-23, HU-24
 - **Entregables:** Código en GitHub guardado por etapas, historial de cambios, la plataforma publicada en GitHub Pages y la base de datos Supabase conectada (9 tablas, catálogo y preguntas cargados, consentimiento y recomendaciones guardados).
 - **Evidencia:** https://jaiderfzuniga.github.io/cuida_tu_negocio/
-- **Revisión:** La base de datos se probó con dos usuarios de prueba: cada uno ve solo su negocio, el consentimiento queda con fecha y las recomendaciones se guardan. Al probarla con su cuenta real, el investigador encontró que la plataforma se quedaba cargando al hacer el diagnóstico; se corrigió (HU-24). Falta: unir la versión 2 con la rama principal de GitHub y revisar las preguntas con el asesor.
-- **Mejora (retrospectiva):** Desde ahora, cada historia terminada se guarda en GitHub por separado.
+- **Revisión:** La base de datos se probó con dos usuarios de prueba: cada uno ve solo su negocio, el consentimiento queda con fecha y las recomendaciones se guardan. Al probarla con su cuenta real, el investigador encontró que la plataforma se quedaba cargando y luego en blanco al hacer el diagnóstico; se corrigió (HU-24) y el investigador confirmó el 2 de noviembre que ya funciona. Falta: unir la versión 2 con la rama principal de GitHub y revisar las preguntas con el asesor.
+- **Mejora (retrospectiva):** Desde ahora, cada historia terminada se guarda en GitHub por separado. Además, la carpeta del computador tenía un archivo viejo que causó otro error: cada actualización debe copiar el código completo, no archivos sueltos.
 
 ## I6 · Probar y dejar lista  —  Por hacer
 
