@@ -16,7 +16,14 @@ npm test           # pruebas del cálculo y del motor de reglas
 Sin archivo `.env` funciona en **modo demostración** (guarda en el navegador).
 Para ver el panel del investigador en modo demo, crea una cuenta con un correo que contenga la palabra `investigador`.
 
-## 2. Conectar la base de datos (Supabase)
+## 2. Base de datos (Supabase) — ya conectada
+
+El proyecto Supabase `escudo-digital` ya tiene las tablas, el catálogo y el cuestionario. Sus datos públicos están en `.env.production`.
+Para que los enlaces de los correos (confirmar cuenta, cambiar contraseña) lleven a la plataforma, en Supabase → **Authentication → URL Configuration**:
+- **Site URL:** `https://jaiderfzuniga.github.io/cuida_tu_negocio/`
+- **Redirect URLs:** `https://jaiderfzuniga.github.io/cuida_tu_negocio/**` y `http://localhost:5173/**`
+
+Para montar la base de datos desde cero en otro proyecto:
 
 1. Crea un proyecto gratis en https://supabase.com.
 2. En **SQL Editor** ejecuta `supabase/migrations/001_esquema.sql` y luego `supabase/seed.sql`.

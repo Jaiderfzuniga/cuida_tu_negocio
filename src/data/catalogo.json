@@ -163,7 +163,7 @@
   "costo": "Gratis (versión de pago opcional)",
   "espanol": true,
   "accesibilidad": 4,
-  "uso": "Antivirus gratuito para instalar, con protección en tiempo real, bloqueo de enlaces peligrosos, protección contra ransomware y revisión de la red Wi-Fi [60]. 18 de 18 puntos y TOP PRODUCT en AV-TEST (julio–agosto 2026) [9]. Al instalarlo, Windows desactiva la protección en tiempo real de Defender, porque no deben funcionar dos antivirus a la vez. Conviene revisar sus opciones de privacidad [11].",
+  "uso": "Antivirus gratuito para instalar, con protección en tiempo real, bloqueo de enlaces peligrosos, protección contra ransomware y revisión de la red Wi-Fi. 18 de 18 puntos y TOP PRODUCT en AV-TEST (julio–agosto 2026). Al instalarlo, Windows desactiva la protección en tiempo real de Defender, porque no deben funcionar dos antivirus a la vez. Conviene revisar sus opciones de privacidad.",
   "subcategoria": "PR.PS-05",
   "rol": "Antivirus para instalar en el computador"
  },
@@ -233,7 +233,7 @@
   "costo": "Gratis",
   "espanol": true,
   "accesibilidad": 4,
-  "uso": "Navegador gratuito basado en Chromium (se usa igual que Chrome) que trae activados de fábrica los escudos Brave Shields y la Navegación segura de Google: bloquea sitios de phishing y malware, descargas peligrosas, anuncios y rastreadores [69], [71]. El negocio lo usa como navegador del computador o del celular para abrir los enlaces que llegan por WhatsApp, sin instalar extensiones ni crear cuenta.",
+  "uso": "Navegador gratuito basado en Chromium (se usa igual que Chrome) que trae activados de fábrica los escudos Brave Shields y la Navegación segura de Google: bloquea sitios de phishing y malware, descargas peligrosas, anuncios y rastreadores. El negocio lo usa como navegador del computador o del celular para abrir los enlaces que llegan por WhatsApp, sin instalar extensiones ni crear cuenta.",
   "subcategoria": "PR.PS-05",
   "rol": "Navegador con protección incluida"
  },
@@ -303,7 +303,7 @@
   "costo": "Gratis",
   "espanol": true,
   "accesibilidad": 5,
-  "uso": "La clave dinámica es un código de 6 dígitos que cambia cada 45 segundos, funciona sin internet y se ve en la parte superior derecha de la pantalla de inicio de Nequi o en el candado de la «mochila» [61]. El botón de pánico de la web bloquea la cuenta si roban el celular [36]. Antes de entregar un producto, el comerciante debe confirmar el pago en Movimientos y no aceptar capturas, por el fraude de comprobantes falsos «Nequi Glitch» [37].",
+  "uso": "La clave dinámica es un código de 6 dígitos que cambia cada 45 segundos, funciona sin internet y se ve en la parte superior derecha de la pantalla de inicio de Nequi o en el candado de la «mochila». El botón de pánico de la web bloquea la cuenta si roban el celular. Antes de entregar un producto, el comerciante debe confirmar el pago en Movimientos y no aceptar capturas, por el fraude de comprobantes falsos «Nequi Glitch».",
   "subcategoria": "PR.AA-03",
   "rol": "Primera opción (cobros por Nequi)"
  },
@@ -373,7 +373,7 @@
   "costo": "Gratis",
   "espanol": true,
   "accesibilidad": 5,
-  "uso": "Descarga e instala las actualizaciones de seguridad de Windows; en Windows 11 se aplican de forma automática y solo pueden pausarse por un tiempo [62]. El propietario solo revisa que no haya actualizaciones pendientes y reinicia cuando se lo pide.",
+  "uso": "Descarga e instala las actualizaciones de seguridad de Windows; en Windows 11 se aplican de forma automática y solo pueden pausarse por un tiempo. El propietario solo revisa que no haya actualizaciones pendientes y reinicia cuando se lo pide.",
   "subcategoria": "PR.PS-02",
   "rol": "Primera opción (actualizaciones)"
  },
@@ -457,7 +457,7 @@
   "costo": "Gratis (15 GB compartidos)",
   "espanol": true,
   "accesibilidad": 5,
-  "uso": "Guarda automáticamente en la nube las fotos y videos del celular; también puede respaldar la carpeta de imágenes de WhatsApp, que viene desactivada por defecto [63]. Si se pierde el celular, el negocio conserva las fotos de productos, comprobantes y facturas.",
+  "uso": "Guarda automáticamente en la nube las fotos y videos del celular; también puede respaldar la carpeta de imágenes de WhatsApp, que viene desactivada por defecto. Si se pierde el celular, el negocio conserva las fotos de productos, comprobantes y facturas.",
   "subcategoria": "PR.DS-11 / RC.RP-03",
   "rol": "Primera opción (fotos del celular)"
  }

@@ -5,12 +5,18 @@
 create table if not exists perfil (
   id uuid primary key references auth.users on delete cascade,
   rol text not null default 'propietario' check (rol in ('propietario', 'investigador')),
+  -- Fecha en que aceptó el uso de sus datos (Ley 1581 de 2012)
+  consentimiento timestamptz,
   creado timestamptz not null default now()
 );
 
 -- Crea el perfil automáticamente al registrarse
 create or replace function crear_perfil() returns trigger language plpgsql security definer set search_path = public as $$
-begin insert into perfil (id) values (new.id); return new; end $$;
+begin
+  insert into perfil (id, consentimiento)
+  values (new.id, case when new.raw_user_meta_data->>'consentimiento' = 'true' then now() end);
+  return new;
+end $$;
 drop trigger if exists al_registrarse on auth.users;
 create trigger al_registrarse after insert on auth.users for each row execute function crear_perfil();
 
