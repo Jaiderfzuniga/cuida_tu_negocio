@@ -3,6 +3,8 @@
 Plataforma web de diagnóstico y recomendaciones de ciberseguridad basada en NIST CSF (Identificar, Proteger y Recuperar) para microcomercios de San Juan de Pasto.
 Trabajo de grado · Ingeniería de Sistemas · Universidad CESMAG.
 
+**Documentación del desarrollo:** [objetivo 3](docs/objetivo-3/README.md) · [Scrumban](docs/scrumban/README.md) · [NIST CSF](docs/nist-csf.md) · [historial de cambios](CHANGELOG.md)
+
 ## 1. Probarla en tu computador
 
 Necesitas Node.js 18 o superior.

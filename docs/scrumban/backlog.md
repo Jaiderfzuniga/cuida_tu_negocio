@@ -30,6 +30,7 @@ Ejemplo: 10 de 12 negocios venden por WhatsApp y cobran por Nequi (H7) → RF-17
 | HU-22 | Como investigador, quiero que se guarden las herramientas que la plataforma recomendó en cada diagnóstico, para analizarlas en el objetivo 4. | Revisión del código (02/11) → RF-05, Objetivo 4 | I5 | Hecho |
 | HU-23 | Como propietario, quiero crear una contraseña nueva si olvidé la mía. | Revisión del código (02/11) → RF-16 | I5 | Hecho |
 | HU-24 | Como propietario, quiero que la plataforma no se quede «cargando» después de iniciar sesión. | Prueba del investigador (02/11) → RNF-02 | I5 | Hecho |
+| HU-25 | Como propietario, quiero una interfaz clara y cercana, con una ilustración y un diseño que se entienda fácil. | Revisión del investigador (04–05/11) → RNF-05 | I5 | Hecho |
 | HU-20 | Como investigador, quiero pruebas internas de usabilidad basadas en ISO/IEC 25010 antes de aplicar la plataforma. | ISO/IEC 25010 (OE4) → RNF-02, RNF-12 | I6 | Por hacer |
 
-Para agregar una historia: asígnale el siguiente código (HU-21…), enlázala a un requisito y ubícala en **Por hacer**.
+Para agregar una historia: asígnale el siguiente código (HU-26…), enlázala a un requisito y ubícala en **Por hacer**.

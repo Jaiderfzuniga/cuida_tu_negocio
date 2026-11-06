@@ -144,3 +144,10 @@
 *.stl                filter=lfs diff=lfs merge=lfs -text
 *.nc                 filter=lfs diff=lfs merge=lfs -text
 *.mat                filter=lfs diff=lfs merge=lfs -text
+
+# ---------------------------------------------------------------------------
+# Imágenes de la plataforma y de la documentación: se guardan directo en Git
+# para que GitHub Pages y la vista de GitHub las encuentren.
+# ---------------------------------------------------------------------------
+src/assets/*         -filter -diff -merge binary
+docs/objetivo-3/img/* -filter -diff -merge binary
