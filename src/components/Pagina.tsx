@@ -71,7 +71,7 @@ function Navegacion() {
 }
 
 /** Estructura común de las pantallas: navegación, palabra de fondo y panel diagonal opcional. */
-export function Pagina({ children, fantasma, panel, panelTipo = 'ancho', panelEnMovil = true, titulo, sub, extras }: {
+export function Pagina({ children, fantasma, panel, panelTipo = 'ancho', panelEnMovil = true, titulo, tituloNaranja, sub, extras }: {
   children: ReactNode;
   /** Elementos ubicados respecto a toda la pantalla: ilustración, sello, puntos. */
   extras?: ReactNode;
@@ -83,6 +83,8 @@ export function Pagina({ children, fantasma, panel, panelTipo = 'ancho', panelEn
   ancho?: 'movil' | 'ancho';
   volver?: string;
   titulo?: string;
+  /** En modo oscuro, el título va en naranja. */
+  tituloNaranja?: boolean;
   sub?: string;
 }) {
   return (
@@ -93,7 +95,7 @@ export function Pagina({ children, fantasma, panel, panelTipo = 'ancho', panelEn
       <Navegacion />
       <div className="pagina-cuerpo">
         <main className="pagina-main aparecer">
-          {titulo && <h1 className="titulo mt-4 pc:mt-7">{titulo}</h1>}
+          {titulo && <h1 className={`titulo mt-4 pc:mt-7${tituloNaranja ? ' titulo-inicio' : ''}`}>{titulo}</h1>}
           {sub && <p className="subtitulo">{sub}</p>}
           {children}
         </main>

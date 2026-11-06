@@ -26,7 +26,7 @@ export default function Negocio() {
   }
 
   return (
-    <Pagina fantasma="NEGOCIO" extras={<Chica className="chica-inicio solo-pc" />} titulo="Tu negocio" sub="Así te recomendamos solo lo que te sirve.">
+    <Pagina fantasma="NEGOCIO" extras={<Chica className="chica-inicio solo-pc" />} titulo="Tu negocio" tituloNaranja sub="Así te recomendamos solo lo que te sirve.">
       <form onSubmit={enviar} className="mt-4 flex flex-col gap-4 pc:max-w-[min(48vw,600px)]">
         <label className="etiqueta">Nombre del negocio
           <input className="campo" required value={f.nombre} onChange={(e) => setF({ ...f, nombre: e.target.value })} placeholder="Ej.: Tienda Don Pedro" />
