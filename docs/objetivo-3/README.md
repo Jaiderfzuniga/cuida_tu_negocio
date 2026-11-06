@@ -548,7 +548,7 @@ Se revisó el código contra cada requerimiento. «Hecho» significa que está p
 2. Scrumban se aplicó en las revisiones y correcciones desde el inicio, y como registro formal desde la etapa 5. El rediseño muestra el ciclo completo: revisión, tarea nueva, propuestas, aplicación, corrección y entrega.
 3. NIST CSF mantuvo el alcance: el cuestionario, el puntaje, el catálogo y las recomendaciones siguen limitados a Identificar, Proteger y Recuperar.
 4. El cambio de diseño no modificó la lógica de evaluación ni los datos. Su efecto sobre los propietarios aún no se ha medido.
-5. La revisión contra los requerimientos dejó seis puntos parciales y varios por medir. Esa lista orienta la etapa 6.
+5. La revisión contra los requerimientos dejó siete puntos parciales y varios por medir. Esa lista orienta la etapa 6.
 
 ## ANEXO A. DICCIONARIO DE DATOS
 
