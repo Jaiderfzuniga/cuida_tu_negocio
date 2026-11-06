@@ -455,9 +455,9 @@ Como bocetos se usaron las muestras de pantalla de la sección VI y las de la et
 
 Todo el código y la documentación técnica están en el repositorio [15]. Se trabaja en la rama version-2; cada etapa se cierra uniendo a main con un pull request, y al llegar a main la plataforma se publica sola. El historial completo está en el Anexo B.
 
-![Commits por fecha en la rama version-2 (40 en total)](img/commits.png)
+![Commits por fecha en la rama version-2 (40, sin contar esta documentación)](img/commits.png)
 
-*Fig. 32. Commits por fecha en la rama version-2 (40 en total). Fuente: historial de Git del repositorio, 5 de noviembre de 2026.*
+*Fig. 32. Commits por fecha en la rama version-2 (40, sin contar esta documentación). Fuente: historial de Git del repositorio, 5 de noviembre de 2026.*
 
 ![Historial de la rama version-2 en GitHub](img/ev-commits.jpg)
 
