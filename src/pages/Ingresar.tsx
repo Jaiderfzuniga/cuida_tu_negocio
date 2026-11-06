@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Pagina } from '../components/Pagina';
+import { Chica } from '../components/Robot';
 import { useSesion } from '../hooks/useSesion';
 import { ingresar, perfilActual, recuperarClave, registrar } from '../services/store';
 
@@ -35,36 +36,34 @@ export default function Ingresar() {
   }
 
   return (
-    <Pagina volver="/" titulo={registro ? 'Crea tu cuenta' : 'Ingresa'} sub="Para guardar tu diagnóstico y ver tu avance">
-      <div className="md:mx-auto md:w-full md:max-w-md">
-      <div className="mt-6 grid grid-cols-2 gap-1 rounded-2xl border border-borde bg-superficie p-1">
+    <Pagina fantasma="CUENTA" extras={<Chica className="chica-inicio solo-pc" />} titulo={registro ? 'Crea tu cuenta' : 'Ingresa'} sub="Para guardar tu diagnóstico y ver tu avance.">
+      <div className="pc:max-w-[min(48vw,600px)]">
+      <div className="mt-4 flex flex-wrap gap-2">
         {[['Crear cuenta', true], ['Ingresar', false]].map(([t, r]) => (
-          <button key={String(t)} onClick={() => { setRegistro(r as boolean); setMsg(null); }}
-            className={`h-11 rounded-xl text-sm font-bold ${registro === r ? 'bg-verde text-[#04140b]' : 'text-suave'}`}>{t as string}</button>
+          <button key={String(t)} className="chip uppercase" aria-pressed={registro === r} onClick={() => { setRegistro(r as boolean); setMsg(null); }}>{t as string}</button>
         ))}
       </div>
-      <form onSubmit={enviar} className="mt-5 flex flex-col gap-4">
-        <label className="flex flex-col gap-2 text-sm font-semibold">Correo electrónico
+      <form onSubmit={enviar} className="mt-4 flex flex-col gap-3">
+        <label className="etiqueta">Correo electrónico
           <input className="campo" type="email" required autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="tunegocio@correo.com" />
         </label>
-        <label className="flex flex-col gap-2 text-sm font-semibold">Contraseña para Escudo Digital
+        <label className="etiqueta">Contraseña para Escudo Digital
           <input className="campo" type="password" required minLength={6} autoComplete={registro ? 'new-password' : 'current-password'} value={clave} onChange={(e) => setClave(e.target.value)} placeholder="Mínimo 6 caracteres" />
         </label>
-        <div className="tarjeta flex gap-3 p-4 text-[13px] leading-snug text-suave">
-          <span aria-hidden="true">🔒</span>
-          <span>Crea una contraseña nueva solo para esta plataforma. <strong className="text-texto">Nunca te pediremos las claves de tu correo, Nequi o banco.</strong></span>
-        </div>
+        <p className="m-0 text-[16px] font-bold leading-snug">Crea una contraseña nueva solo para esta plataforma. Nunca te pediremos las claves de tu correo, Nequi o banco.</p>
         {registro && (
-          <label className="flex items-start gap-3 text-[13px] leading-snug text-suave">
-            <input type="checkbox" checked={acepto} onChange={(e) => setAcepto(e.target.checked)} className="mt-0.5 h-5 w-5 flex-none accent-[var(--verde)]" />
+          <label className="flex items-start gap-3 text-[15px] leading-snug text-suave">
+            <input type="checkbox" checked={acepto} onChange={(e) => setAcepto(e.target.checked)} className="mt-0.5 h-5 w-5 flex-none accent-[var(--tinta)]" />
             <span>Autorizo el uso de mis respuestas para el trabajo de grado de la Universidad CESMAG, de forma anónima, según la Ley 1581 de 2012 de protección de datos personales.</span>
           </label>
         )}
-        {msg && <p role="status" className={`m-0 text-sm font-semibold ${msg.error ? 'text-naranja-texto' : 'text-verde-texto'}`}>{msg.t}</p>}
-        <button className="btn btn-primario mt-2" disabled={enviando || (registro && !acepto)}>
-          {enviando ? 'Un momento…' : registro ? 'Crear mi cuenta' : 'Ingresar'}
-        </button>
-        {!registro && <button type="button" onClick={olvide} className="bg-transparent text-sm font-bold text-verde-texto">Olvidé mi contraseña</button>}
+        {msg && <p role="status" className={`m-0 text-[16px] font-semibold ${msg.error ? 'text-naranja-texto' : 'text-verde-texto'}`}>{msg.t}</p>}
+        <div className="mt-1 flex flex-wrap items-center gap-4">
+          <button className="btn btn-primario" disabled={enviando || (registro && !acepto)}>
+            {enviando ? 'Un momento…' : registro ? 'Crear mi cuenta' : 'Ingresar'}
+          </button>
+          {!registro && <button type="button" onClick={olvide} className="cursor-pointer border-0 bg-transparent text-[16px] font-bold text-texto underline underline-offset-4">Olvidé mi contraseña</button>}
+        </div>
       </form>
       </div>
     </Pagina>
