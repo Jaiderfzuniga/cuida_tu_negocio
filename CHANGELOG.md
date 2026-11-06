@@ -4,17 +4,17 @@ Registro de la evolución de la plataforma para la trazabilidad del trabajo de g
 
 ## v2.2.0 — Nuevo diseño (5 nov. 2026)
 
-El investigador no quedó conforme con el estilo «Neón» y eligió uno nuevo después de ver más de 20 propuestas. Está en la rama `version-2` (commits `bc39ede` a `d9225b5`) y en el pull request #3, **sin unir a `main`**: la página pública sigue con la versión anterior hasta que se una. La versión anterior queda en el commit `bbb5824` (v2.1.3).
+El investigador no quedó conforme con el estilo «Neón» y eligió uno nuevo después de ver más de 20 propuestas. Se publicó el 5 de noviembre a las 23:36 con el pull request #3 (commits `bc39ede` a `d9225b5`). El 6 de noviembre se agregó un último ajuste (`cbf3a61`). La versión anterior queda en el commit `bbb5824` (v2.1.3).
 
 - **HU-25:** estilo «Papel»: fondo de papel arrugado en modo claro, fondo plano en modo oscuro, títulos grandes, botones redondeados y panel diagonal. Se mantiene la adaptación a computador y celular.
 - La pantalla inicial usa los textos definidos por el investigador. Inicio, Crear cuenta y Tu negocio llevan una ilustración de una mujer con ruana usando su celular; el investigador la prefirió a la escena del robot con la tienda porque esta se veía infantil. Un robot pequeño acompaña en las demás ventanas. Las imágenes se generaron con inteligencia artificial; la plataforma no usa inteligencia artificial para diagnosticar ni recomendar.
 - Nueva ventana «Cómo funciona»: qué es la plataforma, sus 5 pasos, las tres funciones con ejemplos reales del cuestionario, por qué existe, cómo se recomienda y cómo se usan los datos.
 - Escudo en 3D en el cuestionario y anillos en 3D con porcentaje y animación en el resultado.
-- En modo oscuro, los títulos de Inicio, Cómo funciona, Catálogo y Mi avance van en naranja.
+- En modo oscuro, los títulos de Inicio, Cómo funciona, Catálogo, Mi avance y Tu negocio van en naranja.
 - La explicación de cada pregunta ahora se ve siempre, sin tener que tocar un botón.
 - «Mi avance» muestra todos los diagnósticos y cuánto ha subido el negocio. Cada herramienta sigue mostrando su logo y su sitio oficial.
 - No cambiaron las preguntas, el puntaje, las recomendaciones, el catálogo ni la base de datos. Los componentes `Anillo`, `Marca` y `Tienda3D` quedaron sin uso.
-- Prueba: compilación, 3 pruebas automáticas y recorrido en modo demostración por las pantallas, en claro y oscuro, en computador y celular. El investigador lo revisó en su computador. Falta la revisión del asesor y las pruebas con usuarios.
+- Prueba: compilación, 3 pruebas automáticas y recorrido en modo demostración por las pantallas, en claro y oscuro, en computador y celular. El investigador lo revisó en su computador y los 33 logos cargan en la página publicada. Falta la revisión del asesor y las pruebas con usuarios.
 
 Documentación: [proceso completo del objetivo 3](docs/objetivo-3/README.md).
 

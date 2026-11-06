@@ -8,7 +8,7 @@ Este informe cuenta, en orden y con evidencias, cómo se ha trabajado el objetiv
 
 **Objetivo específico 3.** Implementar una plataforma web que, a partir de los resultados del diagnóstico, genere recomendaciones personalizadas de herramientas de ciberseguridad adecuadas al perfil de riesgo de cada microcomercio.
 
-**Estado al 5 de noviembre de 2026: el objetivo está en desarrollo, no terminado.** La plataforma funciona, guarda datos reales y genera recomendaciones por reglas. Falta validar las preguntas con el asesor, corregir dos enlaces, completar las guías de respaldo y hacer las pruebas de uso. De las 25 historias de usuario, 21 están hechas, 1 está en curso y 3 están por hacer.
+**Estado al 6 de noviembre de 2026: el objetivo está en desarrollo, no terminado.** La plataforma funciona, guarda datos reales y genera recomendaciones por reglas. Falta validar las preguntas con el asesor, corregir dos enlaces, completar las guías de respaldo y hacer las pruebas de uso. De las 25 historias de usuario, 21 están hechas, 1 está en curso y 3 están por hacer.
 
 **Tres palabras que se repiten.** Un *commit* es un cambio guardado en GitHub, con fecha y código propio, como bc39ede. Una *rama* es una copia de trabajo del proyecto. Un *pull request* es la solicitud para unir una rama a la principal, que es la que se publica.
 
@@ -21,8 +21,8 @@ Este informe cuenta, en orden y con evidencias, cómo se ha trabajado el objetiv
 | Cálculo del nivel y motor de recomendaciones por reglas | Hecho, con 3 pruebas automáticas | src/lib; tests/motor.test.ts |
 | Catálogo de 33 herramientas con filtros | Funciona; faltan 2 enlaces (HU-18) | src/data/catalogo.json |
 | Cuentas y base de datos conectadas | Hecho y probado con dos cuentas | Sección V-E |
-| Publicación en internet | Hecho. La página pública aún muestra el diseño anterior | Sección VIII |
-| Nuevo diseño (HU-25) | Hecho en GitHub; pendiente de revisión y publicación | Sección VI |
+| Publicación en internet | Hecho. La página pública ya muestra el diseño nuevo | Sección VIII |
+| Nuevo diseño (HU-25) | Publicado; falta la revisión del asesor | Sección VI |
 | Guías de respaldo y restauración (HU-19) | En curso | Sección IX |
 | Pruebas internas de uso, ISO/IEC 25010 (HU-20) | Por hacer | Sección V-F |
 
@@ -231,6 +231,8 @@ El proceso tomó dos sesiones. La TABLA VII resume las decisiones. Las horas son
 | 01:39–01:54 | Ajustes del modo oscuro y de los títulos. | Fondo más oscuro y sin textura, porque se veía pixelado. Títulos en naranja. |
 | 13:40–13:57 | Cambio de la imagen principal. | El robot con la tienda se ve infantil: usa a la mujer con ruana y quita la firma «Hecho en Pasto». |
 | 22:41–22:58 | Se comprueba y se sube a GitHub. | Pide subirlo y documentar el proceso. |
+| 05/11, 23:36 | Une el pull request #3 y la página pública pasa al diseño nuevo. | Lo publica antes de la revisión con el asesor. |
+| 06/11, 00:07–00:10 | Último ajuste, subido a GitHub (commit cbf3a61). | «Tu negocio» también va en naranja en modo oscuro. |
 
 ![Primeras 12 propuestas de pantalla inicial (ninguna elegida)](img/propuestas-12.jpg)
 
@@ -252,7 +254,7 @@ La página de referencia en estilo anime no se reproduce aquí porque usa un per
 
 ### C. Antes y ahora
 
-El «antes» es la versión del commit bbb5824 (v2.1.3) y el «ahora» la del commit d9225b5 (v2.2.0). Todas las capturas se tomaron en modo demostración, con datos de ejemplo.
+El «antes» es la versión del commit bbb5824 (v2.1.3) y el «ahora» la del commit cbf3a61 (v2.2.0). Todas las capturas se tomaron en modo demostración, con datos de ejemplo.
 
 ![Antes y ahora: Inicio, Crear cuenta y Tu negocio](img/antes-ahora-1.jpg)
 
@@ -270,11 +272,11 @@ El «antes» es la versión del commit bbb5824 (v2.1.3) y el «ahora» la del co
 
 *Fig. 19. Antes y ahora en el celular. Fuente: elaboración propia.*
 
-**Sobre los logos.** En las capturas del «ahora» los logos aparecen como una letra porque el equipo de prueba no tenía acceso al servicio que los entrega; así se comporta la plataforma cuando no carga un logo. La Fig. 20 muestra el catálogo público el 5 de noviembre, con la versión anterior: cargaron los 33 logos. Hay que repetir esta comprobación cuando se publique el nuevo diseño.
+**Sobre los logos.** En las capturas del «ahora» los logos aparecen como una letra porque el equipo de prueba no tenía acceso al servicio que los entrega; así se comporta la plataforma cuando no carga un logo. La Fig. 20 muestra el catálogo público con el diseño nuevo, el 6 de noviembre: cargaron los 33 logos.
 
-![Catálogo publicado con los logos originales (versión anterior)](img/ev-logos.jpg)
+![Catálogo publicado con el diseño nuevo y los logos originales](img/ev-logos-nuevo.jpg)
 
-*Fig. 20. Catálogo publicado con los logos originales (versión anterior). Fuente: captura de la página pública, 5 de noviembre de 2026.*
+*Fig. 20. Catálogo publicado con el diseño nuevo y los logos originales. Fuente: captura de la página pública, 6 de noviembre de 2026.*
 
 ![Versión 2.2.0 en modo oscuro](img/final-oscuro.jpg)
 
@@ -286,7 +288,7 @@ El «antes» es la versión del commit bbb5824 (v2.1.3) y el «ahora» la del co
 
 ### D. Qué cambió y qué no
 
-El cambio tocó 22 archivos de la interfaz. Las carpetas de lógica, datos, servicios y base de datos, y las pruebas, tienen cero cambios entre los dos commits. **La plataforma evalúa y recomienda exactamente igual; cambió cómo se ve.**
+El cambio tocó 22 archivos de la interfaz. Las carpetas de lógica, datos, servicios y base de datos, y las pruebas, no tienen ningún cambio entre las dos versiones. **La plataforma evalúa y recomienda exactamente igual; cambió cómo se ve.**
 
 **TABLA VIII. Qué cambió y qué se mantuvo en la versión 2.2.0**
 
@@ -455,9 +457,9 @@ Como bocetos se usaron las muestras de pantalla de la sección VI y las de la et
 
 Todo el código y la documentación técnica están en el repositorio [15]. Se trabaja en la rama version-2; cada etapa se cierra uniendo a main con un pull request, y al llegar a main la plataforma se publica sola. El historial completo está en el Anexo B.
 
-![Commits por fecha en la rama version-2 (40, sin contar esta documentación)](img/commits.png)
+![Commits por fecha en la rama version-2 (41, sin contar esta documentación)](img/commits.png)
 
-*Fig. 32. Commits por fecha en la rama version-2 (40, sin contar esta documentación). Fuente: historial de Git del repositorio, 5 de noviembre de 2026.*
+*Fig. 32. Commits por fecha en la rama version-2 (41, sin contar esta documentación). Fuente: historial de Git del repositorio, 5 de noviembre de 2026.*
 
 ![Historial de la rama version-2 en GitHub](img/ev-commits.jpg)
 
@@ -469,11 +471,12 @@ Todo el código y la documentación técnica están en el repositorio [15]. Se t
 |---|---|---|---|---|
 | #1 | Versión 2 de la plataforma | 31/10/2026, 00:07 | 02/11/2026, 23:35 | 27 commits, 74 archivos |
 | #2 | Corrección del modo demostración | 03/11/2026, 15:44 | 03/11/2026, 15:45 | 2 commits, 4 archivos |
-| #3 | Nuevo diseño y esta documentación | 05/11/2026 | Abierto, sin unir | En revisión |
+| #3 | Nuevo diseño y documentación | 05/11/2026, 23:14 | 05/11/2026, 23:36 | 9 commits, 64 archivos |
+| #4 | Último ajuste de «Tu negocio» y actualización de este informe | 06/11/2026 | Abierto, sin unir | En revisión |
 
 **Tres cosas que conviene tener presentes:**
 
-- **La página pública sigue mostrando el diseño «Neón»** hasta que se una el pull request #3 a main. El nuevo diseño está en la rama version-2.
+- **La página pública ya muestra el diseño «Papel»**, desde el 5 de noviembre a las 23:36. El título naranja de «Tu negocio» se publica al unir el pull request #4.
 - **La versión anterior no se pierde.** Queda en el commit bbb5824. Las marcas de versión v2.1.3 y v2.2.0 las debe crear el investigador desde su computador, porque el entorno de trabajo no permite enviarlas.
 - **Autoría.** En el historial, muchos commits aparecen a nombre de «Claude», el asistente con el que se programó. Los pull requests los unió el investigador.
 
@@ -603,6 +606,7 @@ Rama version-2, del más reciente al más antiguo, en hora de Colombia. Se exclu
 
 | Commit | Fecha | Hora | Autor | Mensaje |
 |---|---|---|---|---|
+| cbf3a61 | 06/11/2026 | 00:10 | Claude | HU-25: título de «Tu negocio» en naranja en modo oscuro |
 | d9225b5 | 05/11/2026 | 22:58 | Claude | HU-25: catálogo y «Mi avance» con el nuevo diseño |
 | 22d2e60 | 05/11/2026 | 22:58 | Claude | HU-25: cuestionario, resultado y ruta con escudo y anillos en 3D |
 | e4129ca | 05/11/2026 | 22:58 | Claude | HU-25: crear cuenta y datos del negocio con el nuevo diseño |
