@@ -57,8 +57,8 @@ export default function Cuestionario() {
     }>
       <div className="mt-4 flex items-center justify-between gap-3 pc:mt-8">
         <div className="min-w-0">
-          <h1 className="titulo text-[clamp(38px,5.4vw,84px)]">{p.funcion}</h1>
-          <p className="m-0 mt-1 text-[18px] font-bold">Pregunta {i + 1} de {preguntas.length}</p>
+          <h1 className={`titulo titulo-${p.funcion} text-[clamp(38px,5.4vw,84px)]`}>{p.funcion}</h1>
+          <p className={`m-0 mt-1 text-[18px] font-bold titulo-${p.funcion}`}>Pregunta {i + 1} de {preguntas.length}</p>
         </div>
         <div className="solo-movil flex-none"><Escudo3D llenado={llenado} ancho={84} id="q" /></div>
       </div>

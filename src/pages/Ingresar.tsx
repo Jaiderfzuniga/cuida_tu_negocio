@@ -36,7 +36,7 @@ export default function Ingresar() {
   }
 
   return (
-    <Pagina fantasma="CUENTA" extras={<Chica className="chica-inicio solo-pc" />} titulo={registro ? 'Crea tu cuenta' : 'Ingresa'} sub="Para guardar tu diagnóstico y ver tu avance.">
+    <Pagina fantasma="CUENTA" extras={<Chica className="chica-inicio solo-pc" />} titulo={registro ? 'Crea tu cuenta' : 'Ingresa'} tituloNaranja sub="Para guardar tu diagnóstico y ver tu avance.">
       <div className="pc:max-w-[min(48vw,600px)]">
       <div className="mt-4 flex flex-wrap gap-2">
         {[['Crear cuenta', true], ['Ingresar', false]].map(([t, r]) => (
