@@ -1,6 +1,6 @@
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { Pagina, Cargando } from '../components/Pagina';
-import { Escudo3D } from '../components/Escudo3D';
+import { Robot } from '../components/Robot';
 import { TarjetaHerramienta } from '../components/TarjetaHerramienta';
 import { useSesion } from '../hooks/useSesion';
 import { useDiagnosticos } from '../hooks/useDiagnostico';
@@ -18,65 +18,65 @@ export default function Ruta() {
   const pasos = rutaAl100(actual.respuestas, negocio, n);
   const extra = refuerzo(negocio, pasos.flatMap((p) => [p.herramienta.id, ...p.alternativas.map((a) => a.id)]), pasos.length ? 1 : 2);
   const suma = Object.fromEntries(FUNCIONES.map((f) => [f, pasos.filter((p) => p.funcion === f).reduce((s, p) => s + p.puntos, 0)]));
+  const cuantas = pasos.length === 1 ? 'esta herramienta' : `estas ${pasos.length} herramientas`;
+  const dato = 'font-display text-[clamp(40px,4.2vw,62px)] font-black leading-none tracking-tight';
+  const rotulo = 'text-[18px] font-semibold text-[var(--panel-suave)]';
 
   return (
-    <Pagina volver={`/resultado/${actual.id}`} titulo={pasos.length ? 'Tu ruta al 100%' : 'Tus herramientas'} sub={negocio.nombre}>
-      <div className="tarjeta mt-4 flex items-center gap-4 p-3.5" style={{ borderColor: 'var(--verde)' }}>
-        <Escudo3D id="r" ancho={84} texto={`${n.general}%`} llenado={{ Identificar: n.Identificar / 100, Proteger: n.Proteger / 100, Recuperar: n.Recuperar / 100 }} />
-        <div className="flex-1">
-          <div className="text-[13px] text-suave">Hoy tienes</div>
-          <div className="text-[30px] font-black leading-tight">{n.general}% <span className="text-base text-tenue">de 100%</span></div>
-          <p className="m-0 mt-1 text-[13px] leading-snug text-suave">
-            {pasos.length ? <>Te faltan <strong className="text-verde-texto">{100 - n.general} puntos</strong>. {pasos.length === 1 ? 'Esta herramienta los cubre' : `Estas ${pasos.length} herramientas los cubren`}.</> : <>¡Excelente! <strong className="text-verde-texto">Tu negocio tiene muy buena protección.</strong> Igual te recomendamos estas herramientas para mantenerla.</>}
-          </p>
-        </div>
+    <Pagina fantasma="RUTA" panelTipo="angosto" panelEnMovil={false} panel={
+      <div className="mt-[6vh] flex flex-col items-end gap-7 text-right">
+        <div><div className={rotulo}>Hoy</div><div className={dato}>{n.general} %</div></div>
+        {pasos.length > 0 ? (
+          <>
+            <div><div className={rotulo}>Te faltan</div><div className={dato}>{100 - n.general}</div></div>
+            <div><div className={rotulo}>Con {cuantas}</div><div className={dato} style={{ color: 'var(--acento)' }}>100 %</div></div>
+          </>
+        ) : <div className="text-[18px] font-bold">Tu negocio tiene muy buena protección.</div>}
+        <Robot alto={150} className="mt-2" />
       </div>
+    }>
+      <h1 className="titulo mt-4 text-[clamp(40px,5.2vw,84px)] pc:mt-5">{pasos.length ? 'Tu ruta al 100\u00a0%' : 'Tus herramientas'}</h1>
+      <p className="subtitulo">{pasos.length ? 'En este orden: lo más urgente primero.' : 'Te recomendamos estas para mantener tu protección.'}</p>
+      <p className="m-0 mt-2 text-[16px] text-suave">{negocio.nombre} · <Link to={`/resultado/${actual.id}`} className="font-bold text-texto underline underline-offset-4">Volver a mi resultado</Link></p>
+      <p className="solo-movil m-0 mt-3 text-[18px] font-extrabold">Hoy tienes {n.general} %{pasos.length > 0 && <>. Te faltan {100 - n.general} puntos.</>}</p>
 
       {pasos.length > 0 && (
-        <div className="mt-4">
-          <div className="flex h-4 overflow-hidden rounded-full bg-pista" role="img"
-            aria-label={`Ahora ${n.general}; ${FUNCIONES.map((f) => `${f} +${suma[f]}`).join(', ')}`}>
-            <div style={{ width: `${n.general}%`, background: 'var(--tenue)' }} />
-            {FUNCIONES.filter((f) => suma[f]).map((f) => <div key={f} style={{ width: `${suma[f]}%`, background: COLOR[f].fuerte, borderLeft: '2px solid var(--fondo)' }} />)}
-          </div>
-          <div className="mt-1.5 flex flex-wrap justify-between gap-x-3 text-[11px] font-bold text-tenue">
-            <span>Ahora {n.general}</span>
-            {FUNCIONES.filter((f) => suma[f]).map((f) => <span key={f} style={{ color: COLOR[f].texto }}>{f} +{suma[f]}</span>)}
-            <span className="text-texto">= 100</span>
-          </div>
+        <div className="mt-4 flex h-5 overflow-hidden rounded-full border-[3px] border-[var(--borde)]" role="img"
+          aria-label={`Ahora ${n.general}; ${FUNCIONES.map((f) => `${f} +${suma[f]}`).join(', ')}`}>
+          <div style={{ width: `${n.general}%`, background: 'var(--tinta)' }} />
+          {FUNCIONES.filter((f) => suma[f]).map((f) => <div key={f} style={{ width: `${suma[f]}%`, background: COLOR[f].fuerte }} />)}
         </div>
       )}
 
-      {pasos.length > 0 && <h2 className="mb-0 mt-5 text-[15px] font-extrabold">En este orden (lo más urgente primero)</h2>}
-      <div className="mt-3 flex flex-col gap-2.5 md:grid md:grid-cols-2 md:items-start md:gap-4">
+      <div className="mt-5 flex flex-col gap-6">
         {pasos.map((p, k) => (
           <div key={p.herramienta.id}>
-            <TarjetaHerramienta h={p.herramienta} destacada={k === 0} abierta={k === 0}
-              cabeza={<span className="flex h-6 w-6 flex-none items-center justify-center rounded-full border-2 text-xs font-black" style={{ borderColor: COLOR[p.funcion].fuerte, color: COLOR[p.funcion].texto }}>{k + 1}</span>}
-              extra={<div className="flex-none text-right"><div className="text-[17px] font-black" style={{ color: COLOR[p.funcion].texto }}>+{p.puntos}</div><div className="text-[10px] font-bold uppercase text-tenue">{p.funcion}</div></div>} />
-            <p className="m-0 mt-1 px-2 text-xs text-tenue">Porque {p.motivos.join(' y ')}.
-              {p.alternativas.length > 0 && <> También sirve: {p.alternativas.map((a) => a.nombre).join(', ')}.</>}</p>
+          <TarjetaHerramienta h={p.herramienta}
+            cabeza={<span className="w-9 flex-none font-display text-[38px] font-black leading-[52px] tracking-tight">{k + 1}</span>}
+            nota={<div className="mt-1 text-[16px] font-medium leading-snug text-suave">Porque {p.motivos.join(' y ')}.{p.alternativas.length > 0 && <> También sirve: {p.alternativas.map((a) => a.nombre).join(', ')}.</>}</div>}
+            extra={<>
+              <span className="flex-none font-display text-[30px] font-black" style={{ color: COLOR[p.funcion].texto }} aria-label={`Suma ${p.puntos} puntos en ${p.funcion}`}>+{p.puntos}</span>
+              <a href={p.herramienta.url} target="_blank" rel="noopener noreferrer" className="btn btn-primario btn-chico solo-pc" aria-label={`Abrir ${p.herramienta.nombre}`}>Abrir</a>
+            </>} />
+          <a href={p.herramienta.url} target="_blank" rel="noopener noreferrer" className="btn btn-primario btn-chico solo-movil mt-3 w-full" aria-label={`Abrir ${p.herramienta.nombre}`}>Abrir</a>
           </div>
         ))}
       </div>
 
       {extra.length > 0 && (
         <>
-          <h2 className="mb-0 mt-6 text-[15px] font-extrabold">{pasos.length ? 'Para reforzar lo que ya haces' : 'Te recomendamos conocerlas'}</h2>
-          <p className="m-0 mt-1 text-xs text-tenue">{pasos.length ? 'No suman puntos, pero mejoran tu protección.' : 'Son gratuitas, sirven en tus equipos y te ayudan a seguir protegido.'}</p>
-          <div className="mt-3 flex flex-col gap-2.5 md:grid md:grid-cols-2 md:items-start lg:grid-cols-3 md:gap-4">
-            {extra.map((h, k) => (
-              <TarjetaHerramienta key={h.id} h={h} destacada={!pasos.length && k === 0} abierta={!pasos.length && k === 0}
-                extra={<span className="flex-none rounded-lg px-2 py-1 text-[10px] font-extrabold uppercase" style={{ border: `1px solid ${COLOR[h.funcion].fuerte}`, color: COLOR[h.funcion].texto }}>{h.funcion}</span>} />
-            ))}
+          <h2 className="m-0 mt-8 font-display text-[24px] font-black uppercase tracking-tight">{pasos.length ? 'Para reforzar lo que ya haces' : 'Te recomendamos conocerlas'}</h2>
+          <p className="m-0 mt-1 text-[16px] text-suave">{pasos.length ? 'No suman puntos, pero mejoran tu protección.' : 'Son gratuitas, sirven en tus equipos y te ayudan a seguir protegido.'}</p>
+          <div className="mt-4 flex flex-col gap-5">
+            {extra.map((h, k) => <TarjetaHerramienta key={h.id} h={h} abierta={!pasos.length && k === 0} />)}
           </div>
         </>
       )}
 
-      <p className="m-0 mt-4 text-[11px] leading-snug text-tenue">Revisa siempre el logo y el sitio oficial antes de descargar. Tu porcentaje cambia cuando repites el diagnóstico.</p>
-      <div className="mt-auto flex flex-col gap-3 pt-5 md:flex-row md:[&>*]:flex-1">
-        <Link to="/cuestionario" className="btn btn-primario">{pasos.length ? 'Ya apliqué las herramientas · Repetir diagnóstico' : 'Repetir diagnóstico'}</Link>
-        <Link to="/catalogo" className="btn btn-secundario">Ver todo el catálogo (33)</Link>
+      <p className="m-0 mt-6 text-[15px] leading-snug text-suave">Revisa siempre el logo y el sitio oficial antes de descargar. Tu porcentaje cambia cuando repites el diagnóstico.</p>
+      <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <Link to="/cuestionario" className="btn btn-primario">{pasos.length ? 'Ya las apliqué · Repetir' : 'Repetir diagnóstico'}</Link>
+        <Link to="/catalogo" className="btn btn-secundario">Ver todo el catálogo</Link>
       </div>
     </Pagina>
   );
