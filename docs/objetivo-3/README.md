@@ -471,7 +471,7 @@ Todo el código y la documentación técnica están en el repositorio [15]. Se t
 |---|---|---|---|---|
 | #1 | Versión 2 de la plataforma | 31/10/2026, 00:07 | 02/11/2026, 23:35 | 27 commits, 74 archivos |
 | #2 | Corrección del modo demostración | 03/11/2026, 15:44 | 03/11/2026, 15:45 | 2 commits, 4 archivos |
-| #3 | Nuevo diseño y documentación | 05/11/2026, 23:14 | 05/11/2026, 23:36 | 9 commits, 64 archivos |
+| #3 | Nuevo diseño y documentación | 05/11/2026, 23:12 | 05/11/2026, 23:36 | 9 commits, 64 archivos |
 | #4 | Último ajuste de «Tu negocio» y actualización de este informe | 06/11/2026 | Abierto, sin unir | En revisión |
 
 **Tres cosas que conviene tener presentes:**
