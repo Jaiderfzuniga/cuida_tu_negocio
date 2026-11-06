@@ -18,7 +18,7 @@ export default function NuevaClave() {
   }
 
   return (
-    <Pagina volver="/" titulo="Nueva contraseña" sub="Escribe la contraseña nueva para Escudo Digital">
+    <Pagina volver="/" titulo="Nueva contraseña" tituloNaranja sub="Escribe la contraseña nueva para Escudo Digital">
       <div className="md:mx-auto md:w-full md:max-w-md">
         {!cargando && !perfil ? (
           <p className="mt-6 text-sm text-suave">El enlace ya no es válido. Vuelve a pedirlo desde «Olvidé mi contraseña».</p>

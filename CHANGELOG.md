@@ -2,6 +2,13 @@
 
 Registro de la evolución de la plataforma para la trazabilidad del trabajo de grado.
 
+## v2.2.1 — Colores ajustados en Figma (6 nov. 2026)
+
+El investigador ajustó colores en los mockups de Figma y se pasaron a la plataforma. Solo cambia el color de algunos títulos; nada de la lógica.
+
+- En el cuestionario, el nombre de la función y «Pregunta N de 10» van en el color de su función: verde para Identificar, azul para Proteger y naranja para Recuperar, en modo claro y oscuro.
+- En modo oscuro, los títulos de Crear cuenta, Ingresar, Nueva contraseña y Tu ruta al 100 % también van en naranja.
+
 ## v2.2.0 — Nuevo diseño (5 nov. 2026)
 
 El investigador no quedó conforme con el estilo «Neón» y eligió uno nuevo después de ver más de 20 propuestas. Se publicó el 5 de noviembre a las 23:36 con el pull request #3 (commits `bc39ede` a `d9225b5`). El 6 de noviembre se agregó un último ajuste (`cbf3a61`). La versión anterior queda en el commit `bbb5824` (v2.1.3).

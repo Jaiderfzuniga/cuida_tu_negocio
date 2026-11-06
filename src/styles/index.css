@@ -133,6 +133,11 @@ body::before {
   text-transform: uppercase;
 }
 :root:not(.claro) .titulo-inicio { color: #ff5a1f; }
+/* Cuestionario: el nombre de la función va en su color. */
+.titulo-Identificar { color: var(--verde-texto); }
+.titulo-Proteger { color: var(--azul-texto); }
+.titulo-Recuperar { color: var(--naranja-texto); }
+:root:not(.claro) .titulo-Recuperar { color: var(--acento); }
 .subtitulo { margin: 12px 0 0; font-size: clamp(18px, 1.67vw, 26px); font-weight: 800; line-height: 1.22; }
 
 /* Panel diagonal */

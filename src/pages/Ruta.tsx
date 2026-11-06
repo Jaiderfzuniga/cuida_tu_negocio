@@ -35,7 +35,7 @@ export default function Ruta() {
         <Robot alto={150} className="mt-2" />
       </div>
     }>
-      <h1 className="titulo mt-4 text-[clamp(40px,5.2vw,84px)] pc:mt-5">{pasos.length ? 'Tu ruta al 100\u00a0%' : 'Tus herramientas'}</h1>
+      <h1 className="titulo titulo-inicio mt-4 text-[clamp(40px,5.2vw,84px)] pc:mt-5">{pasos.length ? 'Tu ruta al 100\u00a0%' : 'Tus herramientas'}</h1>
       <p className="subtitulo">{pasos.length ? 'En este orden: lo más urgente primero.' : 'Te recomendamos estas para mantener tu protección.'}</p>
       <p className="m-0 mt-2 text-[16px] text-suave">{negocio.nombre} · <Link to={`/resultado/${actual.id}`} className="font-bold text-texto underline underline-offset-4">Volver a mi resultado</Link></p>
       <p className="solo-movil m-0 mt-3 text-[18px] font-extrabold">Hoy tienes {n.general} %{pasos.length > 0 && <>. Te faltan {100 - n.general} puntos.</>}</p>
