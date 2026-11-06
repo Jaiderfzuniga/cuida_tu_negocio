@@ -117,7 +117,7 @@ La Fig. 5 compara lo planeado con lo que quedó registrado. Las etapas 1 a 4 se 
 | 2. Diseñar cómo se ve | 7 | 19/09 – 30/09/2026 | 30/10/2026 | Hecho |
 | 3. Construir la base | 8 | 01/10 – 15/10/2026 | 30/10/2026 | Hecho |
 | 4. Armar las pantallas y corregir | 8 | 16/10 – 30/10/2026 | 30 – 31/10/2026 | Hecho |
-| 5. Publicar y conectar | 9 | 01/11 – 13/11/2026 | 31/10 – 05/11/2026 | En curso |
+| 5. Publicar y conectar | 9 | 01/11 – 13/11/2026 | 31/10 – 06/11/2026 | En curso |
 | 6. Probar y dejar lista | 9 | 14/11 – 27/11/2026 | Sin iniciar | Por hacer |
 
 ## V. QUÉ SE HIZO EN CADA ETAPA
