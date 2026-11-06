@@ -27,6 +27,6 @@ Una historia de usuario pasa a **Hecho** cuando:
 
 ## Avance actual
 
-**20 de 24 historias hechas**, 1 en curso y 3 por hacer.
+**21 de 25 historias hechas**, 1 en curso y 3 por hacer (5 de noviembre de 2026).
 
 ![Tablero Scrumban](tablero.svg)
