@@ -11,6 +11,7 @@ const Cuestionario = lazy(() => import('./pages/Cuestionario'));
 const Resultado = lazy(() => import('./pages/Resultado'));
 const Ruta = lazy(() => import('./pages/Ruta'));
 const Catalogo = lazy(() => import('./pages/Catalogo'));
+const ComoFunciona = lazy(() => import('./pages/ComoFunciona'));
 const Historial = lazy(() => import('./pages/Historial'));
 const Panel = lazy(() => import('./pages/Panel'));
 const NuevaClave = lazy(() => import('./pages/NuevaClave'));
@@ -35,6 +36,7 @@ export default function App() {
             <Route path="/" element={<Inicio />} />
             <Route path="/ingresar" element={<Ingresar />} />
             <Route path="/catalogo" element={<Catalogo />} />
+            <Route path="/como-funciona" element={<ComoFunciona />} />
             <Route path="/nueva-clave" element={<NuevaClave />} />
             <Route path="/negocio" element={<Protegida><Negocio /></Protegida>} />
             <Route path="/cuestionario" element={<Protegida negocio><Cuestionario /></Protegida>} />
