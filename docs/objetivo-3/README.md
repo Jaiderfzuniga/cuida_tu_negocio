@@ -4,7 +4,7 @@ Informe del proceso, las metodologías, el diseño y las evidencias. Actualizado
 
 ## I. INTRODUCCIÓN
 
-Este informe cuenta, en orden y con evidencias, cómo se ha trabajado el objetivo específico 3 desde que se cerraron los objetivos 1 y 2: qué se hizo, en qué fecha, con qué metodologías, qué se subió a GitHub, por qué cambió el diseño y qué falta.
+Este informe cuenta, en orden y con evidencias, cómo se ha trabajado el objetivo específico 3 desde que se cerraron los objetivos 1 y 2: qué se hizo, en qué fecha, con qué metodologías, qué se subió a GitHub, por qué cambió el diseño, cómo se hicieron los mockups interactivos en Figma y qué falta.
 
 **Objetivo específico 3.** Implementar una plataforma web que, a partir de los resultados del diagnóstico, genere recomendaciones personalizadas de herramientas de ciberseguridad adecuadas al perfil de riesgo de cada microcomercio.
 
@@ -22,7 +22,8 @@ Este informe cuenta, en orden y con evidencias, cómo se ha trabajado el objetiv
 | Catálogo de 33 herramientas con filtros | Funciona; faltan 2 enlaces (HU-18) | src/data/catalogo.json |
 | Cuentas y base de datos conectadas | Hecho y probado con dos cuentas | Sección V-E |
 | Publicación en internet | Hecho. La página pública ya muestra el diseño nuevo | Sección VIII |
-| Nuevo diseño (HU-25) | Publicado; falta la revisión del asesor | Sección VI |
+| Nuevo diseño (HU-25) | Publicado (v2.2.1); falta la revisión del asesor | Sección VI |
+| Mockups interactivos en Figma | Hechos: 15 pantallas en computador y 15 en celular, en claro y oscuro, con navegación | Sección VI-E |
 | Guías de respaldo y restauración (HU-19) | En curso | Sección IX |
 | Pruebas internas de uso, ISO/IEC 25010 (HU-20) | Por hacer | Sección V-F |
 
@@ -214,7 +215,7 @@ El cambio siguió el ciclo de Scrumban: la revisión produjo una tarea nueva (HU
 
 ### B. Cómo se llegó al diseño final
 
-El proceso tomó dos sesiones. La TABLA VII resume las decisiones. Las horas son aproximadas y salen de las imágenes generadas y de los archivos que envió el investigador.
+El proceso tomó tres sesiones, del 4 al 6 de noviembre. La TABLA VII resume las decisiones. Las horas son aproximadas y salen de las imágenes generadas y de los archivos que envió el investigador.
 
 **TABLA VII. Cronología de las decisiones de diseño**
 
@@ -232,7 +233,9 @@ El proceso tomó dos sesiones. La TABLA VII resume las decisiones. Las horas son
 | 13:40–13:57 | Cambio de la imagen principal. | El robot con la tienda se ve infantil: usa a la mujer con ruana y quita la firma «Hecho en Pasto». |
 | 22:41–22:58 | Se comprueba y se sube a GitHub. | Pide subirlo y documentar el proceso. |
 | 05/11, 23:36 | Une el pull request #3 y la página pública pasa al diseño nuevo. | Lo publica antes de la revisión con el asesor. |
-| 06/11, 00:07–00:10 | Último ajuste, subido a GitHub (commit cbf3a61). | «Tu negocio» también va en naranja en modo oscuro. |
+| 06/11, 00:07–00:16 | Último ajuste, subido a GitHub (commit cbf3a61) y publicado con el pull request #4. | «Tu negocio» también va en naranja en modo oscuro. |
+| 06/11, 00:26–01:05 | Mockups interactivos de toda la plataforma en su cuenta de Figma (sección VI-E). | Pide los mockups para revisar el diseño fuera del código. |
+| 06/11, 15:57–16:07 | Revisión de los colores que él cambió en Figma; se pasan a la web (v2.2.1) y se publican con el pull request #5. | Títulos de las preguntas en el color de su función y más títulos en naranja en modo oscuro. |
 
 ![Primeras 12 propuestas de pantalla inicial (ninguna elegida)](img/propuestas-12.jpg)
 
@@ -254,7 +257,7 @@ La página de referencia en estilo anime no se reproduce aquí porque usa un per
 
 ### C. Antes y ahora
 
-El «antes» es la versión del commit bbb5824 (v2.1.3) y el «ahora» la del commit cbf3a61 (v2.2.0). Todas las capturas se tomaron en modo demostración, con datos de ejemplo.
+El «antes» es la versión del commit bbb5824 (v2.1.3) y el «ahora» la del commit cbf3a61 (v2.2.0); los colores del cuestionario de la v2.2.1 se muestran en la sección VI-E. Todas las capturas se tomaron en modo demostración, con datos de ejemplo.
 
 ![Antes y ahora: Inicio, Crear cuenta y Tu negocio](img/antes-ahora-1.jpg)
 
@@ -303,10 +306,59 @@ El cambio tocó 22 archivos de la interfaz. Las carpetas de lógica, datos, serv
 
 **Pruebas hechas:** compilación sin errores, 3 pruebas automáticas y un recorrido automático en modo demostración por las pantallas, en claro y oscuro, en computador y celular, sin errores ni contenido desbordado. El investigador lo revisó en su computador. **Falta:** la revisión del asesor y las pruebas con usuarios.
 
-### E. Uso de inteligencia artificial en esta etapa
+### E. Mockups interactivos en Figma
 
-- **Claude** [5]: apoyo en programación, pruebas y documentación. El investigador revisa los resultados y responde por el contenido.
-- **Canva** [6] **y Google Gemini** [7]: generación de los personajes y de las imágenes en alta calidad. Las imágenes finales se recortaron y los recuadros con candados se dibujaron aparte.
+Después de publicar el diseño nuevo, el investigador pidió los mockups de la plataforma en Figma, con su propia cuenta y que se pudieran recorrer con clics. Se crearon el 6 de noviembre, entre las 00:26 y la 01:05, en el archivo «Escudo Digital · Mockups interactivos v2.2» [5]. Sirven para mostrar y revisar el diseño sin abrir el código, y para que el investigador ajuste detalles por su cuenta.
+
+**TABLA IX. Contenido del archivo de Figma**
+
+| Página | Qué tiene |
+|---|---|
+| Computador | 15 pantallas en modo claro y 15 en modo oscuro (1440 px de ancho), más el menú de cuenta. |
+| Celular | Las mismas 15 pantallas en claro y oscuro (390 px de ancho), más los dos menús. |
+| Piezas | Componentes reutilizables: botón, chip, opción, campo, tarjeta de herramienta, 14 logos, mascota e ilustración. |
+
+**Cómo se hicieron.** Cada pantalla se armó en Figma con texto y componentes editables, a partir del código real de la versión 2.2.0: los mismos textos, colores, tipos de letra (Montserrat y Roboto Flex), preguntas y herramientas del catálogo. No son capturas pegadas. La ruta y el resultado usan un caso calculado con el motor real (50 %, 67 % y 67 %, nivel general 61 %).
+
+**Qué se puede hacer en el prototipo.** El menú, los botones y el flujo completo funcionan con clics: Inicio, Crear cuenta, Tu negocio, preguntas, Resultado, Ruta y Mi avance. El botón de tema pasa del modo claro al oscuro, y los chips y las opciones cambian al tocarlos. Cada página tiene dos puntos de inicio: «Recorrido · modo claro» y «Recorrido · modo oscuro».
+
+![Mockups en Figma: pantallas de computador](img/figma-computador.jpg)
+
+*Fig. 23. Mockups en Figma: pantallas de computador. Fuente: archivo de Figma del investigador, 6 de noviembre de 2026.*
+
+![Mockups en Figma: pantallas de celular](img/figma-celular.jpg)
+
+*Fig. 24. Mockups en Figma: pantallas de celular. Fuente: archivo de Figma del investigador, 6 de noviembre de 2026.*
+
+![Página «Piezas»: ilustración, logos y mascota como componentes](img/figma-piezas.jpg)
+
+*Fig. 25. Página «Piezas»: ilustración, logos y mascota como componentes. Fuente: archivo de Figma del investigador, 6 de noviembre de 2026.*
+
+**Diferencias con la web.** Solo están las preguntas 1, 5 y 10, como muestra. Los datos son de ejemplo (Tienda Don Pedro y dos negocios más en el panel). Los filtros del catálogo se marcan pero no filtran. Nequi y WOT aparecen con su inicial porque no se encontró su logo en vector. El escudo conserva el grosor 3D, pero no la inclinación.
+
+**Del mockup de vuelta a la web.** El mismo 6 de noviembre por la tarde, el investigador cambió colores directamente en Figma. Como su plan gratuito de Figma no permitía leer el archivo de forma automática, los cambios se revisaron mirando el archivo y midiendo los colores en capturas (Fig. 26). Luego se pasaron al código (commit 99b3356, versión 2.2.1) y él los publicó con el pull request #5 (TABLA X).
+
+![Cambios de color hechos por el investigador en Figma](img/figma-colores.jpg)
+
+*Fig. 26. Cambios de color hechos por el investigador en Figma. Fuente: captura del archivo de Figma, 6 de noviembre de 2026.*
+
+**TABLA X. Colores ajustados en Figma y aplicados en la versión 2.2.1**
+
+| Dónde | Modo claro | Modo oscuro |
+|---|---|---|
+| Nombre de la función en el cuestionario y «Pregunta N de 10» | Identificar verde #0B7640, Proteger azul #1F5FD6, Recuperar naranja #BD3A0B | Identificar verde #3FE09A, Proteger azul #7AB6FF, Recuperar naranja #FF7A4D |
+| Títulos de Crear cuenta, Ingresar, Nueva contraseña y Tu ruta al 100 % | Sin cambio (negro) | Naranja #FF5A1F, como Inicio, Cómo funciona, Catálogo, Tu negocio y Mi avance |
+
+En modo oscuro, el investigador había coloreado «Pregunta 10 de 10» pero no «Pregunta 1 de 10». Para que se vea parejo, se dejó en color en todas las preguntas. El título del panel del investigador sigue en blanco, como él lo dejó.
+
+![Cuestionario antes (v2.2.0) y ahora (v2.2.1)](img/colores-antes-ahora.jpg)
+
+*Fig. 27. Cuestionario antes (v2.2.0) y ahora (v2.2.1). Fuente: capturas en modo demostración, 6 de noviembre de 2026.*
+
+### F. Uso de inteligencia artificial en esta etapa
+
+- **Claude** [6]: apoyo en programación, pruebas, documentación y armado de los mockups en Figma. El investigador revisa los resultados y responde por el contenido.
+- **Canva** [7] **y Google Gemini** [8]: generación de los personajes y de las imágenes en alta calidad. Las imágenes finales se recortaron y los recuadros con candados se dibujaron aparte.
 - **La plataforma no usa inteligencia artificial** para diagnosticar ni recomendar. Esa restricción no cambió.
 
 ## VII. PRODUCTOS DE ANÁLISIS Y DISEÑO
@@ -315,7 +367,7 @@ Estos son los productos que pide la orientación institucional para el desarroll
 
 ### A. ¿Qué está diseñado, prototipado, desarrollado y validado?
 
-**TABLA IX. Estado de cada producto**
+**TABLA XI. Estado de cada producto**
 
 | Producto | Diseñado | Prototipado | Desarrollado | Validado |
 |---|---|---|---|---|
@@ -331,7 +383,7 @@ Estos son los productos que pide la orientación institucional para el desarroll
 
 Cada historia nace de una fuente concreta: un hallazgo del diagnóstico, el catálogo, el diseño de la investigación, el plan técnico o una revisión. Por ejemplo, 10 de 12 negocios venden por WhatsApp y cobran por Nequi (H7); eso produjo el requisito RF-17 y la historia HU-02.
 
-**TABLA X. Historias de usuario**
+**TABLA XII. Historias de usuario**
 
 | N.º | Lo que pide el usuario | De dónde salió | Etapa | ¿Cómo va? |
 |---|---|---|---|---|
@@ -363,77 +415,77 @@ Cada historia nace de una fuente concreta: un hallazgo del diagnóstico, el cat�
 
 ### C. Arquitectura por niveles
 
-**Nivel 0.** La plataforma vista desde afuera: quién la usa y con qué servicios se comunica (Fig. 23).
+**Nivel 0.** La plataforma vista desde afuera: quién la usa y con qué servicios se comunica (Fig. 28).
 
 ![Arquitectura, nivel 0](img/n0.png)
 
-*Fig. 23. Arquitectura, nivel 0. Fuente: elaboración propia.*
+*Fig. 28. Arquitectura, nivel 0. Fuente: elaboración propia.*
 
-**Nivel 1.** Las partes del sistema (Fig. 24). La plataforma se ejecuta en el navegador y se comunica con Supabase por HTTPS; no hay un servidor propio que mantener. Se publica en GitHub Pages [8]; el documento de octubre decía Vercel.
+**Nivel 1.** Las partes del sistema (Fig. 29). La plataforma se ejecuta en el navegador y se comunica con Supabase por HTTPS; no hay un servidor propio que mantener. Se publica en GitHub Pages [9]; el documento de octubre decía Vercel.
 
 ![Arquitectura, nivel 1](img/n1.png)
 
-*Fig. 24. Arquitectura, nivel 1. Fuente: elaboración propia.*
+*Fig. 29. Arquitectura, nivel 1. Fuente: elaboración propia.*
 
-**Nivel 2.** Las cinco capas del código (Fig. 25). Cada capa usa la de abajo, de modo que un error se puede ubicar en una carpeta concreta.
+**Nivel 2.** Las cinco capas del código (Fig. 30). Cada capa usa la de abajo, de modo que un error se puede ubicar en una carpeta concreta.
 
 ![Arquitectura, nivel 2: capas de la aplicación](img/n2.png)
 
-*Fig. 25. Arquitectura, nivel 2: capas de la aplicación. Fuente: elaboración propia.*
+*Fig. 30. Arquitectura, nivel 2: capas de la aplicación. Fuente: elaboración propia.*
 
 ### D. Inventario del stack tecnológico
 
-**TABLA XI. Stack tecnológico con versiones instaladas**
+**TABLA XIII. Stack tecnológico con versiones instaladas**
 
 | Parte | Tecnología | Versión | Para qué se usa |
 |---|---|---|---|
-| Interfaz | React [9] | 18.3.1 | Pantallas y componentes |
-| Lenguaje | TypeScript [10] | 5.6.3 | Detecta errores antes de ejecutar |
-| Construcción | Vite [11] | 5.4.21 | Compila la aplicación |
-| Estilos | Tailwind CSS [12] | 4.3.3 | Colores, letras, modo oscuro y adaptación a pantallas |
-| Navegación | React Router [13] | 6.30.6 | Rutas entre pantallas |
-| Base de datos y cuentas | Supabase [14] (cliente) | 2.118.0 | PostgreSQL, autenticación y reglas de acceso por fila |
+| Interfaz | React [10] | 18.3.1 | Pantallas y componentes |
+| Lenguaje | TypeScript [11] | 5.6.3 | Detecta errores antes de ejecutar |
+| Construcción | Vite [12] | 5.4.21 | Compila la aplicación |
+| Estilos | Tailwind CSS [13] | 4.3.3 | Colores, letras, modo oscuro y adaptación a pantallas |
+| Navegación | React Router [14] | 6.30.6 | Rutas entre pantallas |
+| Base de datos y cuentas | Supabase [15] (cliente) | 2.118.0 | PostgreSQL, autenticación y reglas de acceso por fila |
 | Pruebas | Vitest | 2.1.9 | Pruebas automáticas del cálculo y del motor |
 | Publicación | GitHub Pages y GitHub Actions | Servicio | Publica cada cambio que llega a main |
 | Control de versiones | Git y GitHub | Servicio | Historial, ramas y pull requests |
 
 ### E. Diagramas UML
 
-**Casos de uso.** Qué puede hacer cada tipo de usuario (Fig. 26).
+**Casos de uso.** Qué puede hacer cada tipo de usuario (Fig. 31).
 
 ![Diagrama de casos de uso](img/uso.png)
 
-*Fig. 26. Diagrama de casos de uso. Fuente: elaboración propia.*
+*Fig. 31. Diagrama de casos de uso. Fuente: elaboración propia.*
 
-**Secuencia.** Qué pasa cuando un propietario termina el cuestionario (Fig. 27).
+**Secuencia.** Qué pasa cuando un propietario termina el cuestionario (Fig. 32).
 
 ![Diagrama de secuencia del diagnóstico](img/seq.png)
 
-*Fig. 27. Diagrama de secuencia del diagnóstico. Fuente: elaboración propia.*
+*Fig. 32. Diagrama de secuencia del diagnóstico. Fuente: elaboración propia.*
 
-**Clases.** Los datos y la lógica principales. El código está escrito con funciones y tipos, no con clases; el diagrama representa esos tipos y funciones (Fig. 28).
+**Clases.** Los datos y la lógica principales. El código está escrito con funciones y tipos, no con clases; el diagrama representa esos tipos y funciones (Fig. 33).
 
 ![Diagrama de tipos y lógica principal](img/clases.png)
 
-*Fig. 28. Diagrama de tipos y lógica principal. Fuente: elaboración propia.*
+*Fig. 33. Diagrama de tipos y lógica principal. Fuente: elaboración propia.*
 
 ### F. Modelo entidad-relación
 
-El modelo se hizo a partir del archivo real de la base de datos. Guarda quién usa la plataforma, qué respondió cada negocio y qué se le recomendó (Fig. 29). El campo «momento» distingue el pre-test del post-test. El diccionario de datos está en el Anexo A.
+El modelo se hizo a partir del archivo real de la base de datos. Guarda quién usa la plataforma, qué respondió cada negocio y qué se le recomendó (Fig. 34). El campo «momento» distingue el pre-test del post-test. El diccionario de datos está en el Anexo A.
 
 ![Modelo entidad-relación (9 tablas)](img/er.png)
 
-*Fig. 29. Modelo entidad-relación (9 tablas). Fuente: elaboración propia.*
+*Fig. 34. Modelo entidad-relación (9 tablas). Fuente: elaboración propia.*
 
 ### G. Mapa de navegación y pantallas
 
 ![Mapa de navegación de la versión 2.2.0](img/nav.png)
 
-*Fig. 30. Mapa de navegación de la versión 2.2.0. Fuente: elaboración propia.*
+*Fig. 35. Mapa de navegación de la versión 2.2.0. Fuente: elaboración propia.*
 
 Como bocetos se usaron las muestras de pantalla de la sección VI y las de la etapa 2. No se hicieron bocetos en blanco y negro aparte.
 
-**TABLA XII. Pantallas de la plataforma**
+**TABLA XIV. Pantallas de la plataforma**
 
 | Pantalla | Para qué sirve | Requisitos |
 |---|---|---|
@@ -451,40 +503,41 @@ Como bocetos se usaron las muestras de pantalla de la sección VI y las de la et
 
 ![Pantallas de la versión 2.2.0 en modo claro](img/final-claro.jpg)
 
-*Fig. 31. Pantallas de la versión 2.2.0 en modo claro. Fuente: elaboración propia.*
+*Fig. 36. Pantallas de la versión 2.2.0 en modo claro. Fuente: elaboración propia.*
 
 ## VIII. EVIDENCIA EN GITHUB
 
-Todo el código y la documentación técnica están en el repositorio [15]. Se trabaja en la rama version-2; cada etapa se cierra uniendo a main con un pull request, y al llegar a main la plataforma se publica sola. El historial completo está en el Anexo B.
+Todo el código y la documentación técnica están en el repositorio [16]. Se trabaja en la rama version-2; cada etapa se cierra uniendo a main con un pull request, y al llegar a main la plataforma se publica sola. El historial completo está en el Anexo B.
 
-![Commits por fecha en la rama version-2 (41, sin contar esta documentación)](img/commits.png)
+![Commits por fecha en la rama version-2 (48, sin contar esta documentación)](img/commits.png)
 
-*Fig. 32. Commits por fecha en la rama version-2 (41, sin contar esta documentación). Fuente: historial de Git del repositorio, 5 de noviembre de 2026.*
+*Fig. 37. Commits por fecha en la rama version-2 (48, sin contar esta documentación). Fuente: historial de Git del repositorio, 6 de noviembre de 2026.*
 
 ![Historial de la rama version-2 en GitHub](img/ev-commits.jpg)
 
-*Fig. 33. Historial de la rama version-2 en GitHub. Fuente: captura de GitHub, 5 de noviembre de 2026 (fechas en hora universal).*
+*Fig. 38. Historial de la rama version-2 en GitHub. Fuente: captura de GitHub, 5 de noviembre de 2026 (fechas en hora universal).*
 
-**TABLA XIII. Pull requests del proyecto**
+**TABLA XV. Pull requests del proyecto**
 
 | N.º | Qué une | Abierto | Unido | Tamaño |
 |---|---|---|---|---|
 | #1 | Versión 2 de la plataforma | 31/10/2026, 00:07 | 02/11/2026, 23:35 | 27 commits, 74 archivos |
 | #2 | Corrección del modo demostración | 03/11/2026, 15:44 | 03/11/2026, 15:45 | 2 commits, 4 archivos |
 | #3 | Nuevo diseño y documentación | 05/11/2026, 23:12 | 05/11/2026, 23:36 | 9 commits, 64 archivos |
-| #4 | Último ajuste de «Tu negocio» y actualización de este informe | 06/11/2026 | Abierto, sin unir | En revisión |
+| #4 | Último ajuste de «Tu negocio» y actualización del informe | 06/11/2026, 00:14 | 06/11/2026, 00:16 | 4 commits, 18 archivos |
+| #5 | Colores ajustados en Figma (v2.2.1) | 06/11/2026, 16:05 | 06/11/2026, 16:07 | 1 commit, 6 archivos |
 
 **Tres cosas que conviene tener presentes:**
 
-- **La página pública ya muestra el diseño «Papel»**, desde el 5 de noviembre a las 23:36. El título naranja de «Tu negocio» se publica al unir el pull request #4.
-- **La versión anterior no se pierde.** Queda en el commit bbb5824. Las marcas de versión v2.1.3 y v2.2.0 las debe crear el investigador desde su computador, porque el entorno de trabajo no permite enviarlas.
+- **La página pública ya muestra el diseño «Papel»**, desde el 5 de noviembre a las 23:36, con los ajustes de los pull requests #4 y #5 (6 de noviembre).
+- **La versión anterior no se pierde.** El investigador creó las marcas de versión v2.1.3 (commit bbb5824, diseño «Neón») y v2.2.0 (commit e3031cf, diseño «Papel»). Falta la marca v2.2.1 (commit 99b3356).
 - **Autoría.** En el historial, muchos commits aparecen a nombre de «Claude», el asistente con el que se programó. Los pull requests los unió el investigador.
 
 ## IX. CUMPLIMIENTO DE LOS REQUERIMIENTOS
 
 Se revisó el código contra cada requerimiento. «Hecho» significa que está programado; no significa que ya se validó con usuarios. Esta revisión mostró cosas que el tablero no dejaba ver, sobre todo en RF-08, RF-09, RF-10, RF-12, RF-16 y RNF-10.
 
-**TABLA XIV. Requerimientos funcionales**
+**TABLA XVI. Requerimientos funcionales**
 
 | ID | La plataforma debe… | Estado | Qué hay hoy |
 |---|---|---|---|
@@ -506,7 +559,7 @@ Se revisó el código contra cada requerimiento. «Hecho» significa que está p
 | RF-16 | Guardar, descargar o imprimir y repetir | Parcial | Guarda, repite y compara; el propietario no puede descargar ni imprimir |
 | RF-17 | Adaptarse a las plataformas usadas | Hecho | Filtra preguntas y herramientas |
 
-**TABLA XV. Requerimientos no funcionales**
+**TABLA XVII. Requerimientos no funcionales**
 
 | ID | Atributo | Estado | Qué hay hoy |
 |---|---|---|---|
@@ -530,7 +583,7 @@ Se revisó el código contra cada requerimiento. «Hecho» significa que está p
 1. **Fechas.** Las etapas 1 a 4 quedaron registradas entre el 30 y el 31 de octubre, frente a lo planeado desde el 7 de septiembre. ¿Se presenta así, con el desplazamiento explicado?
 2. **Registro retroactivo.** El tablero de las etapas 1 a 4 se escribió después. ¿Es suficiente con declararlo?
 3. **Preguntas y puntaje (HU-17).** El código todavía las marca como borrador. Son el paso más urgente, porque de ellas depende la medición.
-4. **Congelar el diseño.** Conviene aprobar esta versión y no cambiarla antes de la Fase 4, para que un cambio de pantalla no se mezcle con los resultados.
+4. **Congelar el diseño.** Conviene aprobar esta versión y no cambiarla antes de la Fase 4, para que un cambio de pantalla no se mezcle con los resultados. Los mockups de Figma pueden servir como referencia aprobada.
 5. **Requisitos parciales.** RF-08, RF-09, RF-10, RF-12 y RF-16 no se cumplen del todo. ¿Se completan todos en la etapa 6 o se ajusta alguno? RF-16 y RNF-10 no tienen historia de usuario todavía.
 6. **Entrar con el nombre del microcomercio.** Le recomendaron entrar con el nombre y una contraseña en lugar del correo. Es posible, pero sin correo no se recupera la contraseña, el nombre debería ser único y sería fácil de adivinar. No se ha cambiado nada.
 7. **Frase «de forma anónima».** La plataforma la usa, pero cada cuenta tiene un correo. Se propone decir «sin publicar datos de tu negocio y solo para el trabajo de grado», o lo que el asesor considere.
@@ -540,30 +593,31 @@ Se revisó el código contra cada requerimiento. «Hecho» significa que está p
 
 1. **Publicación.** El documento de arquitectura dice Vercel y se usa GitHub Pages. Se recomienda dejar GitHub Pages, porque ya funciona, no tiene costo y está ligado al repositorio.
 2. **Documento de arquitectura.** Hay que actualizar la fila de identidad visual y pasar de 9 a 11 pantallas.
-3. **Imágenes generadas con inteligencia artificial.** Se declaran en la sección VI-E. ¿El programa pide algo más?
+3. **Imágenes generadas con inteligencia artificial.** Se declaran en la sección VI-F. ¿El programa pide algo más?
 4. **Textos del catálogo.** Algunas fichas dicen «funciones de pago opcionales». Se propone unificarlas como «funciones opcionales de bajo costo».
 5. **Confirmación del correo.** Supabase pide confirmar el correo antes de entrar. Es más seguro, pero agrega un paso. Se puede revisar con las pruebas de uso.
 6. **«Cómo funciona» en el celular.** La página queda larga. Se revisará en las pruebas de uso.
+7. **Figma y la web van juntas.** Si se cambia algo en Figma, hay que pasarlo al código, como se hizo con los colores. El plan gratuito de Figma limita la lectura automática del archivo, así que conviene anotar qué se cambió.
 
 ## XI. CONCLUSIONES PARCIALES
 
 1. El objetivo específico 3 avanzó hasta tener una plataforma funcional, con base de datos real y recomendaciones por reglas, pero todavía no está terminado.
 2. Scrumban se aplicó en las revisiones y correcciones desde el inicio, y como registro formal desde la etapa 5. El rediseño muestra el ciclo completo: revisión, tarea nueva, propuestas, aplicación, corrección y entrega.
 3. NIST CSF mantuvo el alcance: el cuestionario, el puntaje, el catálogo y las recomendaciones siguen limitados a Identificar, Proteger y Recuperar.
-4. El cambio de diseño no modificó la lógica de evaluación ni los datos. Su efecto sobre los propietarios aún no se ha medido.
+4. El cambio de diseño no modificó la lógica de evaluación ni los datos. Su efecto sobre los propietarios aún no se ha medido. Los mockups de Figma dejan el diseño documentado y editable fuera del código.
 5. La revisión contra los requerimientos dejó siete puntos parciales y varios por medir. Esa lista orienta la etapa 6.
 
 ## ANEXO A. DICCIONARIO DE DATOS
 
 Salido del archivo supabase/migrations/001_esquema.sql.
 
-**TABLA XVI. Diccionario de datos**
+**TABLA XVIII. Diccionario de datos**
 
 | Tabla | Campo | Tipo | Qué guarda |
 |---|---|---|---|
 | perfil | id | uuid (clave) | Cuenta del usuario |
 | perfil | rol | texto | propietario o investigador |
-| perfil | consentimiento | fecha y hora | Cuándo aceptó el uso de datos (Ley 1581 [16]) |
+| perfil | consentimiento | fecha y hora | Cuándo aceptó el uso de datos (Ley 1581 [17]) |
 | perfil | creado | fecha y hora | Cuándo se creó |
 | negocio | id | uuid (clave) | Identificador |
 | negocio | owner | uuid (único) | Cuenta dueña; una por negocio |
@@ -602,11 +656,18 @@ Salido del archivo supabase/migrations/001_esquema.sql.
 
 Rama version-2, del más reciente al más antiguo, en hora de Colombia. Se excluye el commit de esta documentación.
 
-**TABLA XVII. Historial de commits**
+**TABLA XIX. Historial de commits**
 
 | Commit | Fecha | Hora | Autor | Mensaje |
 |---|---|---|---|---|
+| 99b3356 | 06/11/2026 | 16:05 | Claude | HU-25: colores de títulos ajustados por el investigador en Figma |
+| e3031cf | 06/11/2026 | 00:15 | Claude | Documentación: fecha real de la etapa 5 hasta el 06/11 |
+| 1153a5d | 06/11/2026 | 00:14 | Claude | Documentación: corregir la hora de apertura del pull request #3 |
+| c65cd12 | 06/11/2026 | 00:14 | Claude | Documentación: informe del objetivo 3 con el diseño publicado y el último ajuste |
 | cbf3a61 | 06/11/2026 | 00:10 | Claude | HU-25: título de «Tu negocio» en naranja en modo oscuro |
+| 43c58f2 | 05/11/2026 | 23:20 | Claude | Documentación: corregir el conteo de requisitos parciales |
+| 3a19194 | 05/11/2026 | 23:19 | Claude | Documentación: precisar el conteo de commits del informe |
+| 70e790f | 05/11/2026 | 23:18 | Claude | Documentación: proceso completo del objetivo 3 y cierre de HU-25 |
 | d9225b5 | 05/11/2026 | 22:58 | Claude | HU-25: catálogo y «Mi avance» con el nuevo diseño |
 | 22d2e60 | 05/11/2026 | 22:58 | Claude | HU-25: cuestionario, resultado y ruta con escudo y anillos en 3D |
 | e4129ca | 05/11/2026 | 22:58 | Claude | HU-25: crear cuenta y datos del negocio con el nuevo diseño |
@@ -658,26 +719,28 @@ Rama version-2, del más reciente al más antiguo, en hora de Colombia. Se exclu
 
 [4] International Organization for Standardization, ISO/IEC 25010:2023 Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model. Ginebra, Suiza: ISO, 2023.
 
-[5] Anthropic, «Claude», 2026. [En línea]. Disponible en: https://claude.ai
+[5] Figma, «Escudo Digital · Mockups interactivos v2.2», archivo de diseño, 2026. [En línea]. Disponible en: https://www.figma.com/design/zlUdRxzaD46XTODeDVBvn3
 
-[6] Canva, «Canva», 2026. [En línea]. Disponible en: https://www.canva.com
+[6] Anthropic, «Claude», 2026. [En línea]. Disponible en: https://claude.ai
 
-[7] Google, «Gemini», 2026. [En línea]. Disponible en: https://gemini.google.com
+[7] Canva, «Canva», 2026. [En línea]. Disponible en: https://www.canva.com
 
-[8] GitHub, «GitHub Pages documentation». [En línea]. Disponible en: https://docs.github.com/pages
+[8] Google, «Gemini», 2026. [En línea]. Disponible en: https://gemini.google.com
 
-[9] Meta Open Source, «React: The library for web and native user interfaces», documentación oficial. [En línea]. Disponible en: https://react.dev
+[9] GitHub, «GitHub Pages documentation». [En línea]. Disponible en: https://docs.github.com/pages
 
-[10] Microsoft, «TypeScript Documentation». [En línea]. Disponible en: https://www.typescriptlang.org/docs/
+[10] Meta Open Source, «React: The library for web and native user interfaces», documentación oficial. [En línea]. Disponible en: https://react.dev
 
-[11] Vite, «Vite: Next Generation Frontend Tooling», documentación oficial. [En línea]. Disponible en: https://vite.dev
+[11] Microsoft, «TypeScript Documentation». [En línea]. Disponible en: https://www.typescriptlang.org/docs/
 
-[12] Tailwind Labs, «Tailwind CSS Documentation». [En línea]. Disponible en: https://tailwindcss.com/docs
+[12] Vite, «Vite: Next Generation Frontend Tooling», documentación oficial. [En línea]. Disponible en: https://vite.dev
 
-[13] Remix Software, «React Router», documentación oficial. [En línea]. Disponible en: https://reactrouter.com
+[13] Tailwind Labs, «Tailwind CSS Documentation». [En línea]. Disponible en: https://tailwindcss.com/docs
 
-[14] Supabase, «Supabase Docs». [En línea]. Disponible en: https://supabase.com/docs
+[14] Remix Software, «React Router», documentación oficial. [En línea]. Disponible en: https://reactrouter.com
 
-[15] J. F. Matta Zuñiga, «cuida_tu_negocio: Escudo Digital v2», repositorio GitHub, rama version-2, 2026. [En línea]. Disponible en: https://github.com/Jaiderfzuniga/cuida_tu_negocio
+[15] Supabase, «Supabase Docs». [En línea]. Disponible en: https://supabase.com/docs
 
-[16] Congreso de la República de Colombia, «Ley Estatutaria 1581 de 2012, por la cual se dictan disposiciones generales para la protección de datos personales», Diario Oficial n.º 48.587, 18 oct. 2012.
+[16] J. F. Matta Zuñiga, «cuida_tu_negocio: Escudo Digital v2», repositorio GitHub, rama version-2, 2026. [En línea]. Disponible en: https://github.com/Jaiderfzuniga/cuida_tu_negocio
+
+[17] Congreso de la República de Colombia, «Ley Estatutaria 1581 de 2012, por la cual se dictan disposiciones generales para la protección de datos personales», Diario Oficial n.º 48.587, 18 oct. 2012.
