@@ -8,7 +8,7 @@ El desarrollo de la plataforma (objetivo específico 3) se gestiona con **Scrumb
 |---|---|
 | Dueño del producto | Jaider Felipe Matta Zúñiga (investigador): prioriza el backlog según el diagnóstico (OE1) y el catálogo (OE2) |
 | Equipo de desarrollo | El investigador, con apoyo de asistentes de IA para programación y documentación |
-| Interesados | Mg. Luis Arnoby Escobar Hernández (asesor) y los propietarios de microcomercios |
+| Interesados | Asesor y los propietarios de microcomercios |
 | Backlog | Historias de usuario (HU) enlazadas a los requisitos RF/RNF → [backlog.md](backlog.md) |
 | Tablero | Por hacer → En curso → Hecho, con **límite de 2 HU en curso** |
 | Iteraciones | 6 iteraciones (I1–I6) dentro de las actividades 7, 8 y 9 del cronograma → [iteraciones.md](iteraciones.md) |
