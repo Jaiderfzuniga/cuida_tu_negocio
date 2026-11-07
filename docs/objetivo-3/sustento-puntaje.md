@@ -33,9 +33,28 @@ Ejemplo: Identificar 3/8 = 38 %, Proteger 5/8 = 63 %, Recuperar 1/6 = 17 % → g
 | Mismo peso por pregunta | El NIST CSF no asigna pesos numéricos; no hay evidencia para ponderar. La prioridad se da al ordenar las recomendaciones. |
 | Promedio de funciones | Proteger tiene más preguntas; así cada función cuenta igual, como en los resultados del objetivo 1. |
 
+## Por qué cada opción vale lo que vale
+
+El NIST **no publica una tabla de puntos**: el CSF describe resultados y deja que cada organización los mida (para eso está la guía NIST SP 800-55 Vol. 1). El valor de cada opción se apoya en dos bases verificables:
+
+1. **Escala de niveles del MSPI de MinTIC.** Su instrumento de evaluación califica cada control como inexistente (0), inicial (20), repetible (40), efectivo (60), gestionado (80) u optimizado (100) y da un porcentaje 0–100 por función del NIST CSF (ejemplo publicado: evaluación de ICULTUR 2024). La plataforma lo simplifica a tres niveles: 0 = inexistente, 1 = inicial o repetible (a medias, depende de acordarse), 2 = efectivo.
+2. **Una fuente oficial que ordena las opciones** de cada pregunta.
+
+| Tipo | Preguntas | 2 | 1 | 0 | Base |
+|---|---|---|---|---|---|
+| Sí o no | ID2, ID3, ID5, PR2 | Activada | — | No / no sé | Subcategoría NIST de la pregunta |
+| Cobertura | PR3, PR6, RC2, RC3 | Todas | Algunas | Ninguna / no sé | El resultado NIST se cumple a medias si cubre solo una parte |
+| Frecuencia | ID4, RC1 | Siempre / automática | A veces / a mano | Nunca | PR.DS-11: copias creadas y mantenidas; MSPI: «inicial» si depende de acordarse |
+| Cantidad de medidas | PR4 | Las dos | Una | Ninguna | Número de medidas de Nequi activas |
+| Comprobado o creído | RC5 | Ya lo hizo | Cree que sí | No | PR.DS-11: las copias se prueban |
+| Fuente oficial | PR1 | App de contraseñas | Las recuerda y son distintas | Misma en todas | NIST SP 800-63B-4 §3.1.1 y CISA *Use Strong Passwords* |
+
+**Inconsistencia por decidir con el asesor (no aplicada en la plataforma):** «Anotadas en papel o cuaderno» vale hoy 0, igual que usar la misma contraseña en todas. El NIST define la contraseña como un secreto que se memoriza **o se registra**, así que anotarla no es incorrecto en sí; el riesgo es dejarla a la vista (H5). Propuesta: subirla a 1 punto y aclarar en la ayuda que el cuaderno se guarde fuera de la vista.
+
 ## Qué ya está comprobado y qué falta
 
 - ✅ El cálculo da lo que dice la fórmula (3 pruebas automáticas).
+- ✅ Cada opción se apoya en una fuente oficial (revisión documental, 07/11/2026).
 - ✅ Funciona con datos reales (prueba con dos cuentas el 02/11/2026: 43 % → 88 %).
 - ⏳ **Juicio de expertos:** el asesor y un segundo experto califican pertinencia, claridad y puntos de cada pregunta (1 a 4); se acepta con 3 o 4.
 - ⏳ **Prueba piloto:** aplicar la plataforma y la lista de chequeo en 2–3 negocios fuera de la muestra y comparar si coinciden en la función más débil.
