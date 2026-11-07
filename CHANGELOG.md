@@ -2,11 +2,6 @@
 
 Registro de la evolución de la plataforma para la trazabilidad del trabajo de grado.
 
-## Documentación — base de los puntos por opción (7 nov. 2026)
-
-- El asesor preguntó cómo se puntúan las preguntas con varias opciones (por ejemplo, dónde se guardan las contraseñas). Se agregó al [sustento del puntaje](docs/objetivo-3/sustento-puntaje.md) la base de cada opción: escala de niveles del MSPI de MinTIC y recomendaciones del NIST SP 800-63B-4 y de CISA.
-- Se encontró una inconsistencia en PR1: «anotadas en papel» vale lo mismo que «la misma en todas». Se propone subirla a 1 punto; **no se cambió el código** hasta que lo decida el asesor.
-
 ## Documentación — asesoría del 6 nov. 2026
 
 - El asesor **aprobó el diseño** (versión 2.2.1). Se registró en el informe del objetivo 3 y en el backlog (HU-25).
