@@ -2,9 +2,16 @@
 
 Registro de la evolución de la plataforma para la trazabilidad del trabajo de grado.
 
+## Documentación — asesoría del 6 nov. 2026
+
+- El asesor **aprobó el diseño** (versión 2.2.1). Se registró en el informe del objetivo 3 y en el backlog (HU-25).
+- El asesor preguntó de dónde sale el puntaje del cuestionario. Se agregó el [sustento del puntaje](docs/objetivo-3/sustento-puntaje.md) con el cálculo, el origen de cada pregunta, lo que falta validar y un plan de juicio de expertos y prueba piloto (HU-17 en curso).
+- El informe de avances de los objetivos 1 y 2 quedó con **33 herramientas** (sin Recuva, descartada por su licencia de uso doméstico), igual que la plataforma.
+- Los prototipos de Figma se llaman ahora **wireframes** en toda la documentación.
+
 ## v2.2.1 — Colores ajustados en Figma (6 nov. 2026)
 
-El investigador ajustó colores en los mockups de Figma y se pasaron a la plataforma. Solo cambia el color de algunos títulos; nada de la lógica.
+El investigador ajustó colores en los wireframes de Figma y se pasaron a la plataforma. Solo cambia el color de algunos títulos; nada de la lógica.
 
 - En el cuestionario, el nombre de la función y «Pregunta N de 10» van en el color de su función: verde para Identificar, azul para Proteger y naranja para Recuperar, en modo claro y oscuro.
 - En modo oscuro, los títulos de Crear cuenta, Ingresar, Nueva contraseña y Tu ruta al 100 % también van en naranja.

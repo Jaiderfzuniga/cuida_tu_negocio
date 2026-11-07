@@ -4,7 +4,7 @@ Informe del proceso, las metodologías, el diseño y las evidencias. Actualizado
 
 ## I. INTRODUCCIÓN
 
-Este informe cuenta, en orden y con evidencias, cómo se ha trabajado el objetivo específico 3 desde que se cerraron los objetivos 1 y 2: qué se hizo, en qué fecha, con qué metodologías, qué se subió a GitHub, por qué cambió el diseño, cómo se hicieron los mockups interactivos en Figma y qué falta.
+Este informe cuenta, en orden y con evidencias, cómo se ha trabajado el objetivo específico 3 desde que se cerraron los objetivos 1 y 2: qué se hizo, en qué fecha, con qué metodologías, qué se subió a GitHub, por qué cambió el diseño, cómo se hicieron los wireframes interactivos en Figma y qué falta.
 
 **Objetivo específico 3.** Implementar una plataforma web que, a partir de los resultados del diagnóstico, genere recomendaciones personalizadas de herramientas de ciberseguridad adecuadas al perfil de riesgo de cada microcomercio.
 
@@ -22,14 +22,14 @@ Este informe cuenta, en orden y con evidencias, cómo se ha trabajado el objetiv
 | Catálogo de 33 herramientas con filtros | Funciona; faltan 2 enlaces (HU-18) | src/data/catalogo.json |
 | Cuentas y base de datos conectadas | Hecho y probado con dos cuentas | Sección V-E |
 | Publicación en internet | Hecho. La página pública ya muestra el diseño nuevo | Sección VIII |
-| Nuevo diseño (HU-25) | Publicado (v2.2.1); falta la revisión del asesor | Sección VI |
-| Mockups interactivos en Figma | Hechos: 15 pantallas en computador y 15 en celular, en claro y oscuro, con navegación | Sección VI-E |
+| Nuevo diseño (HU-25) | Publicado (v2.2.1) y aprobado por el asesor el 06/11/2026 | Sección VI |
+| Wireframes interactivos en Figma | Hechos: 15 pantallas en computador y 15 en celular, en claro y oscuro, con navegación | Sección VI-E |
 | Guías de respaldo y restauración (HU-19) | En curso | Sección IX |
 | Pruebas internas de uso, ISO/IEC 25010 (HU-20) | Por hacer | Sección V-F |
 
 ## II. PUNTO DE PARTIDA: LO QUE DEJARON LOS OBJETIVOS 1 Y 2
 
-La plataforma no empezó desde una idea suelta. Los dos objetivos anteriores le entregaron el problema que debía atender y las herramientas con las que debía responder (TABLA II). El informe de avances que cierra ambos objetivos se guardó el 30 de octubre de 2026.
+La plataforma no empezó desde una idea suelta. Los dos objetivos anteriores le entregaron el problema que debía atender y las herramientas con las que debía responder (TABLA II). El informe de avances que cierra ambos objetivos se entregó el 20 de octubre de 2026; se actualizó el 30 de octubre y el 6 de noviembre, cuando el catálogo quedó en 33 herramientas.
 
 **TABLA II. Qué recibió el objetivo 3 de los objetivos anteriores**
 
@@ -37,7 +37,7 @@ La plataforma no empezó desde una idea suelta. Los dos objetivos anteriores le 
 |---|---|---|
 | Objetivo 1 | Diagnóstico de 12 microcomercios. Proteger 67 %, Identificar 22 % y Recuperar 22 % de respuestas favorables. | Las preguntas y la prioridad de las recomendaciones parten de esas brechas. |
 | Objetivo 1 | 12 necesidades identificadas (H1 a H12). | De ellas salen buena parte de las historias de usuario. |
-| Objetivo 2 | Catálogo final de 34 herramientas clasificadas por función. | La plataforma carga 33. Recuva quedó por fuera porque su licencia gratuita es solo para uso doméstico. |
+| Objetivo 2 | Catálogo final de 33 herramientas clasificadas por función: 10 de Identificar, 17 de Proteger y 6 de Recuperar. | La plataforma carga las 33 herramientas del catálogo. |
 | Objetivos 1 y 2 | 17 requerimientos funcionales (RF: lo que debe hacer) y 12 no funcionales (RNF: cómo debe ser). | Cada historia de usuario se enlaza con uno de ellos. |
 
 **Antecedente: el prototipo «Cuida tu Negocio».** Antes de esta versión ya existía un prototipo, publicado el 10 y 11 de septiembre (commits 24b2ac2 y 954d303). El 3 de octubre se analizó en un documento técnico que encontró 16 hallazgos: 4 pantallas, 7 preguntas, 11 herramientas y ningún dato guardado. El cuestionario y el catálogo no correspondían del todo a lo investigado y, sin base de datos no era posible comparar el antes y el después que exige el objetivo 4. Por eso se decidió construir de nuevo.
@@ -54,7 +54,7 @@ El proyecto usa dos metodologías que hacen trabajos distintos. **Scrumban** dic
 
 ### A. Scrumban: cómo se organiza el trabajo
 
-Scrumban combina las etapas con revisión de Scrum [1] con el tablero de Kanban [2]. Se eligió porque el desarrollo lo hace una sola persona y necesita un método simple, ordenado y fácil de mostrar. En el proyecto se aplica así:
+Scrumban combina las etapas con revisión de Scrum [1] con el tablero de Kanban [2]. Se eligió porque el desarrollo lo hace una sola persona y necesita un método simple, ordenado y fácil de mostrar. En los objetivos 1 y 2, la revisión de cada ciclo fueron las asesorías del 24 de agosto y del 25 de septiembre de 2026; en el objetivo 3, la revisión la hace el investigador al probar cada etapa y se confirma en la asesoría, como la del 6 de noviembre, en la que el asesor aprobó el diseño. En el proyecto se aplica así:
 
 **TABLA III. ¿Quién hace qué?**
 
@@ -234,8 +234,9 @@ El proceso tomó tres sesiones, del 4 al 6 de noviembre. La TABLA VII resume las
 | 22:41–22:58 | Se comprueba y se sube a GitHub. | Pide subirlo y documentar el proceso. |
 | 05/11, 23:36 | Une el pull request #3 y la página pública pasa al diseño nuevo. | Lo publica antes de la revisión con el asesor. |
 | 06/11, 00:07–00:16 | Último ajuste, subido a GitHub (commit cbf3a61) y publicado con el pull request #4. | «Tu negocio» también va en naranja en modo oscuro. |
-| 06/11, 00:26–01:05 | Mockups interactivos de toda la plataforma en su cuenta de Figma (sección VI-E). | Pide los mockups para revisar el diseño fuera del código. |
+| 06/11, 00:26–01:05 | Wireframes interactivos de toda la plataforma en su cuenta de Figma (sección VI-E). | Pide los wireframes para revisar el diseño fuera del código. |
 | 06/11, 15:57–16:07 | Revisión de los colores que él cambió en Figma; se pasan a la web (v2.2.1) y se publican con el pull request #5. | Títulos de las preguntas en el color de su función y más títulos en naranja en modo oscuro. |
+| 06/11, asesoría | Revisión del diseño (versión 2.2.1) con el asesor. | El asesor lo aprueba: «está muy bien». |
 
 ![Primeras 12 propuestas de pantalla inicial (ninguna elegida)](img/propuestas-12.jpg)
 
@@ -306,9 +307,9 @@ El cambio tocó 22 archivos de la interfaz. Las carpetas de lógica, datos, serv
 
 **Pruebas hechas:** compilación sin errores, 3 pruebas automáticas y un recorrido automático en modo demostración por las pantallas, en claro y oscuro, en computador y celular, sin errores ni contenido desbordado. El investigador lo revisó en su computador. **Falta:** la revisión del asesor y las pruebas con usuarios.
 
-### E. Mockups interactivos en Figma
+### E. Wireframes interactivos en Figma
 
-Después de publicar el diseño nuevo, el investigador pidió los mockups de la plataforma en Figma, con su propia cuenta y que se pudieran recorrer con clics. Se crearon el 6 de noviembre, entre las 00:26 y la 01:05, en el archivo «Escudo Digital · Mockups interactivos v2.2» [5]. Sirven para mostrar y revisar el diseño sin abrir el código, y para que el investigador ajuste detalles por su cuenta.
+Después de publicar el diseño nuevo, el investigador pidió los wireframes de la plataforma en Figma, con su propia cuenta y que se pudieran recorrer con clics. Se crearon el 6 de noviembre, entre las 00:26 y la 01:05, en el archivo «Escudo Digital · Mockups interactivos v2.2» [5]. Sirven para mostrar y revisar el diseño sin abrir el código, y para que el investigador ajuste detalles por su cuenta.
 
 **TABLA IX. Contenido del archivo de Figma**
 
@@ -322,13 +323,13 @@ Después de publicar el diseño nuevo, el investigador pidió los mockups de la 
 
 **Qué se puede hacer en el prototipo.** El menú, los botones y el flujo completo funcionan con clics: Inicio, Crear cuenta, Tu negocio, preguntas, Resultado, Ruta y Mi avance. El botón de tema pasa del modo claro al oscuro, y los chips y las opciones cambian al tocarlos. Cada página tiene dos puntos de inicio: «Recorrido · modo claro» y «Recorrido · modo oscuro».
 
-![Mockups en Figma: pantallas de computador](img/figma-computador.jpg)
+![Wireframes en Figma: pantallas de computador](img/figma-computador.jpg)
 
-*Fig. 23. Mockups en Figma: pantallas de computador. Fuente: archivo de Figma del investigador, 6 de noviembre de 2026.*
+*Fig. 23. Wireframes en Figma: pantallas de computador. Fuente: archivo de Figma del investigador, 6 de noviembre de 2026.*
 
-![Mockups en Figma: pantallas de celular](img/figma-celular.jpg)
+![Wireframes en Figma: pantallas de celular](img/figma-celular.jpg)
 
-*Fig. 24. Mockups en Figma: pantallas de celular. Fuente: archivo de Figma del investigador, 6 de noviembre de 2026.*
+*Fig. 24. Wireframes en Figma: pantallas de celular. Fuente: archivo de Figma del investigador, 6 de noviembre de 2026.*
 
 ![Página «Piezas»: ilustración, logos y mascota como componentes](img/figma-piezas.jpg)
 
@@ -336,7 +337,7 @@ Después de publicar el diseño nuevo, el investigador pidió los mockups de la 
 
 **Diferencias con la web.** Solo están las preguntas 1, 5 y 10, como muestra. Los datos son de ejemplo (Tienda Don Pedro y dos negocios más en el panel). Los filtros del catálogo se marcan pero no filtran. Nequi y WOT aparecen con su inicial porque no se encontró su logo en vector. El escudo conserva el grosor 3D, pero no la inclinación.
 
-**Del mockup de vuelta a la web.** El mismo 6 de noviembre por la tarde, el investigador cambió colores directamente en Figma. Como su plan gratuito de Figma no permitía leer el archivo de forma automática, los cambios se revisaron mirando el archivo y midiendo los colores en capturas (Fig. 26). Luego se pasaron al código (commit 99b3356, versión 2.2.1) y él los publicó con el pull request #5 (TABLA X).
+**Del wireframe de vuelta a la web.** El mismo 6 de noviembre por la tarde, el investigador cambió colores directamente en Figma. Como su plan gratuito de Figma no permitía leer el archivo de forma automática, los cambios se revisaron mirando el archivo y midiendo los colores en capturas (Fig. 26). Luego se pasaron al código (commit 99b3356, versión 2.2.1) y él los publicó con el pull request #5 (TABLA X).
 
 ![Cambios de color hechos por el investigador en Figma](img/figma-colores.jpg)
 
@@ -357,7 +358,7 @@ En modo oscuro, el investigador había coloreado «Pregunta 10 de 10» pero no �
 
 ### F. Uso de inteligencia artificial en esta etapa
 
-- **Claude** [6]: apoyo en programación, pruebas, documentación y armado de los mockups en Figma. El investigador revisa los resultados y responde por el contenido.
+- **Claude** [6]: apoyo en programación, pruebas, documentación y armado de los wireframes en Figma. El investigador revisa los resultados y responde por el contenido.
 - **Canva** [7] **y Google Gemini** [8]: generación de los personajes y de las imágenes en alta calidad. Las imágenes finales se recortaron y los recuadros con candados se dibujaron aparte.
 - **La plataforma no usa inteligencia artificial** para diagnosticar ni recomendar. Esa restricción no cambió.
 
@@ -375,7 +376,7 @@ Estos son los productos que pide la orientación institucional para el desarroll
 | Puntaje y motor de reglas | Sí | No aplica | Sí | Pruebas automáticas; falta con usuarios |
 | Catálogo | Sí | Sí | Sí | Herramientas en el objetivo 2; faltan 2 enlaces |
 | Cuentas y base de datos | Sí | No aplica | Sí | Prueba con dos cuentas |
-| Diseño «Papel» | Sí | Sí | Sí | Revisado por el investigador; falta asesor y usuarios |
+| Diseño «Papel» | Sí | Sí | Sí | Aprobado por el asesor (06/11/2026); falta con usuarios |
 | Guías de respaldo | Parcial | No | En curso | No |
 | Pruebas de uso ISO/IEC 25010 | Por diseñar | No aplica | No | No |
 
@@ -582,8 +583,8 @@ Se revisó el código contra cada requerimiento. «Hecho» significa que está p
 
 1. **Fechas.** Las etapas 1 a 4 quedaron registradas entre el 30 y el 31 de octubre, frente a lo planeado desde el 7 de septiembre. ¿Se presenta así, con el desplazamiento explicado?
 2. **Registro retroactivo.** El tablero de las etapas 1 a 4 se escribió después. ¿Es suficiente con declararlo?
-3. **Preguntas y puntaje (HU-17).** El código todavía las marca como borrador. Son el paso más urgente, porque de ellas depende la medición.
-4. **Congelar el diseño.** Conviene aprobar esta versión y no cambiarla antes de la Fase 4, para que un cambio de pantalla no se mezcle con los resultados. Los mockups de Figma pueden servir como referencia aprobada.
+3. **Preguntas y puntaje (HU-17).** El código todavía las marca como borrador. En la asesoría del 6 de noviembre, el asesor preguntó de dónde sale el puntaje y cómo se ha comprobado. La respuesta y un plan para validarlo están en [sustento del puntaje](sustento-puntaje.md). Es el paso más urgente, porque de él depende la medición.
+4. **Congelar el diseño.** El asesor aprobó el diseño el 6 de noviembre de 2026. Se propone no cambiarlo antes de la Fase 4, para que un cambio de pantalla no se mezcle con los resultados; los wireframes de Figma quedan como referencia aprobada.
 5. **Requisitos parciales.** RF-08, RF-09, RF-10, RF-12 y RF-16 no se cumplen del todo. ¿Se completan todos en la etapa 6 o se ajusta alguno? RF-16 y RNF-10 no tienen historia de usuario todavía.
 6. **Entrar con el nombre del microcomercio.** Le recomendaron entrar con el nombre y una contraseña en lugar del correo. Es posible, pero sin correo no se recupera la contraseña, el nombre debería ser único y sería fácil de adivinar. No se ha cambiado nada.
 7. **Frase «de forma anónima».** La plataforma la usa, pero cada cuenta tiene un correo. Se propone decir «sin publicar datos de tu negocio y solo para el trabajo de grado», o lo que el asesor considere.
@@ -604,7 +605,7 @@ Se revisó el código contra cada requerimiento. «Hecho» significa que está p
 1. El objetivo específico 3 avanzó hasta tener una plataforma funcional, con base de datos real y recomendaciones por reglas, pero todavía no está terminado.
 2. Scrumban se aplicó en las revisiones y correcciones desde el inicio, y como registro formal desde la etapa 5. El rediseño muestra el ciclo completo: revisión, tarea nueva, propuestas, aplicación, corrección y entrega.
 3. NIST CSF mantuvo el alcance: el cuestionario, el puntaje, el catálogo y las recomendaciones siguen limitados a Identificar, Proteger y Recuperar.
-4. El cambio de diseño no modificó la lógica de evaluación ni los datos. Su efecto sobre los propietarios aún no se ha medido. Los mockups de Figma dejan el diseño documentado y editable fuera del código.
+4. El cambio de diseño no modificó la lógica de evaluación ni los datos. El asesor lo aprobó el 6 de noviembre de 2026; su efecto sobre los propietarios aún no se ha medido. Los wireframes de Figma dejan el diseño documentado y editable fuera del código.
 5. La revisión contra los requerimientos dejó siete puntos parciales y varios por medir. Esa lista orienta la etapa 6.
 
 ## ANEXO A. DICCIONARIO DE DATOS
