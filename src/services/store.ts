@@ -139,7 +139,7 @@ export async function diagnosticosDe(negocioId: string): Promise<Diagnostico[]> 
 /** Panel del investigador: todos los negocios con sus diagnósticos (RLS lo restringe en la base). */
 export async function todosLosNegocios(): Promise<{ negocio: Negocio; diagnosticos: Diagnostico[] }[]> {
   if (supabase) {
-    const { data, error } = await supabase.from('negocio').select('*, diagnostico(*)').order('nombre');
+    const { data, error } = await supabase.from('negocio').select('*, diagnostico(*, respuesta(pregunta_id, opcion_id))').order('nombre');
     if (error) throw new Error(error.message);
     return (data ?? []).map((f) => ({ negocio: desdeFila(f),
       diagnosticos: (f.diagnostico ?? []).map(diagDesdeFila).sort((a: Diagnostico, b: Diagnostico) => a.fecha.localeCompare(b.fecha)) }));

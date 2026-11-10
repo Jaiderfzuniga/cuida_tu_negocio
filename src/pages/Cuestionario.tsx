@@ -72,7 +72,7 @@ export default function Cuestionario() {
           <button key={o.id} role="radio" aria-checked={r[p.id] === o.id} onClick={() => setR({ ...r, [p.id]: o.id })} className="opcion">{o.texto}</button>
         ))}
       </div>
-      <p className="m-0 mt-4 max-w-[620px] text-[17px] leading-[1.4] text-suave"><strong className="text-texto">¿Qué significa esto?</strong> {p.ayuda}</p>
+      <p className={`ayuda ayuda-${p.funcion} m-0 mt-4 max-w-[620px] text-[17px] leading-[1.4]`}><strong className="ayuda-titulo">¿Qué significa esto?</strong> {p.ayuda}</p>
 
       <div className="mt-5 flex flex-wrap gap-3">
         <button className="btn btn-secundario" onClick={() => (i ? setI(i - 1) : nav('/negocio'))}>Anterior</button>

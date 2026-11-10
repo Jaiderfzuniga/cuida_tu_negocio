@@ -2,9 +2,29 @@
 
 Registro de la evolución de la plataforma para la trazabilidad del trabajo de grado.
 
+## v2.3.0 — Ajustes de la asesoría y descargas (9 nov. 2026)
+
+Cambios pedidos por el asesor el 6 de noviembre y revisados por el investigador en su computador antes de subirlos.
+
+- **HU-26:** «¿Qué significa esto?» va en un recuadro con una franja y el título en el color de la función, para que se vea más.
+- **HU-27:** en «Cómo funciona», los números 1, 3 y 5 van en verde, azul y naranja, los colores de Identificar, Proteger y Recuperar, en modo claro y oscuro.
+- **HU-28:** si un nuevo diagnóstico queda igual o más bajo que el anterior, aparece «Volver a intentar». El intento queda guardado en la base de datos y el panel muestra cuántos intentos tiene cada negocio.
+- **HU-29 (RF-16):** botón «Descargar o imprimir» en el resultado: una hoja con los niveles, el punto más débil y la ruta al 100 % con el sitio oficial de cada herramienta. Se guarda como PDF desde la ventana de imprimir.
+- **HU-30:** el panel del investigador descarga un Excel en vez de un CSV, con una hoja por negocio (cada pregunta y la respuesta de cada intento), todas las respuestas con filtros, los intentos y la lista de preguntas. Se corrigió que el panel no traía las respuestas desde la base de datos.
+- **HU-18:** enlaces oficiales de Nequi (P-18, centro de ayuda de Nequi) y de Windows Update (P-33, soporte de Microsoft), también en la base de datos.
+- **Puntaje (HU-17):** se agregó la [rúbrica de puntuación](docs/objetivo-3/rubrica-puntaje.md) y se ajustó el [sustento](docs/objetivo-3/sustento-puntaje.md): «No» y «No sé» valen 0, la escala es propia porque el NIST CSF no tiene una puntuación oficial y, por ahora, no se hará juicio de expertos; queda la prueba piloto.
+- Nueva librería: ExcelJS 4.4.0, que solo se carga al pulsar el botón del Excel.
+
+## Documentación — asesoría del 6 nov. 2026
+
+- El asesor **aprobó el diseño** (versión 2.2.1). Se registró en el informe del objetivo 3 y en el backlog (HU-25).
+- El asesor preguntó de dónde sale el puntaje del cuestionario. Se agregó el [sustento del puntaje](docs/objetivo-3/sustento-puntaje.md) con el cálculo, el origen de cada pregunta, lo que falta validar y un plan de juicio de expertos y prueba piloto (HU-17 en curso).
+- El informe de avances de los objetivos 1 y 2 quedó con **33 herramientas** (sin Recuva, descartada por su licencia de uso doméstico), igual que la plataforma.
+- Los prototipos de Figma se llaman ahora **wireframes** en toda la documentación.
+
 ## v2.2.1 — Colores ajustados en Figma (6 nov. 2026)
 
-El investigador ajustó colores en los mockups de Figma y se pasaron a la plataforma. Solo cambia el color de algunos títulos; nada de la lógica.
+El investigador ajustó colores en los wireframes de Figma y se pasaron a la plataforma. Solo cambia el color de algunos títulos; nada de la lógica.
 
 - En el cuestionario, el nombre de la función y «Pregunta N de 10» van en el color de su función: verde para Identificar, azul para Proteger y naranja para Recuperar, en modo claro y oscuro.
 - En modo oscuro, los títulos de Crear cuenta, Ingresar, Nueva contraseña y Tu ruta al 100 % también van en naranja.
