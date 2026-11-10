@@ -17,13 +17,15 @@ Este informe cuenta, en orden y con evidencias, cómo se ha trabajado el objetiv
 | Parte del objetivo | Cómo va | Evidencia |
 |---|---|---|
 | Plan técnico, arquitectura y base de datos | Hecho | Sección VII; documento de arquitectura |
-| Cuestionario por Identificar, Proteger y Recuperar | Funciona; falta validarlo con el asesor (HU-17) | src/data/preguntas.ts |
+| Cuestionario por Identificar, Proteger y Recuperar | Funciona; sustento y rúbrica del puntaje entregados, falta la prueba piloto (HU-17) | src/data/preguntas.ts; [sustento](sustento-puntaje.md); [rúbrica](rubrica-puntaje.md) |
 | Cálculo del nivel y motor de recomendaciones por reglas | Hecho, con 3 pruebas automáticas | src/lib; tests/motor.test.ts |
-| Catálogo de 33 herramientas con filtros | Funciona; faltan 2 enlaces (HU-18) | src/data/catalogo.json |
+| Catálogo de 33 herramientas con filtros | Hecho; enlaces oficiales completos (HU-18) | src/data/catalogo.json |
 | Cuentas y base de datos conectadas | Hecho y probado con dos cuentas | Sección V-E |
 | Publicación en internet | Hecho. La página pública ya muestra el diseño nuevo | Sección VIII |
 | Nuevo diseño (HU-25) | Publicado (v2.2.1) y aprobado por el asesor el 06/11/2026 | Sección VI |
 | Wireframes interactivos en Figma | Hechos: 15 pantallas en computador y 15 en celular, en claro y oscuro, con navegación | Sección VI-E |
+| Ajustes de la asesoría del 06/11 (HU-26 a HU-28) | Hechos y subidos el 09/11/2026 | Sección V-E |
+| Descargas: resultado del propietario (HU-29) y Excel del investigador (HU-30) | Hechas y subidas el 09/11/2026 | Sección V-E |
 | Guías de respaldo y restauración (HU-19) | En curso | Sección IX |
 | Pruebas internas de uso, ISO/IEC 25010 (HU-20) | Por hacer | Sección V-F |
 
@@ -118,7 +120,7 @@ La Fig. 5 compara lo planeado con lo que quedó registrado. Las etapas 1 a 4 se 
 | 2. Diseñar cómo se ve | 7 | 19/09 – 30/09/2026 | 30/10/2026 | Hecho |
 | 3. Construir la base | 8 | 01/10 – 15/10/2026 | 30/10/2026 | Hecho |
 | 4. Armar las pantallas y corregir | 8 | 16/10 – 30/10/2026 | 30 – 31/10/2026 | Hecho |
-| 5. Publicar y conectar | 9 | 01/11 – 13/11/2026 | 31/10 – 06/11/2026 | En curso |
+| 5. Publicar y conectar | 9 | 01/11 – 13/11/2026 | 31/10 – 09/11/2026 | En curso |
 | 6. Probar y dejar lista | 9 | 14/11 – 27/11/2026 | Sin iniciar | Por hacer |
 
 ## V. QUÉ SE HIZO EN CADA ETAPA
@@ -171,12 +173,16 @@ La Fig. 5 compara lo planeado con lo que quedó registrado. Las etapas 1 a 4 se 
 
 ### E. Etapa 5: Publicar y conectar (en curso)
 
-- **Historias:** HU-15, HU-16, HU-21, HU-22, HU-23, HU-24 y HU-25 (hechas) y HU-17 (por hacer).
+- **Historias:** HU-15, HU-16, HU-18, HU-21 a HU-30 (hechas) y HU-17 (en curso).
 - **31 de octubre:** el código sube a GitHub, separado por partes, y se publica en GitHub Pages (commit 834fa3f).
 - **2 de noviembre:** se conecta la base de datos Supabase con 9 tablas, 33 herramientas, 13 preguntas, 40 opciones y 29 reglas. Se guarda la fecha del consentimiento y las recomendaciones, y se agrega la opción de crear una contraseña nueva.
 - **2 de noviembre, primer error real:** al probar con su cuenta, el investigador encontró que la plataforma se quedaba «cargando» y luego en blanco (HU-24). Se corrigió y él confirmó que ya funcionaba. La versión 2 se unió a la rama principal (pull request #1).
 - **3 de noviembre, segundo error real:** al entrar desde otro dispositivo notó que la página pública había quedado en «modo demostración». La causa estaba en el flujo de publicación. Se corrigió con el pull request #2.
-- **Qué se aprendió:** cada historia se sube por separado y cada actualización de la carpeta local debe copiar el código completo; un archivo viejo causó otro error.
+- **6 de noviembre, asesoría:** el asesor aprobó el diseño y preguntó de dónde sale el puntaje del cuestionario y cómo se comprobó. También pidió tres ajustes: que «¿Qué significa esto?» se vea más, que los números 1, 3 y 5 de «Cómo funciona» tengan color y que el propietario pueda repetir el diagnóstico si su nivel queda igual o más bajo, sin borrar el intento.
+- **7 de noviembre, ajustes:** se hicieron en el computador del investigador y él los revisó antes de subirlos (TABLA VI-A). Para la pregunta del puntaje se escribieron el [sustento del puntaje](sustento-puntaje.md) y la [rúbrica de puntuación](rubrica-puntaje.md).
+- **7 de noviembre, tercer error real:** al abrir el Excel con sus datos, el investigador vio que no aparecían las respuestas de cada negocio. Estaban guardadas en la base de datos (68 respuestas en 6 diagnósticos), pero el panel no las pedía. Se corrigió en el mismo cambio de HU-30.
+- **9 de noviembre:** el investigador aprobó los cambios y se subieron a GitHub (commits 8122073, 7ffe8ff y da01c53). Los dos enlaces nuevos también se actualizaron en la base de datos.
+- **Qué se aprendió:** cada historia se sube por separado y cada actualización de la carpeta local debe copiar el código completo; un archivo viejo causó otro error. Toda descarga se revisa con datos reales y no solo con datos de prueba.
 
 ![Plataforma publicada en GitHub Pages](img/etapa-5-pages.png)
 
@@ -195,10 +201,21 @@ El 2 de noviembre se simularon dos propietarios de prueba, que luego se borraron
 | Revisión automática de seguridad de Supabase | Sin alertas graves | Cumple (1 aviso menor justificado) |
 | Prueba real con dos cuentas: diagnóstico inicial y de seguimiento | Se guardan con sus respuestas y recomendaciones | Cumple (43 % → 88 %; 24 respuestas y 17 recomendaciones) |
 
+**TABLA VI-A. Ajustes del 7 de noviembre y cómo se probaron**
+
+| Historia | Qué cambió | Cómo se probó | Resultado |
+|---|---|---|---|
+| HU-26 | «¿Qué significa esto?» va en un recuadro con una franja y el título en el color de la función | Cuestionario en modo claro y oscuro | Cumple |
+| HU-27 | Los pasos 1, 3 y 5 de «Cómo funciona» van en verde, azul y naranja, los colores de Identificar, Proteger y Recuperar | «Cómo funciona» en modo claro y oscuro | Cumple |
+| HU-28 | Si el nuevo diagnóstico queda igual o más bajo, aparece «Volver a intentar»; el intento queda guardado y el panel muestra cuántos intentos tiene cada negocio | Prueba del investigador con su cuenta | Cumple (50 % → 39 %; los dos intentos quedaron guardados) |
+| HU-29 | Botón «Descargar o imprimir» con un resumen de una hoja: niveles, punto más débil y ruta al 100 % con el sitio oficial de cada herramienta | Impresión a PDF | Cumple (una hoja tamaño carta) |
+| HU-30 | El panel descarga un Excel con una hoja por negocio: cada pregunta, la respuesta de cada intento y los niveles | Excel generado con los datos reales de la base | Cumple (3 negocios, 6 diagnósticos, 68 respuestas) |
+| HU-18 | Enlaces oficiales de Nequi (P-18) y de Windows Update (P-33) | Revisión del dominio de cada enlace | Cumple (ayuda.nequi.com.co y support.microsoft.com) |
+
 ### F. Etapa 6: Probar y dejar lista (por hacer)
 
 - **Planeada:** del 14 al 27 de noviembre de 2026.
-- **Historias:** HU-18 (enlaces oficiales), HU-19 (guías de respaldo) y HU-20 (pruebas de uso con base en ISO/IEC 25010 [4]).
+- **Historias:** HU-19 (guías de respaldo), HU-20 (pruebas de uso con base en ISO/IEC 25010 [4]) y la prueba piloto del puntaje (HU-17).
 - **Entrega esperada:** una versión estable para la Fase 4.
 
 ## VI. EL CAMBIO DE DISEÑO (HU-25)
@@ -372,9 +389,9 @@ Estos son los productos que pide la orientación institucional para el desarroll
 
 | Producto | Diseñado | Prototipado | Desarrollado | Validado |
 |---|---|---|---|---|
-| Cuestionario | Sí | Sí | Sí | Pendiente con el asesor (HU-17) |
+| Cuestionario | Sí | Sí | Sí | Sustento y rúbrica entregados; falta la prueba piloto (HU-17) |
 | Puntaje y motor de reglas | Sí | No aplica | Sí | Pruebas automáticas; falta con usuarios |
-| Catálogo | Sí | Sí | Sí | Herramientas en el objetivo 2; faltan 2 enlaces |
+| Catálogo | Sí | Sí | Sí | Herramientas en el objetivo 2; enlaces oficiales completos |
 | Cuentas y base de datos | Sí | No aplica | Sí | Prueba con dos cuentas |
 | Diseño «Papel» | Sí | Sí | Sí | Aprobado por el asesor (06/11/2026); falta con usuarios |
 | Guías de respaldo | Parcial | No | En curso | No |
@@ -404,8 +421,8 @@ Cada historia nace de una fuente concreta: un hallazgo del diagnóstico, el cat�
 | HU-14 | Como usuario, quiero usar la plataforma en el celular y en el computador. | H7 y revisión del investigador → RNF-01 | 4 | Hecho |
 | HU-15 | Como investigador, quiero el código en GitHub y la plataforma publicada en un enlace. | Revisión del investigador (31/10) → RNF-09 | 5 | Hecho |
 | HU-16 | Como investigador, quiero conectar la base de datos Supabase en el sitio publicado. | Arquitectura (Supabase) → RF-16 | 5 | Hecho |
-| HU-17 | Como investigador, quiero validar con el asesor la redacción y el puntaje de las preguntas. | Validez del instrumento → Validez del instrumento | 5 | Por hacer |
-| HU-18 | Como propietario, quiero que los enlaces de Nequi (P-18) y Windows Update (P-33) lleven a sitios oficiales. | Revisión del catálogo (OE2) → RF-06 | 6 | Por hacer |
+| HU-17 | Como investigador, quiero validar con el asesor la redacción y el puntaje de las preguntas. | Validez del instrumento → Validez del instrumento | 5 | En curso |
+| HU-18 | Como propietario, quiero que los enlaces de Nequi (P-18) y Windows Update (P-33) lleven a sitios oficiales. | Revisión del catálogo (OE2) → RF-06 | 5 | Hecho |
 | HU-19 | Como propietario, quiero guías paso a paso para respaldar y recuperar mi información. | H3 y H4: Recuperar crítica → RF-08, RF-09 | 6 | En curso |
 | HU-20 | Como investigador, quiero pruebas internas de usabilidad basadas en ISO/IEC 25010 antes de aplicar la plataforma. | ISO/IEC 25010 (OE4) → RNF-02, RNF-12 | 6 | Por hacer |
 | HU-21 | Como investigador, quiero que quede guardada la fecha en que cada propietario aceptó el uso de sus datos. | Revisión del código (02/11) → RNF-08 (Ley 1581) | 5 | Hecho |
@@ -413,6 +430,11 @@ Cada historia nace de una fuente concreta: un hallazgo del diagnóstico, el cat�
 | HU-23 | Como propietario, quiero crear una contraseña nueva si olvidé la mía. | Revisión del código (02/11) → RF-16 | 5 | Hecho |
 | HU-24 | Como propietario, quiero que la plataforma no se quede «cargando» después de iniciar sesión. | Prueba del investigador (02/11) → RNF-02 | 5 | Hecho |
 | HU-25 | Como propietario, quiero una interfaz clara y cercana, con una ilustración y un diseño que se entienda fácil. | Revisión del investigador (04–05/11) → RNF-05 | 5 | Hecho |
+| HU-26 | Como propietario, quiero que «¿Qué significa esto?» se vea más, para no pasar por alto la explicación. | Asesoría (06/11) → RF-02 | 5 | Hecho |
+| HU-27 | Como usuario, quiero que los pasos 1, 3 y 5 de «Cómo funciona» lleven el color de su función. | Asesoría (06/11) → RNF-05 | 5 | Hecho |
+| HU-28 | Como propietario, quiero volver a intentar el diagnóstico si mi nivel quedó igual o bajó, sin que se borre el intento. | Asesoría (06/11) → RF-16 | 5 | Hecho |
+| HU-29 | Como propietario, quiero descargar o imprimir mi resultado. | Revisión de requerimientos (RF-16 parcial) → RF-16 | 5 | Hecho |
+| HU-30 | Como investigador, quiero un Excel con cada pregunta y la respuesta de cada negocio en cada intento. | Revisión del investigador (07/11) → Objetivo 4 | 5 | Hecho |
 
 ### C. Arquitectura por niveles
 
@@ -447,6 +469,7 @@ Cada historia nace de una fuente concreta: un hallazgo del diagnóstico, el cat�
 | Navegación | React Router [14] | 6.30.6 | Rutas entre pantallas |
 | Base de datos y cuentas | Supabase [15] (cliente) | 2.118.0 | PostgreSQL, autenticación y reglas de acceso por fila |
 | Pruebas | Vitest | 2.1.9 | Pruebas automáticas del cálculo y del motor |
+| Excel del investigador | ExcelJS [18] | 4.4.0 | Arma el Excel del panel; se carga solo al pulsar el botón |
 | Publicación | GitHub Pages y GitHub Actions | Servicio | Publica cada cambio que llega a main |
 | Control de versiones | Git y GitHub | Servicio | Historial, ramas y pull requests |
 
@@ -551,14 +574,26 @@ Se revisó el código contra cada requerimiento. «Hecho» significa que está p
 | RF-07 | Ordenar por prioridad | Hecho | Primero la función con el nivel más bajo |
 | RF-08 | Incluir guía paso a paso de respaldo y restauración | Parcial | Descripción y enlace oficial; falta la guía (HU-19) |
 | RF-09 | Recomendar una frecuencia de respaldo | Parcial | Pregunta si es automática; no indica una frecuencia (HU-19) |
-| RF-10 | Guiar la verificación en dos pasos | Parcial | Recomienda y enlaza; no hay guía propia. Falta el enlace de Nequi (HU-18) |
+| RF-10 | Guiar la verificación en dos pasos | Parcial | Recomienda y enlaza a sitios oficiales, incluido Nequi (HU-18); no hay guía propia |
 | RF-11 | Recomendar gestor de contraseñas | Hecho | Pregunta y herramientas de Proteger |
 | RF-12 | Enseñar a reconocer fraudes | Parcial | Una pregunta, su explicación y herramientas para revisar enlaces |
-| RF-13 | Recomendar protección básica | Hecho | Antivirus y actualizaciones. Falta el enlace de Windows Update (HU-18) |
+| RF-13 | Recomendar protección básica | Hecho | Antivirus y actualizaciones, con el enlace oficial de Windows Update (HU-18) |
 | RF-14 | Ayudar a inventariar equipos y sesiones | Hecho | Preguntas y herramientas de Identificar |
 | RF-15 | Incluir preguntas de conducta | Hecho | Por ejemplo, dónde guarda sus contraseñas |
-| RF-16 | Guardar, descargar o imprimir y repetir | Parcial | Guarda, repite y compara; el propietario no puede descargar ni imprimir |
-| RF-17 | Adaptarse a las plataformas usadas | Hecho | Filtra preguntas y herramientas |
+| RF-16 | Guardar, descargar o imprimir y repetir | Hecho | Guarda, repite y compara; ofrece volver a intentar si el nivel no sube (HU-28) y descargar o imprimir un resumen (HU-29) |
+| RF-17 | Adaptarse a las plataformas usadas | Hecho | Filtra preguntas y herramientas (TABLA XVI-A) |
+
+**TABLA XVI-A. Preguntas que dependen del negocio (RF-17)**
+
+Al registrarse, el propietario indica qué plataformas usa y si tiene computador. Las preguntas sobre algo que el negocio no usa no se muestran ni cuentan en el puntaje. De las 13 preguntas, 8 salen siempre (ID2, ID3, ID4, ID5, PR1, PR6, RC2 y RC5) y 5 dependen del negocio, así que cada uno responde entre 8 y 13. Por ejemplo, una tienda que usa WhatsApp, pero no Nequi, correo ni redes, y no tiene computador, ve 10 preguntas: 4 de Identificar, 3 de Proteger y 3 de Recuperar. Responde al hallazgo H7: los microcomercios usan pocas plataformas, y preguntarles por una que no usan bajaría su nivel sin que eso sea un riesgo real.
+
+| Pregunta | Función | Aparece solo si el negocio… |
+|---|---|---|
+| PR2. PIN de WhatsApp | Proteger | usa WhatsApp |
+| PR3. Verificación en dos pasos en correo y redes | Proteger | usa correo, Facebook o Instagram |
+| PR4. Clave dinámica y botón de pánico de Nequi | Proteger | usa Nequi |
+| RC1. Copia de los chats de WhatsApp | Recuperar | usa WhatsApp |
+| RC3. Archivos del computador en la nube | Recuperar | tiene computador |
 
 **TABLA XVII. Requerimientos no funcionales**
 
@@ -583,16 +618,16 @@ Se revisó el código contra cada requerimiento. «Hecho» significa que está p
 
 1. **Fechas.** Las etapas 1 a 4 quedaron registradas entre el 30 y el 31 de octubre, frente a lo planeado desde el 7 de septiembre. ¿Se presenta así, con el desplazamiento explicado?
 2. **Registro retroactivo.** El tablero de las etapas 1 a 4 se escribió después. ¿Es suficiente con declararlo?
-3. **Preguntas y puntaje (HU-17).** El código todavía las marca como borrador. En la asesoría del 6 de noviembre, el asesor preguntó de dónde sale el puntaje y cómo se ha comprobado. La respuesta y un plan para validarlo están en [sustento del puntaje](sustento-puntaje.md). Es el paso más urgente, porque de él depende la medición.
+3. **Preguntas y puntaje (HU-17).** El código todavía las marca como borrador. En la asesoría del 6 de noviembre, el asesor preguntó de dónde sale el puntaje y cómo se ha comprobado. La respuesta está en el [sustento del puntaje](sustento-puntaje.md) y en la [rúbrica de puntuación](rubrica-puntaje.md): el NIST CSF no tiene una puntuación oficial, así que la escala es propia; «No» y «No sé» valen 0, y cada opción se justifica con un hallazgo del diagnóstico y una subcategoría del NIST. Se propone comprobarla con una prueba piloto antes de la Fase 4.
 4. **Congelar el diseño.** El asesor aprobó el diseño el 6 de noviembre de 2026. Se propone no cambiarlo antes de la Fase 4, para que un cambio de pantalla no se mezcle con los resultados; los wireframes de Figma quedan como referencia aprobada.
-5. **Requisitos parciales.** RF-08, RF-09, RF-10, RF-12 y RF-16 no se cumplen del todo. ¿Se completan todos en la etapa 6 o se ajusta alguno? RF-16 y RNF-10 no tienen historia de usuario todavía.
+5. **Requisitos parciales.** RF-08, RF-09, RF-10 y RF-12 no se cumplen del todo. ¿Se completan todos en la etapa 6 o se ajusta alguno? RF-16 ya se cumple (HU-28 y HU-29); RNF-10 no tiene historia de usuario todavía.
 6. **Entrar con el nombre del microcomercio.** Le recomendaron entrar con el nombre y una contraseña en lugar del correo. Es posible, pero sin correo no se recupera la contraseña, el nombre debería ser único y sería fácil de adivinar. No se ha cambiado nada.
 7. **Frase «de forma anónima».** La plataforma la usa, pero cada cuenta tiene un correo. Se propone decir «sin publicar datos de tu negocio y solo para el trabajo de grado», o lo que el asesor considere.
 8. **RNF-07.** Dice «no pedir nunca contraseñas», pero la plataforma pide una propia. Se propone: «no pedir nunca las contraseñas de las cuentas del negocio (correo, Nequi, banco)».
 
 **Para dejar al día:**
 
-1. **Publicación.** El documento de arquitectura dice Vercel y se usa GitHub Pages. Se recomienda dejar GitHub Pages, porque ya funciona, no tiene costo y está ligado al repositorio.
+1. **Publicación.** El documento de arquitectura dice Vercel y hoy se usa GitHub Pages. El investigador decidió revisar más adelante la conexión con Vercel; mientras tanto, la plataforma sigue en GitHub Pages, que ya funciona y se actualiza con cada cambio que llega a main.
 2. **Documento de arquitectura.** Hay que actualizar la fila de identidad visual y pasar de 9 a 11 pantallas.
 3. **Imágenes generadas con inteligencia artificial.** Se declaran en la sección VI-F. ¿El programa pide algo más?
 4. **Textos del catálogo.** Algunas fichas dicen «funciones de pago opcionales». Se propone unificarlas como «funciones opcionales de bajo costo».
@@ -606,7 +641,8 @@ Se revisó el código contra cada requerimiento. «Hecho» significa que está p
 2. Scrumban se aplicó en las revisiones y correcciones desde el inicio, y como registro formal desde la etapa 5. El rediseño muestra el ciclo completo: revisión, tarea nueva, propuestas, aplicación, corrección y entrega.
 3. NIST CSF mantuvo el alcance: el cuestionario, el puntaje, el catálogo y las recomendaciones siguen limitados a Identificar, Proteger y Recuperar.
 4. El cambio de diseño no modificó la lógica de evaluación ni los datos. El asesor lo aprobó el 6 de noviembre de 2026; su efecto sobre los propietarios aún no se ha medido. Los wireframes de Figma dejan el diseño documentado y editable fuera del código.
-5. La revisión contra los requerimientos dejó siete puntos parciales y varios por medir. Esa lista orienta la etapa 6.
+5. La revisión contra los requerimientos dejó seis puntos parciales y varios por medir; RF-16 quedó completo el 9 de noviembre. Esa lista orienta la etapa 6.
+6. Los ajustes que pidió el asesor el 6 de noviembre se hicieron, se revisaron en el computador del investigador y se subieron a GitHub el 9 de noviembre. La pregunta sobre el puntaje quedó respondida con el sustento y la rúbrica; falta comprobarla con la prueba piloto.
 
 ## ANEXO A. DICCIONARIO DE DATOS
 
@@ -661,6 +697,14 @@ Rama version-2, del más reciente al más antiguo, en hora de Colombia. Se exclu
 
 | Commit | Fecha | Hora | Autor | Mensaje |
 |---|---|---|---|---|
+| da01c53 | 09/11/2026 | 22:37 | Claude | HU-30: Excel del investigador con cada pregunta y la respuesta de cada intento |
+| 7ffe8ff | 09/11/2026 | 22:37 | Claude | HU-26 a HU-29: ajustes del asesor (06/11) y descarga o impresión del resultado (RF-16) |
+| 8122073 | 09/11/2026 | 22:37 | Claude | HU-18: enlaces oficiales de Nequi (P-18) y Windows Update (P-33) |
+| 87ab3c1 | 07/11/2026 | 00:11 | Claude | Revertir: base de los puntos por opción (pendiente de definir con el investigador) |
+| 5043a33 | 07/11/2026 | 00:04 | Claude | Documentación: base de los puntos por opción (MSPI, NIST SP 800-63B-4, CISA) e inconsistencia en PR1 |
+| bbd7ecc | 06/11/2026 | 23:45 | Claude | Documentación: asesoría del 06/11 (diseño aprobado), sustento del puntaje, catálogo de 33 y wireframes |
+| e0a9a40 | 06/11/2026 | 19:51 | Jaiderfzuniga | Update interested parties description in README |
+| 8ed8404 | 06/11/2026 | 16:12 | Claude | Documentación: informe del objetivo 3 con los mockups de Figma y la versión 2.2.1 |
 | 99b3356 | 06/11/2026 | 16:05 | Claude | HU-25: colores de títulos ajustados por el investigador en Figma |
 | e3031cf | 06/11/2026 | 00:15 | Claude | Documentación: fecha real de la etapa 5 hasta el 06/11 |
 | 1153a5d | 06/11/2026 | 00:14 | Claude | Documentación: corregir la hora de apertura del pull request #3 |
@@ -745,3 +789,5 @@ Rama version-2, del más reciente al más antiguo, en hora de Colombia. Se exclu
 [16] J. F. Matta Zuñiga, «cuida_tu_negocio: Escudo Digital v2», repositorio GitHub, rama version-2, 2026. [En línea]. Disponible en: https://github.com/Jaiderfzuniga/cuida_tu_negocio
 
 [17] Congreso de la República de Colombia, «Ley Estatutaria 1581 de 2012, por la cual se dictan disposiciones generales para la protección de datos personales», Diario Oficial n.º 48.587, 18 oct. 2012.
+
+[18] ExcelJS, «ExcelJS: Excel Workbook Manager», repositorio GitHub. [En línea]. Disponible en: https://github.com/exceljs/exceljs
