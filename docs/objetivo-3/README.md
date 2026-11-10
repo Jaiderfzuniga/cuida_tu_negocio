@@ -26,7 +26,7 @@ Este informe cuenta, en orden y con evidencias, cómo se ha trabajado el objetiv
 | Wireframes interactivos en Figma | Hechos: 15 pantallas en computador y 15 en celular, en claro y oscuro, con navegación | Sección VI-E |
 | Ajustes de la asesoría del 06/11 (HU-26 a HU-28) | Hechos y subidos el 09/11/2026 | Sección V-E |
 | Descargas: resultado del propietario (HU-29) y Excel del investigador (HU-30) | Hechas y subidas el 09/11/2026 | Sección V-E |
-| Guías de respaldo y restauración (HU-19) | En curso | Sección IX |
+| Guías paso a paso: respaldo, dos pasos y fraudes (HU-19, HU-31 y HU-32) | Hecho y subido el 09/11/2026 | Sección V-F |
 | Pruebas internas de uso, ISO/IEC 25010 (HU-20) | Por hacer | Sección V-F |
 
 ## II. PUNTO DE PARTIDA: LO QUE DEJARON LOS OBJETIVOS 1 Y 2
@@ -121,7 +121,7 @@ La Fig. 5 compara lo planeado con lo que quedó registrado. Las etapas 1 a 4 se 
 | 3. Construir la base | 8 | 01/10 – 15/10/2026 | 30/10/2026 | Hecho |
 | 4. Armar las pantallas y corregir | 8 | 16/10 – 30/10/2026 | 30 – 31/10/2026 | Hecho |
 | 5. Publicar y conectar | 9 | 01/11 – 13/11/2026 | 31/10 – 09/11/2026 | En curso |
-| 6. Probar y dejar lista | 9 | 14/11 – 27/11/2026 | Sin iniciar | Por hacer |
+| 6. Probar y dejar lista | 9 | 14/11 – 27/11/2026 | 09/11/2026 – en curso | En curso |
 
 ## V. QUÉ SE HIZO EN CADA ETAPA
 
@@ -212,11 +212,26 @@ El 2 de noviembre se simularon dos propietarios de prueba, que luego se borraron
 | HU-30 | El panel descarga un Excel con una hoja por negocio: cada pregunta, la respuesta de cada intento y los niveles | Excel generado con los datos reales de la base | Cumple (3 negocios, 6 diagnósticos, 68 respuestas) |
 | HU-18 | Enlaces oficiales de Nequi (P-18) y de Windows Update (P-33) | Revisión del dominio de cada enlace | Cumple (ayuda.nequi.com.co y support.microsoft.com) |
 
-### F. Etapa 6: Probar y dejar lista (por hacer)
+### F. Etapa 6: Probar y dejar lista (en curso)
 
-- **Planeada:** del 14 al 27 de noviembre de 2026.
-- **Historias:** HU-19 (guías de respaldo), HU-20 (pruebas de uso con base en ISO/IEC 25010 [4]) y la prueba piloto del puntaje (HU-17).
+- **Planeada:** del 14 al 27 de noviembre de 2026. Empezó antes, el 9 de noviembre.
+- **Historias:** HU-19, HU-31 y HU-32 (hechas); HU-20 (pruebas de uso con base en ISO/IEC 25010 [4]) y la prueba piloto del puntaje (HU-17), por hacer.
+- **9 de noviembre, guías:** se creó la pantalla «Guías» con 10 guías paso a paso (TABLA VI-B). Cada una sale de la página de ayuda oficial del servicio y la enlaza al final, por si los menús cambian [20]–[23].
+- **9 de noviembre, diseño:** la primera versión no le convenció al investigador. Se le mostraron tres diseños con capturas (como la ruta, paso a paso y por secciones) y eligió el de la ruta, con un acceso rápido arriba. Después pidió ordenarlas por prioridad (HU-32). Las aprobó y se subieron el mismo día (commit 9d1fc75).
 - **Entrega esperada:** una versión estable para la Fase 4.
+
+**TABLA VI-B. Guías de la plataforma**
+
+| Función | Guía | Qué explica | Requisito |
+|---|---|---|---|
+| Recuperar | Copia de WhatsApp (Android e iPhone) | Activar la copia diaria y restaurar en un celular nuevo | RF-08, RF-09 |
+| Recuperar | Copia del celular (Google One en Android, iCloud en iPhone) | Activar la copia automática y recuperar en un equipo nuevo | RF-08, RF-09 |
+| Recuperar | Archivos del computador en OneDrive | Copiar Escritorio, Documentos e Imágenes y abrirlos en otro equipo | RF-08, RF-09 |
+| Proteger | Verificación en dos pasos de WhatsApp, Google y Facebook o Instagram | Activarla y guardar los códigos de recuperación | RF-10 |
+| Proteger | Clave dinámica de Nequi | Usarla solo en la app y no dictarla a nadie | RF-10 |
+| Identificar | Cómo reconocer un mensaje o enlace falso | Señales de alerta y qué hacer antes de abrir o pagar | RF-12 |
+
+Las guías se ordenan por prioridad: con diagnóstico, primero las de las herramientas de la ruta al 100 %, con los puntos que suman, y después de la función más débil a la más fuerte; sin diagnóstico, primero Recuperar, la función más débil en el diagnóstico de los microcomercios (H3 y H4). Solo se muestran las que sirven al negocio según su celular, su computador y sus plataformas.
 
 ## VI. EL CAMBIO DE DISEÑO (HU-25)
 
@@ -394,7 +409,7 @@ Estos son los productos que pide la orientación institucional para el desarroll
 | Catálogo | Sí | Sí | Sí | Herramientas en el objetivo 2; enlaces oficiales completos |
 | Cuentas y base de datos | Sí | No aplica | Sí | Prueba con dos cuentas |
 | Diseño «Papel» | Sí | Sí | Sí | Aprobado por el asesor (06/11/2026); falta con usuarios |
-| Guías de respaldo | Parcial | No | En curso | No |
+| Guías paso a paso | Sí | Sí (tres diseños) | Sí | Aprobadas por el investigador; falta con usuarios |
 | Pruebas de uso ISO/IEC 25010 | Por diseñar | No aplica | No | No |
 
 ### B. Historias de usuario
@@ -423,7 +438,7 @@ Cada historia nace de una fuente concreta: un hallazgo del diagnóstico, el cat�
 | HU-16 | Como investigador, quiero conectar la base de datos Supabase en el sitio publicado. | Arquitectura (Supabase) → RF-16 | 5 | Hecho |
 | HU-17 | Como investigador, quiero validar con el asesor la redacción y el puntaje de las preguntas. | Validez del instrumento → Validez del instrumento | 5 | En curso |
 | HU-18 | Como propietario, quiero que los enlaces de Nequi (P-18) y Windows Update (P-33) lleven a sitios oficiales. | Revisión del catálogo (OE2) → RF-06 | 5 | Hecho |
-| HU-19 | Como propietario, quiero guías paso a paso para respaldar y recuperar mi información. | H3 y H4: Recuperar crítica → RF-08, RF-09 | 6 | En curso |
+| HU-19 | Como propietario, quiero guías paso a paso para respaldar y recuperar mi información. | H3 y H4: Recuperar crítica → RF-08, RF-09 | 6 | Hecho |
 | HU-20 | Como investigador, quiero pruebas internas de usabilidad basadas en ISO/IEC 25010 antes de aplicar la plataforma. | ISO/IEC 25010 (OE4) → RNF-02, RNF-12 | 6 | Por hacer |
 | HU-21 | Como investigador, quiero que quede guardada la fecha en que cada propietario aceptó el uso de sus datos. | Revisión del código (02/11) → RNF-08 (Ley 1581) | 5 | Hecho |
 | HU-22 | Como investigador, quiero que se guarden las herramientas que la plataforma recomendó en cada diagnóstico, para analizarlas en el objetivo 4. | Revisión del código (02/11) → RF-05, Objetivo 4 | 5 | Hecho |
@@ -523,7 +538,8 @@ Como bocetos se usaron las muestras de pantalla de la sección VI y las de la et
 | Tu ruta al 100 % | Herramientas en orden, con motivo y puntos que suma. | RF-05, RF-07, RF-17 |
 | Catálogo | 33 herramientas con búsqueda y filtros. | RF-06 |
 | Mi avance | Todos los diagnósticos y cuánto subió el negocio. | RF-16 |
-| Panel del investigador | Comparativo antes y después, y descarga en CSV. | Objetivo 4 |
+| Guías (nueva) | Guías paso a paso ordenadas por prioridad, con acceso rápido. | RF-07, RF-08, RF-09, RF-10, RF-12 |
+| Panel del investigador | Comparativo antes y después, intentos y descarga en Excel. | Objetivo 4 |
 
 ![Pantallas de la versión 2.2.0 en modo claro](img/final-claro.jpg)
 
@@ -572,11 +588,11 @@ Se revisó el código contra cada requerimiento. «Hecho» significa que está p
 | RF-05 | Recomendar con reglas predefinidas | Hecho | src/lib/motor.ts, sin inteligencia artificial |
 | RF-06 | Ofrecer catálogo con filtros | Hecho | Por función, equipo y búsqueda |
 | RF-07 | Ordenar por prioridad | Hecho | Primero la función con el nivel más bajo |
-| RF-08 | Incluir guía paso a paso de respaldo y restauración | Parcial | Descripción y enlace oficial; falta la guía (HU-19) |
-| RF-09 | Recomendar una frecuencia de respaldo | Parcial | Pregunta si es automática; no indica una frecuencia (HU-19) |
-| RF-10 | Guiar la verificación en dos pasos | Parcial | Recomienda y enlaza a sitios oficiales, incluido Nequi (HU-18); no hay guía propia |
+| RF-08 | Incluir guía paso a paso de respaldo y restauración | Hecho | Guías de WhatsApp, celular y computador (HU-19) |
+| RF-09 | Recomendar una frecuencia de respaldo | Hecho | Cada guía de Recuperar dice cada cuánto hacer la copia (HU-19) |
+| RF-10 | Guiar la verificación en dos pasos | Hecho | Guías de WhatsApp, Google, Facebook e Instagram, y clave dinámica de Nequi (HU-31) |
 | RF-11 | Recomendar gestor de contraseñas | Hecho | Pregunta y herramientas de Proteger |
-| RF-12 | Enseñar a reconocer fraudes | Parcial | Una pregunta, su explicación y herramientas para revisar enlaces |
+| RF-12 | Enseñar a reconocer fraudes | Hecho | Guía de señales de alerta y qué hacer antes de abrir o pagar (HU-31) |
 | RF-13 | Recomendar protección básica | Hecho | Antivirus y actualizaciones, con el enlace oficial de Windows Update (HU-18) |
 | RF-14 | Ayudar a inventariar equipos y sesiones | Hecho | Preguntas y herramientas de Identificar |
 | RF-15 | Incluir preguntas de conducta | Hecho | Por ejemplo, dónde guarda sus contraseñas |
@@ -618,9 +634,9 @@ Al registrarse, el propietario indica qué plataformas usa y si tiene computador
 
 1. **Fechas.** Las etapas 1 a 4 quedaron registradas entre el 30 y el 31 de octubre, frente a lo planeado desde el 7 de septiembre. ¿Se presenta así, con el desplazamiento explicado?
 2. **Registro retroactivo.** El tablero de las etapas 1 a 4 se escribió después. ¿Es suficiente con declararlo?
-3. **Preguntas y puntaje (HU-17).** El código todavía las marca como borrador. En la asesoría del 6 de noviembre, el asesor preguntó de dónde sale el puntaje y cómo se ha comprobado. La respuesta está en el [sustento del puntaje](sustento-puntaje.md) y en la [rúbrica de puntuación](rubrica-puntaje.md): el NIST CSF no tiene una puntuación oficial, así que la escala es propia; «No» y «No sé» valen 0, y cada opción se justifica con un hallazgo del diagnóstico y una subcategoría del NIST. Se propone comprobarla con una prueba piloto antes de la Fase 4.
+3. **Preguntas y puntaje (HU-17).** El código todavía las marca como borrador. En la asesoría del 6 de noviembre, el asesor preguntó de dónde sale el puntaje y cómo se ha comprobado. La respuesta está en el [sustento del puntaje](sustento-puntaje.md) y en la [rúbrica de puntuación](rubrica-puntaje.md): el NIST CSF no tiene una puntuación oficial [3], [19], así que la escala es propia; «No» y «No sé» valen 0, y cada opción se justifica con un hallazgo del diagnóstico y una subcategoría del NIST. Se propone comprobarla con una prueba piloto antes de la Fase 4.
 4. **Congelar el diseño.** El asesor aprobó el diseño el 6 de noviembre de 2026. Se propone no cambiarlo antes de la Fase 4, para que un cambio de pantalla no se mezcle con los resultados; los wireframes de Figma quedan como referencia aprobada.
-5. **Requisitos parciales.** RF-08, RF-09, RF-10 y RF-12 no se cumplen del todo. ¿Se completan todos en la etapa 6 o se ajusta alguno? RF-16 ya se cumple (HU-28 y HU-29); RNF-10 no tiene historia de usuario todavía.
+5. **Requisitos parciales.** Los requerimientos funcionales ya se cumplen todos: RF-16 desde el 9 de noviembre (HU-28 y HU-29) y RF-08, RF-09, RF-10 y RF-12 con las guías (HU-19 y HU-31). Quedan parciales RNF-05 y RNF-10; RNF-10 no tiene historia de usuario todavía.
 6. **Entrar con el nombre del microcomercio.** Le recomendaron entrar con el nombre y una contraseña en lugar del correo. Es posible, pero sin correo no se recupera la contraseña, el nombre debería ser único y sería fácil de adivinar. No se ha cambiado nada.
 7. **Frase «de forma anónima».** La plataforma la usa, pero cada cuenta tiene un correo. Se propone decir «sin publicar datos de tu negocio y solo para el trabajo de grado», o lo que el asesor considere.
 8. **RNF-07.** Dice «no pedir nunca contraseñas», pero la plataforma pide una propia. Se propone: «no pedir nunca las contraseñas de las cuentas del negocio (correo, Nequi, banco)».
@@ -641,7 +657,7 @@ Al registrarse, el propietario indica qué plataformas usa y si tiene computador
 2. Scrumban se aplicó en las revisiones y correcciones desde el inicio, y como registro formal desde la etapa 5. El rediseño muestra el ciclo completo: revisión, tarea nueva, propuestas, aplicación, corrección y entrega.
 3. NIST CSF mantuvo el alcance: el cuestionario, el puntaje, el catálogo y las recomendaciones siguen limitados a Identificar, Proteger y Recuperar.
 4. El cambio de diseño no modificó la lógica de evaluación ni los datos. El asesor lo aprobó el 6 de noviembre de 2026; su efecto sobre los propietarios aún no se ha medido. Los wireframes de Figma dejan el diseño documentado y editable fuera del código.
-5. La revisión contra los requerimientos dejó seis puntos parciales y varios por medir; RF-16 quedó completo el 9 de noviembre. Esa lista orienta la etapa 6.
+5. La revisión contra los requerimientos dejó varios puntos parciales. Al 9 de noviembre todos los requerimientos funcionales se cumplen; quedan dos no funcionales parciales (RNF-05 y RNF-10) y varios por medir con las pruebas de uso de la etapa 6.
 6. Los ajustes que pidió el asesor el 6 de noviembre se hicieron, se revisaron en el computador del investigador y se subieron a GitHub el 9 de noviembre. La pregunta sobre el puntaje quedó respondida con el sustento y la rúbrica; falta comprobarla con la prueba piloto.
 
 ## ANEXO A. DICCIONARIO DE DATOS
@@ -697,6 +713,8 @@ Rama version-2, del más reciente al más antiguo, en hora de Colombia. Se exclu
 
 | Commit | Fecha | Hora | Autor | Mensaje |
 |---|---|---|---|---|
+| 9d1fc75 | 09/11/2026 | 23:49 | Claude | HU-19, HU-31 y HU-32: guías paso a paso ordenadas por prioridad |
+| deebb0f | 09/11/2026 | 22:40 | Claude | Documentación: ajustes del 06/11, descargas, rúbrica del puntaje y tablero actualizado |
 | da01c53 | 09/11/2026 | 22:37 | Claude | HU-30: Excel del investigador con cada pregunta y la respuesta de cada intento |
 | 7ffe8ff | 09/11/2026 | 22:37 | Claude | HU-26 a HU-29: ajustes del asesor (06/11) y descarga o impresión del resultado (RF-16) |
 | 8122073 | 09/11/2026 | 22:37 | Claude | HU-18: enlaces oficiales de Nequi (P-18) y Windows Update (P-33) |
@@ -791,3 +809,13 @@ Rama version-2, del más reciente al más antiguo, en hora de Colombia. Se exclu
 [17] Congreso de la República de Colombia, «Ley Estatutaria 1581 de 2012, por la cual se dictan disposiciones generales para la protección de datos personales», Diario Oficial n.º 48.587, 18 oct. 2012.
 
 [18] ExcelJS, «ExcelJS: Excel Workbook Manager», repositorio GitHub. [En línea]. Disponible en: https://github.com/exceljs/exceljs
+
+[19] FortifyData Team, «What Is a NIST CSF Score?», FortifyData, dic. 2023, act. sep. 2026. [En línea]. Disponible en: https://fortifydata.com/insights/what-is-a-nist-csf-score
+
+[20] Apple, «Hacer una copia de seguridad del iPhone o iPad con iCloud», Ayuda de iCloud. [En línea]. Disponible en: https://help.apple.com/icloud/es.lproj/mmab848634c8.html
+
+[21] Microsoft, «Hacer una copia de seguridad de las carpetas con OneDrive», Soporte de Microsoft. [En línea]. Disponible en: https://support.microsoft.com/es-ES/onedrive/back-up-your-folders-with-onedrive
+
+[22] ASUS, «[Teléfono] Cómo hacer una copia de seguridad de los datos del dispositivo con Google One», Soporte de ASUS. [En línea]. Disponible en: https://www.asus.com/co/support/faq/1036182/
+
+[23] Google, «Activar la verificación en 2 pasos», Ayuda de la Cuenta de Google. [En línea]. Disponible en: https://support.google.com/accounts/answer/185839
