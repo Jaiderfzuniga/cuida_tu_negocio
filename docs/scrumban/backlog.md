@@ -25,7 +25,7 @@ Ejemplo: 10 de 12 negocios venden por WhatsApp y cobran por Nequi (H7) → RF-17
 | HU-16 | Como investigador, quiero conectar la base de datos Supabase en el sitio publicado. | Arquitectura (Supabase) → RF-16 | I5 | Hecho |
 | HU-17 | Como investigador, quiero validar con el asesor la redacción y el puntaje de las preguntas. | Validez del instrumento → Validez del instrumento | I5 | En curso (sustento del puntaje y rúbrica entregados; falta la prueba piloto) |
 | HU-18 | Como propietario, quiero que los enlaces de Nequi (P-18) y Windows Update (P-33) lleven a sitios oficiales. | Revisión del catálogo (OE2) → RF-06 | I5 | Hecho (07/11) |
-| HU-19 | Como propietario, quiero guías paso a paso para respaldar y recuperar mi información. | H3 y H4: Recuperar crítica → RF-08, RF-09 | I6 | En curso |
+| HU-19 | Como propietario, quiero guías paso a paso para respaldar y recuperar mi información. | H3 y H4: Recuperar crítica → RF-08, RF-09 | I6 | Hecho (09/11) |
 | HU-21 | Como investigador, quiero que quede guardada la fecha en que cada propietario aceptó el uso de sus datos. | Revisión del código (02/11) → RNF-08 (Ley 1581) | I5 | Hecho |
 | HU-22 | Como investigador, quiero que se guarden las herramientas que la plataforma recomendó en cada diagnóstico, para analizarlas en el objetivo 4. | Revisión del código (02/11) → RF-05, Objetivo 4 | I5 | Hecho |
 | HU-23 | Como propietario, quiero crear una contraseña nueva si olvidé la mía. | Revisión del código (02/11) → RF-16 | I5 | Hecho |
@@ -37,5 +37,7 @@ Ejemplo: 10 de 12 negocios venden por WhatsApp y cobran por Nequi (H7) → RF-17
 | HU-28 | Como propietario, quiero volver a intentar el diagnóstico si mi nivel quedó igual o bajó, sin que se borre el intento. | Asesoría (06/11) → RF-16 | I5 | Hecho |
 | HU-29 | Como propietario, quiero descargar o imprimir mi resultado. | Revisión de requerimientos (RF-16 parcial) → RF-16 | I5 | Hecho |
 | HU-30 | Como investigador, quiero un Excel con cada pregunta y la respuesta de cada negocio en cada intento. | Revisión del investigador (07/11) → Objetivo 4 | I5 | Hecho |
+| HU-31 | Como propietario, quiero guías para activar la verificación en dos pasos y para reconocer mensajes o enlaces falsos. | Revisión de requerimientos (RF-10 y RF-12 parciales) → RF-10, RF-12 | I6 | Hecho (09/11) |
+| HU-32 | Como propietario, quiero ver primero las guías más urgentes para mi negocio y llegar rápido a cualquier otra. | Revisión del investigador (09/11) → RF-07 | I6 | Hecho (09/11) |
 
 Para agregar una historia: asígnale el siguiente código (HU-26…), enlázala a un requisito y ubícala en **Por hacer**.

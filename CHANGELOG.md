@@ -2,6 +2,17 @@
 
 Registro de la evolución de la plataforma para la trazabilidad del trabajo de grado.
 
+## v2.4.0 — Guías paso a paso (9 nov. 2026)
+
+Nueva pantalla **Guías**, en el menú entre Catálogo y Mi avance. El investigador eligió el diseño entre tres opciones y la aprobó antes de subirla.
+
+- **HU-19 (RF-08, RF-09):** guías para hacer y recuperar copias de WhatsApp (Android e iPhone), del celular (Google One e iCloud) y de los archivos del computador (OneDrive). Cada una dice cómo activar la copia, cómo recuperar en un equipo nuevo y cada cuánto hacerla.
+- **HU-31 (RF-10, RF-12):** guías de verificación en dos pasos (WhatsApp, Google, Facebook e Instagram), de la clave dinámica de Nequi y de cómo reconocer un mensaje o enlace falso.
+- **HU-32:** las guías se ordenan según el último diagnóstico (primero las de la ruta al 100 %, con los puntos que suman; después de la función más débil a la más fuerte). Sin diagnóstico, va primero Recuperar. Arriba hay un acceso rápido «Ir directo a».
+- Solo se muestran las guías que sirven al negocio (Android o iPhone, computador, plataformas), con la opción «Ver todas».
+- La ruta al 100 % enlaza cada herramienta con su guía. Cada guía termina con el enlace a su página oficial.
+- 3 pruebas automáticas nuevas (6 en total): solo Identificar, Proteger y Recuperar, herramientas del catálogo y frecuencia en las guías de Recuperar.
+
 ## v2.3.0 — Ajustes de la asesoría y descargas (9 nov. 2026)
 
 Cambios pedidos por el asesor el 6 de noviembre y revisados por el investigador en su computador antes de subirlos.
