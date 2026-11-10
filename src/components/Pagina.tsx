@@ -25,7 +25,7 @@ function Navegacion() {
   const { pathname } = useLocation();
   useEffect(() => setAbierto(false), [pathname]);
 
-  const enlaces: [string, string][] = [['/', 'Inicio'], ['/como-funciona', 'Cómo funciona'], ['/catalogo', 'Catálogo']];
+  const enlaces: [string, string][] = [['/', 'Inicio'], ['/como-funciona', 'Cómo funciona'], ['/catalogo', 'Catálogo'], ['/guias', 'Guías']];
   if (perfil && negocio) enlaces.push(['/historial', 'Mi avance']);
   const clase = ({ isActive }: { isActive: boolean }) => `nav-enlace ${isActive ? 'nav-activo' : ''}`;
   const cuenta = (

@@ -7,6 +7,7 @@ import { useDiagnosticos } from '../hooks/useDiagnostico';
 import { refuerzo, rutaAl100 } from '../lib/motor';
 import { COLOR } from '../lib/colores';
 import { FUNCIONES } from '../types';
+import { guiaDe } from '../data/guias';
 
 export default function Ruta() {
   const { id } = useParams();
@@ -59,6 +60,9 @@ export default function Ruta() {
               <a href={p.herramienta.url} target="_blank" rel="noopener noreferrer" className="btn btn-primario btn-chico solo-pc" aria-label={`Abrir ${p.herramienta.nombre}`}>Abrir</a>
             </>} />
           <a href={p.herramienta.url} target="_blank" rel="noopener noreferrer" className="btn btn-primario btn-chico solo-movil mt-3 w-full" aria-label={`Abrir ${p.herramienta.nombre}`}>Abrir</a>
+          {(() => { const g = guiaDe(p.herramienta.id, negocio.celular); return g && (
+            <Link to={`/guias#${g.id}`} className="mt-2 inline-block text-[16px] font-bold underline underline-offset-4 pc:ml-[68px]" style={{ color: COLOR[g.funcion].texto }}>Ver guía paso a paso: {g.titulo}</Link>
+          ); })()}
           </div>
         ))}
       </div>
