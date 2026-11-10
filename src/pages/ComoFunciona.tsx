@@ -42,7 +42,7 @@ export default function ComoFunciona() {
         <ol className="m-0 mt-6 grid list-none gap-6 p-0 sm:grid-cols-2 pc:grid-cols-5 pc:gap-7">
           {PASOS.map(([t, d], i) => (
             <li key={t}>
-              <div className="font-display text-[clamp(64px,5.8vw,84px)] font-black leading-none tracking-[-0.04em]">{i + 1}</div>
+              <div className={`paso-numero paso-${i + 1} font-display text-[clamp(64px,5.8vw,84px)] font-black leading-none tracking-[-0.04em]`}>{i + 1}</div>
               <div className="mt-2 text-[23px] font-extrabold leading-[1.15]">{t}</div>
               <p className="m-0 mt-2 text-[17.5px] leading-[1.38] text-suave">{d}</p>
             </li>

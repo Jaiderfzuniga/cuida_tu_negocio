@@ -380,3 +380,56 @@ body::before {
 @keyframes flotar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 .flotar { animation: flotar 4s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) { .aparecer, .flotar { animation: none; } }
+
+/* Cómo funciona: los pasos 1, 3 y 5 llevan el color de cada función (ajuste del asesor, 6/11). */
+.paso-1 { color: var(--verde-texto); }
+.paso-3 { color: var(--azul-texto); }
+.paso-5 { color: var(--naranja-texto); }
+:root:not(.claro) .paso-5 { color: var(--acento); }
+
+/* Cuestionario: «¿Qué significa esto?» resaltado con el color de la función (ajuste del asesor, 6/11). */
+.ayuda { padding: 14px 18px; border-radius: 14px; border-left: 6px solid var(--ayuda-color); background: var(--superficie); color: var(--texto); font-weight: 500; }
+.ayuda-titulo { display: block; margin-bottom: 4px; color: var(--ayuda-color); font-weight: 900; }
+.ayuda-Identificar { --ayuda-color: var(--verde-texto); }
+.ayuda-Proteger { --ayuda-color: var(--azul-texto); }
+.ayuda-Recuperar { --ayuda-color: var(--naranja-texto); }
+
+/* Resultado: aviso cuando el nuevo diagnóstico queda igual o más bajo. */
+.aviso-repetir { padding: 16px 20px; border-radius: 16px; border: 3px solid var(--ambar); background: var(--superficie); }
+
+/* RF-16: resumen imprimible. En pantalla no se ve; al imprimir solo se ve el resumen. */
+.reporte-impreso { display: none; }
+@media print {
+  @page { size: letter; margin: 12mm 14mm; }
+  :root, :root.claro { --fondo: #fff; color-scheme: light; }
+  html, body { background: #fff !important; }
+  body::before { display: none !important; }
+  body > :not(.reporte-impreso) { display: none !important; }
+  .reporte-impreso { display: block; color: #14131a; font: 10pt/1.38 var(--font-sans); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .rp-cabeza { display: flex; align-items: center; gap: 10px; padding-bottom: 10px; border-bottom: 3px solid #0a0a0d; }
+  .rp-marca { font: 900 15pt/1 Montserrat, sans-serif; letter-spacing: -0.02em; }
+  .rp-sub { font-size: 9.5pt; color: #4c4a56; margin-top: 2px; }
+  .rp-fecha { margin-left: auto; text-align: right; font-size: 9.5pt; font-weight: 600; color: #4c4a56; }
+  .rp-resumen { display: grid; grid-template-columns: 1fr 1.35fr; gap: 26px; align-items: center; margin-top: 16px; }
+  .rp-negocio { font: 800 13pt/1.2 Montserrat, sans-serif; }
+  .rp-general { font: 900 54pt/0.95 Montserrat, sans-serif; letter-spacing: -0.04em; margin-top: 4px; }
+  .rp-general span { font-size: 30pt; }
+  .rp-etiqueta { font-weight: 700; margin-top: 4px; }
+  .rp-barras { display: flex; flex-direction: column; gap: 10px; }
+  .rp-barra-fila { display: flex; justify-content: space-between; font-size: 11pt; font-weight: 800; }
+  .rp-pista { height: 10px; border-radius: 6px; background: #e6e4ec; overflow: hidden; margin-top: 3px; }
+  .rp-pista > div { height: 100%; border-radius: 6px; }
+  .rp-que { font-size: 8.5pt; color: #4c4a56; margin-top: 2px; }
+  .rp-aviso { margin-top: 16px; padding: 9px 14px; border-left: 5px solid; border-radius: 8px; background: #f4f3f7; font-size: 11pt; }
+  .rp-titulo { font: 900 12.5pt/1 Montserrat, sans-serif; text-transform: uppercase; margin: 14px 0 4px; }
+  .rp-nota { margin: 0 0 8px; font-size: 9pt; color: #4c4a56; }
+  .rp-lista { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 5px; }
+  .rp-lista li { display: flex; align-items: center; gap: 10px; padding: 5px 12px; border: 1.5px solid; border-radius: 10px; break-inside: avoid; }
+  .rp-num { flex: none; width: 22px; height: 22px; border-radius: 50%; color: #fff; font-weight: 900; font-size: 10pt; display: flex; align-items: center; justify-content: center; }
+  .rp-item { flex: 1; min-width: 0; }
+  .rp-item-fila { display: flex; justify-content: space-between; gap: 10px; }
+  .rp-puntos { flex: none; font-weight: 900; }
+  .rp-item-meta { font-size: 8.5pt; color: #4c4a56; margin-top: 1px; }
+  .rp-extra li { border-style: dashed; }
+  .rp-pie { margin-top: 18px; padding-top: 8px; border-top: 1px solid #c9c7d2; font-size: 8pt; color: #4c4a56; }
+}
