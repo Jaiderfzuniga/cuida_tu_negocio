@@ -2,6 +2,10 @@
 
 Registro de la evolución de la plataforma para la trazabilidad del trabajo de grado.
 
+## v2.4.2 — Ícono en el celular (11 nov. 2026)
+
+- En Chrome para Android la pestaña mostraba un globo gris en vez del robot, porque ese navegador no siempre lee íconos SVG. Se agregó el robot en PNG (32 y 192 píxeles, fondo transparente).
+
 ## v2.4.1 — Ícono de la pestaña (11 nov. 2026)
 
 - El ícono de la pestaña del navegador pasa del escudo verde del diseño «Neón» a la cabeza del robot, la mascota de la plataforma. El investigador lo eligió entre seis estilos (caricatura, anime, robot, pixel art, sticker y candado) porque se reconoce bien a 16 píxeles y une el ícono con el personaje de las pantallas.
