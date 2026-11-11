@@ -2,6 +2,11 @@
 
 Registro de la evolución de la plataforma para la trazabilidad del trabajo de grado.
 
+## v2.4.1 — Ícono de la pestaña (11 nov. 2026)
+
+- El ícono de la pestaña del navegador pasa del escudo verde del diseño «Neón» a la cabeza del robot, la mascota de la plataforma. El investigador lo eligió entre seis estilos (caricatura, anime, robot, pixel art, sticker y candado) porque se reconoce bien a 16 píxeles y une el ícono con el personaje de las pantallas.
+- Se agregó el ícono grande (`icono-180.png`) para cuando se guarda la página en la pantalla de inicio del celular.
+
 ## v2.4.0 — Guías paso a paso (9 nov. 2026)
 
 Nueva pantalla **Guías**, en el menú entre Catálogo y Mi avance. El investigador eligió el diseño entre tres opciones y la aprobó antes de subirla.

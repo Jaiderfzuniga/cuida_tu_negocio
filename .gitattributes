@@ -151,3 +151,4 @@
 # ---------------------------------------------------------------------------
 src/assets/*         -filter -diff -merge binary
 docs/objetivo-3/img/* -filter -diff -merge binary
+public/*            -filter -diff -merge binary
