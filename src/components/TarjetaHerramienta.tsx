@@ -40,7 +40,12 @@ export function TarjetaHerramienta({ h, cabeza, extra, nota, abierta = false }: 
             <span className="rounded-full border-2 border-borde px-3 py-1">{h.costo}</span>
             {!h.espanol && <span className="rounded-full border-2 border-borde px-3 py-1">En inglés</span>}
           </div>
-          <a href={h.url} target="_blank" rel="noopener noreferrer" className="btn btn-primario btn-chico">Abrir {nombre} ↗</a>
+          <div className="flex flex-wrap gap-2">
+            <a href={h.url} target="_blank" rel="noopener noreferrer" className="btn btn-primario btn-chico">{h.textoUrl ?? `Abrir ${nombre}`} ↗</a>
+            {h.enlaces?.map((e) => (
+              <a key={e.url} href={e.url} target="_blank" rel="noopener noreferrer" className="btn btn-secundario btn-chico">{e.texto} ↗</a>
+            ))}
+          </div>
         </div>
       )}
     </article>
