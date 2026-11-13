@@ -52,7 +52,7 @@ export default function Ruta() {
       <div className="mt-5 flex flex-col gap-6">
         {pasos.map((p, k) => (
           <div key={p.herramienta.id}>
-          <TarjetaHerramienta h={p.herramienta}
+          <TarjetaHerramienta h={p.herramienta} conGuia={false}
             cabeza={<span className="w-9 flex-none font-display text-[38px] font-black leading-[52px] tracking-tight">{k + 1}</span>}
             nota={<div className="mt-1 text-[16px] font-medium leading-snug text-suave">Porque {p.motivos.join(' y ')}.{p.alternativas.length > 0 && <> También sirve: {p.alternativas.map((a) => a.nombre).join(', ')}.</>}</div>}
             extra={<>
@@ -80,7 +80,7 @@ export default function Ruta() {
       <p className="m-0 mt-6 text-[15px] leading-snug text-suave">Revisa siempre el logo y el sitio oficial antes de descargar. Tu porcentaje cambia cuando repites el diagnóstico.</p>
       <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
         <Link to="/cuestionario" className="btn btn-primario">{pasos.length ? 'Ya las apliqué · Repetir' : 'Repetir diagnóstico'}</Link>
-        <Link to="/catalogo" className="btn btn-secundario">Ver todo el catálogo</Link>
+        <Link to="/catalogo" className="btn btn-secundario">Ver todas las herramientas</Link>
       </div>
     </Pagina>
   );

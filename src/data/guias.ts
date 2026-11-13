@@ -266,3 +266,13 @@ export function guiaDe(herramientaId: string, celular?: 'android' | 'iphone'): G
   const g = GUIAS.filter((x) => x.herramientas.includes(herramientaId));
   return g.find((x) => x.equipo === celular) ?? g[0];
 }
+
+/** Guía paso a paso escrita para esa herramienta (no una guía que solo la menciona). La usa el botón del catálogo. */
+const GUIA_PROPIA: Record<string, string> = {
+  'R-05': 'copia-whatsapp-android', 'R-06': 'copia-android', 'R-07': 'copia-iphone', 'R-04': 'copia-computador',
+  'P-09': 'dos-pasos-whatsapp', 'P-16': 'dos-pasos-google', 'P-17': 'dos-pasos-meta', 'P-18': 'nequi',
+};
+export function guiaPropiaDe(herramientaId: string, celular?: 'android' | 'iphone'): Guia | undefined {
+  if (herramientaId === 'R-05') return guiaDe(herramientaId, celular);
+  return GUIAS.find((g) => g.id === GUIA_PROPIA[herramientaId]);
+}
