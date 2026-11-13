@@ -31,7 +31,8 @@ const corto = (g: Guia) => g.titulo
   .replace(' con Google One', '').replace(' con iCloud', '').replace(' con OneDrive', '')
   .replace('Verificación en dos pasos de ', 'Dos pasos: ').replace('Verificación en 2 pasos de ', 'Dos pasos: ')
   .replace('Autenticación en dos pasos de ', 'Dos pasos: ')
-  .replace('Cómo reconocer un mensaje o enlace falso', 'Reconocer fraudes');
+  .replace('Cómo reconocer un mensaje o enlace falso', 'Reconocer fraudes')
+  .replace('Clave dinámica y botón de pánico de Nequi', 'Nequi: clave y botón de pánico');
 
 function Pasos({ g }: { g: Guia }) {
   const c = COLOR[g.funcion];
@@ -58,6 +59,11 @@ function Pasos({ g }: { g: Guia }) {
       <p className="m-0 text-[14px] text-suave">
         Si tu pantalla se ve distinta, sigue la guía oficial:{' '}
         <a href={g.fuente.url} target="_blank" rel="noopener noreferrer" className="font-bold text-texto underline underline-offset-4">{g.fuente.nombre}</a>
+        {g.otrasFuentes?.map((f) => (
+          <span key={f.url}>{' · '}
+            <a href={f.url} target="_blank" rel="noopener noreferrer" className="font-bold text-texto underline underline-offset-4">{f.nombre}</a>
+          </span>
+        ))}
       </p>
     </div>
   );

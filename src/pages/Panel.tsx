@@ -25,7 +25,7 @@ export default function Panel() {
     a === undefined ? <span className="text-tenue">—</span> : <>{a}{b !== undefined && <> → <b style={{ color }}>{b}</b></>}</>;
 
   return (
-    <Pagina ancho="ancho" volver="/" titulo="Negocios participantes" sub="Sector Suroriental · San Juan de Pasto">
+    <Pagina ancho="ancho" volver="/" titulo="Negocios participantes">
       <div className="mt-5 flex justify-end"><button onClick={() => exportarExcel(filas)} className="btn btn-primario min-h-11 text-sm">Descargar datos en Excel</button></div>
       <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4">
         {kpi('Negocios', String(filas.length))}

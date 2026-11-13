@@ -21,6 +21,8 @@ export interface Guia {
   /** Cada cuánto hacerlo (RF-09) o qué revisar. */
   frecuencia?: string;
   fuente: { nombre: string; url: string };
+  /** Otras páginas oficiales que respaldan la guía. */
+  otrasFuentes?: { nombre: string; url: string }[];
   /** Herramientas del catálogo que explica esta guía. */
   herramientas: string[];
 }
@@ -205,19 +207,29 @@ export const GUIAS: Guia[] = [
   {
     id: 'nequi',
     funcion: 'Proteger',
-    titulo: 'Clave dinámica de Nequi',
-    para: 'Confirmar tus movimientos con un código que cambia y que solo ves tú.',
+    titulo: 'Clave dinámica y botón de pánico de Nequi',
+    para: 'Confirmar tus movimientos con un código que solo ves tú y bloquear tu Nequi si te roban o pierdes el celular.',
     equipo: 'todos',
     plataformas: ['nequi'],
     secciones: [
-      { titulo: 'Usarla', pasos: [
+      { titulo: 'Usar la clave dinámica', pasos: [
         'La clave dinámica aparece en la pantalla de ingreso de la app de Nequi y cambia cada poco tiempo.',
         'Úsala solo dentro de la app o en sitios oficiales de Nequi.',
         'Nunca se la dictes a nadie por llamada, WhatsApp o mensaje, aunque diga ser de Nequi.',
-        'Revisa en la ayuda oficial de Nequi cómo bloquear tu cuenta si pierdes el celular, antes de que te pase.',
+      ] },
+      { titulo: 'Si te roban o pierdes el celular: botón de pánico', pasos: [
+        'Hazlo lo antes posible, desde otro celular o un computador.',
+        'Entra a nequi.com.co (escríbelo tú mismo en el navegador) y toca «Entrar».',
+        'Ingresa con tu número de celular y tu clave de Nequi.',
+        'Elige «Bloquear tu Nequi» y confirma el bloqueo.',
+        'Si no puedes entrar, comunícate con Nequi por sus canales de atención para que te ayuden a bloquearlo.',
       ] },
     ],
-    fuente: { nombre: 'Centro de ayuda de Nequi', url: 'https://ayuda.nequi.com.co/hc/es/articles/34010128839949--Qu%C3%A9-es-la-clave-din%C3%A1mica-de-Nequi-y-para-qu%C3%A9-sirve' },
+    frecuencia: 'Aprende hoy estos pasos y tu clave de Nequi de memoria: si te roban el celular, la vas a necesitar para bloquear desde otro equipo.',
+    fuente: { nombre: 'Centro de ayuda de Nequi: clave dinámica', url: 'https://ayuda.nequi.com.co/hc/es/articles/34010128839949--Qu%C3%A9-es-la-clave-din%C3%A1mica-de-Nequi-y-para-qu%C3%A9-sirve' },
+    otrasFuentes: [
+      { nombre: 'Centro de ayuda de Nequi: bloquear si pierdes o roban tu celular', url: 'https://ayuda.nequi.com.co/hc/es/articles/35177946188941--C%C3%B3mo-bloquear-Nequi-si-pierdo-o-roban-mi-celular' },
+    ],
     herramientas: ['P-18'],
   },
 

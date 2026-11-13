@@ -2,6 +2,16 @@
 
 Registro de la evolución de la plataforma para la trazabilidad del trabajo de grado.
 
+## v2.4.3 — Botón de pánico de Nequi (12 nov. 2026)
+
+Cambios pedidos por el investigador al revisar la ficha de Nequi; los revisó en capturas antes de subirlos.
+
+- **HU-33 (RF-10, RF-12):** la ficha de Nequi (P-18) ya no solo nombra el botón de pánico: explica cómo bloquear la cuenta desde otro celular o un computador (nequi.com.co → «Entrar» → número y clave → «Bloquear tu Nequi»). La ficha tiene dos enlaces oficiales separados: «Cómo usar la clave dinámica» y «Cómo usar el botón de pánico» (centro de ayuda de Nequi). El cambio también se ve en la ruta al 100 %.
+- **HU-33:** la guía pasa a llamarse «Clave dinámica y botón de pánico de Nequi», con una sección nueva de 5 pasos para bloquear la cuenta si roban o se pierde el celular, y los dos enlaces oficiales al final.
+- Las fichas del catálogo y las guías aceptan enlaces oficiales adicionales (`enlaces`, `textoUrl` y `otrasFuentes`).
+- Panel del investigador: se quitó el subtítulo «Sector Suroriental · San Juan de Pasto».
+- `supabase/seed.sql` tiene el texto nuevo de la ficha; la base de datos en línea todavía no se ha actualizado.
+
 ## v2.4.2 — Ícono en el celular (11 nov. 2026)
 
 - En Chrome para Android la pestaña mostraba un globo gris en vez del robot, porque ese navegador no siempre lee íconos SVG. Se agregó el robot en PNG (32 y 192 píxeles, fondo transparente).

@@ -11,6 +11,8 @@ export interface Herramienta {
   nombre: string;
   dispositivo: Dispositivo;
   url: string;
+  /** Texto del botón del enlace principal; si no hay, dice «Abrir <nombre>». */
+  textoUrl?: string;
   marca: string;
   costo: string;
   espanol: boolean;
@@ -18,6 +20,8 @@ export interface Herramienta {
   uso: string;
   subcategoria: string;
   rol: string;
+  /** Enlaces oficiales adicionales (por ejemplo, el botón de pánico de Nequi). */
+  enlaces?: { texto: string; url: string }[];
 }
 
 export interface Opcion { id: string; texto: string; puntos: number; omitir?: boolean }

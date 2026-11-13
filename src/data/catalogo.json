@@ -299,13 +299,20 @@
   "nombre": "Nequi – Clave dinámica y botón de pánico",
   "dispositivo": "celular",
   "url": "https://ayuda.nequi.com.co/hc/es/articles/34010128839949--Qu%C3%A9-es-la-clave-din%C3%A1mica-de-Nequi-y-para-qu%C3%A9-sirve",
+  "textoUrl": "Cómo usar la clave dinámica",
   "marca": "nequi.com.co",
   "costo": "Gratis",
   "espanol": true,
   "accesibilidad": 5,
-  "uso": "La clave dinámica es un código de 6 dígitos que cambia cada 45 segundos, funciona sin internet y se ve en la parte superior derecha de la pantalla de inicio de Nequi o en el candado de la «mochila». El botón de pánico de la web bloquea la cuenta si roban el celular. Antes de entregar un producto, el comerciante debe confirmar el pago en Movimientos y no aceptar capturas, por el fraude de comprobantes falsos «Nequi Glitch».",
+  "uso": "La clave dinámica es un código de 6 dígitos que cambia cada 45 segundos, funciona sin internet y se ve en la parte superior derecha de la pantalla de inicio de Nequi o en el candado de la «mochila». Si te roban o pierdes el celular, usa el botón de pánico: desde otro celular o un computador entra a nequi.com.co, toca «Entrar», ingresa con tu número y tu clave, elige «Bloquear tu Nequi» y confirma. Antes de entregar un producto, el comerciante debe confirmar el pago en Movimientos y no aceptar capturas, por el fraude de comprobantes falsos «Nequi Glitch».",
   "subcategoria": "PR.AA-03",
-  "rol": "Primera opción (cobros por Nequi)"
+  "rol": "Primera opción (cobros por Nequi)",
+  "enlaces": [
+   {
+    "texto": "Cómo usar el botón de pánico",
+    "url": "https://ayuda.nequi.com.co/hc/es/articles/35177946188941--C%C3%B3mo-bloquear-Nequi-si-pierdo-o-roban-mi-celular"
+   }
+  ]
  },
  {
   "id": "P-16",
