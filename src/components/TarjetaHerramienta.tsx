@@ -1,4 +1,6 @@
 import { useState, type ReactNode } from 'react';
+import { Link } from 'react-router-dom';
+import { guiaPropiaDe } from '../data/guias';
 import type { Herramienta } from '../types';
 import { COLOR } from '../lib/colores';
 import { Logo } from './Logo';
@@ -7,12 +9,15 @@ import { Sitio } from './Sitio';
 const DISP = { celular: 'Solo celular', pc: 'Solo PC', ambos: 'PC y celular' };
 
 /** Herramienta como fila: logo, nombre y sitio oficial; al tocarla muestra para qué sirve y el enlace. */
-export function TarjetaHerramienta({ h, cabeza, extra, nota, abierta = false }: {
+export function TarjetaHerramienta({ h, cabeza, extra, nota, abierta = false, conGuia = true }: {
   h: Herramienta; cabeza?: ReactNode; extra?: ReactNode; nota?: ReactNode; abierta?: boolean; destacada?: boolean;
+  /** Muestra el botón a la guía paso a paso de la plataforma (la ruta ya la enlaza aparte). */
+  conGuia?: boolean;
 }) {
   const [ver, setVer] = useState(abierta);
   const c = COLOR[h.funcion];
   const nombre = h.nombre.split(' (')[0];
+  const guia = conGuia ? guiaPropiaDe(h.id) : undefined;
   return (
     <article>
       <div className="flex items-center gap-3 pc:gap-4">
@@ -45,6 +50,7 @@ export function TarjetaHerramienta({ h, cabeza, extra, nota, abierta = false }: 
             {h.enlaces?.map((e) => (
               <a key={e.url} href={e.url} target="_blank" rel="noopener noreferrer" className="btn btn-secundario btn-chico">{e.texto} ↗</a>
             ))}
+            {guia && <Link to={`/guias#${guia.id}`} className="btn btn-secundario btn-chico">Ver guía paso a paso</Link>}
           </div>
         </div>
       )}

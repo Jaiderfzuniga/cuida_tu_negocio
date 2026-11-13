@@ -16,11 +16,11 @@ export default function Catalogo() {
   const lista = CATALOGO.filter((h) => (!f || h.funcion === f) && (!eq || h.dispositivo === eq) && sinTildes(h.nombre + ' ' + h.uso).includes(sinTildes(q)));
 
   return (
-    <Pagina fantasma="CATÁLOGO">
+    <Pagina fantasma="HERRAMIENTAS">
       <div className="flex flex-col gap-4 pc:flex-row pc:items-end pc:justify-between">
         <div>
-          <h1 className="titulo titulo-inicio mt-4">Catálogo</h1>
-          <p className="subtitulo mt-2">{CATALOGO.length} herramientas gratuitas o de bajo costo.</p>
+          <h1 className="titulo titulo-inicio mt-4">Herramientas</h1>
+          <p className="subtitulo mt-2">{CATALOGO.length} herramientas oficiales y accesibles para proteger tu negocio.</p>
         </div>
         <input className="campo pc:max-w-[440px]" type="search" placeholder="Buscar herramienta" aria-label="Buscar herramienta" value={q} onChange={(e) => setQ(e.target.value)} />
       </div>

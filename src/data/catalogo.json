@@ -25,7 +25,13 @@
   "accesibilidad": 5,
   "uso": "Revisa las contraseñas guardadas en la cuenta de Google y marca las filtradas, repetidas o débiles.",
   "subcategoria": "ID.RA-01",
-  "rol": "Primera opción (contraseñas filtradas)"
+  "rol": "Primera opción (contraseñas filtradas)",
+  "enlaces": [
+   {
+    "texto": "Cómo usarla (ayuda oficial)",
+    "url": "https://support.google.com/accounts/answer/9457609?hl=es-419"
+   }
+  ]
  },
  {
   "id": "I-04",
@@ -39,7 +45,13 @@
   "accesibilidad": 3,
   "uso": "Compara el correo con filtraciones públicas e indica en cuáles aparece.",
   "subcategoria": "ID.RA-01",
-  "rol": "Complementaria (correos filtrados fuera de Google)"
+  "rol": "Complementaria (correos filtrados fuera de Google)",
+  "enlaces": [
+   {
+    "texto": "Cómo usarla (ayuda oficial, en inglés)",
+    "url": "https://haveibeenpwned.com/FAQs"
+   }
+  ]
  },
  {
   "id": "I-16",
@@ -53,7 +65,13 @@
   "accesibilidad": 4,
   "uso": "Revisa con la tecnología de Navegación segura de Google si una página es peligrosa, sin necesidad de abrirla. El propietario pega el enlace sospechoso que le llegó por WhatsApp o SMS y ve el resultado.",
   "subcategoria": "ID.RA-03 (amenazas identificadas)",
-  "rol": "Primera opción (revisar enlaces)"
+  "rol": "Primera opción (revisar enlaces)",
+  "enlaces": [
+   {
+    "texto": "Cómo funciona (ayuda oficial)",
+    "url": "https://support.google.com/transparencyreport/answer/7380435?hl=es-419"
+   }
+  ]
  },
  {
   "id": "I-15",
@@ -67,7 +85,13 @@
   "accesibilidad": 3,
   "uso": "Analiza un enlace o un archivo con más de 70 motores antivirus y servicios de reputación antes de abrirlo. Complementa a I-16, que solo revisa páginas: sirve para revisar un comprobante, factura o APK que llegó por correo o WhatsApp.",
   "subcategoria": "ID.RA-03 (amenazas identificadas)",
-  "rol": "Complementaria (archivos sospechosos)"
+  "rol": "Complementaria (archivos sospechosos)",
+  "enlaces": [
+   {
+    "texto": "Cómo usarla (ayuda oficial, en inglés)",
+    "url": "https://docs.virustotal.com/docs/searching"
+   }
+  ]
  },
  {
   "id": "I-07",
@@ -81,7 +105,13 @@
   "accesibilidad": 5,
   "uso": "Lista los dispositivos Android ligados a la cuenta y su última ubicación.",
   "subcategoria": "ID.AM-01",
-  "rol": "Primera opción (celulares Android)"
+  "rol": "Primera opción (celulares Android)",
+  "enlaces": [
+   {
+    "texto": "Cómo usarla (ayuda oficial)",
+    "url": "https://support.google.com/accounts/answer/6160491?hl=es-419"
+   }
+  ]
  },
  {
   "id": "I-08",
@@ -95,7 +125,13 @@
   "accesibilidad": 5,
   "uso": "Equivalente a I-07 para negocios que operan con iPhone o iPad.",
   "subcategoria": "ID.AM-01",
-  "rol": "Primera opción (iPhone)"
+  "rol": "Primera opción (iPhone)",
+  "enlaces": [
+   {
+    "texto": "Cómo usarla (ayuda oficial)",
+    "url": "https://support.apple.com/es-ES/explore/find-my-iphone-ipad-mac-watch"
+   }
+  ]
  },
  {
   "id": "I-06",
@@ -109,7 +145,13 @@
   "accesibilidad": 5,
   "uso": "Muestra los dispositivos con sesión abierta, las apps con acceso a la cuenta y los datos de recuperación. Permite detectar un celular viejo o de un exempleado que todavía entra al Gmail del negocio.",
   "subcategoria": "ID.AM-01, ID.AM-02",
-  "rol": "Primera opción (accesos a la cuenta)"
+  "rol": "Primera opción (accesos a la cuenta)",
+  "enlaces": [
+   {
+    "texto": "Cómo usarla (ayuda oficial)",
+    "url": "https://support.google.com/accounts/answer/46526?hl=es-419"
+   }
+  ]
  },
  {
   "id": "I-09",
@@ -207,7 +249,13 @@
   "accesibilidad": 5,
   "uso": "Avisa o bloquea páginas, descargas y extensiones peligrosas en Chrome, Gmail y Google Chat, y alerta si una contraseña aparece en una filtración. Se activa una vez y protege todos los equipos con la misma cuenta.",
   "subcategoria": "PR.PS-05; PR.AT-01",
-  "rol": "Primera opción (navegación segura)"
+  "rol": "Primera opción (navegación segura)",
+  "enlaces": [
+   {
+    "texto": "Cómo usarla (ayuda oficial)",
+    "url": "https://support.google.com/chrome/answer/9890866?hl=es-419"
+   }
+  ]
  },
  {
   "id": "P-24",
@@ -263,7 +311,13 @@
   "accesibilidad": 4,
   "uso": "Bóveda cifrada de extremo a extremo; genera contraseñas fuertes y las autocompleta.",
   "subcategoria": "PR.AA-01",
-  "rol": "Primera opción (contraseñas)"
+  "rol": "Primera opción (contraseñas)",
+  "enlaces": [
+   {
+    "texto": "Cómo usarla (ayuda oficial)",
+    "url": "https://bitwarden.com/es-la/help/getting-started-mobile/"
+   }
+  ]
  },
  {
   "id": "P-06",
@@ -277,7 +331,13 @@
   "accesibilidad": 4,
   "uso": "Genera códigos temporales de 6 dígitos como segundo paso al iniciar sesión y puede sincronizarlos con la cuenta de Google. Protege el correo y las redes sociales aunque se filtre la contraseña.",
   "subcategoria": "PR.AA-03",
-  "rol": "Primera opción (verificación en dos pasos)"
+  "rol": "Primera opción (verificación en dos pasos)",
+  "enlaces": [
+   {
+    "texto": "Cómo usarla (ayuda oficial)",
+    "url": "https://support.google.com/accounts/answer/1066447?hl=es"
+   }
+  ]
  },
  {
   "id": "P-09",
@@ -354,7 +414,13 @@
   "accesibilidad": 5,
   "uso": "Identifica números sospechosos con bases de datos y reportes de otros usuarios; muestra una advertencia o evita que el teléfono suene. Protege contra las llamadas de supuestos bancos o proveedores que buscan robar claves.",
   "subcategoria": "PR.AT-01; PR.PS-01",
-  "rol": "Primera opción (llamadas fraudulentas)"
+  "rol": "Primera opción (llamadas fraudulentas)",
+  "enlaces": [
+   {
+    "texto": "Cómo usarla (ayuda oficial)",
+    "url": "https://support.google.com/phoneapp/answer/3459196?hl=es"
+   }
+  ]
  },
  {
   "id": "P-32",
@@ -410,7 +476,13 @@
   "accesibilidad": 4,
   "uso": "Sincroniza carpetas del computador con la nube. Si el equipo se daña o lo roban, los archivos se recuperan desde cualquier dispositivo con la cuenta de Google. Los archivos borrados pueden restaurarse desde la papelera de Google Drive.",
   "subcategoria": "PR.DS-11 / RC.RP-03",
-  "rol": "Primera opción (nube con cuenta Google)"
+  "rol": "Primera opción (nube con cuenta Google)",
+  "enlaces": [
+   {
+    "texto": "Cómo usarla (ayuda oficial)",
+    "url": "https://support.google.com/drive/answer/16631477?hl=es-419"
+   }
+  ]
  },
  {
   "id": "R-06",
@@ -466,6 +538,12 @@
   "accesibilidad": 5,
   "uso": "Guarda automáticamente en la nube las fotos y videos del celular; también puede respaldar la carpeta de imágenes de WhatsApp, que viene desactivada por defecto. Si se pierde el celular, el negocio conserva las fotos de productos, comprobantes y facturas.",
   "subcategoria": "PR.DS-11 / RC.RP-03",
-  "rol": "Primera opción (fotos del celular)"
+  "rol": "Primera opción (fotos del celular)",
+  "enlaces": [
+   {
+    "texto": "Cómo usarla (ayuda oficial)",
+    "url": "https://support.google.com/photos/answer/6193313?hl=es-419"
+   }
+  ]
  }
 ]
