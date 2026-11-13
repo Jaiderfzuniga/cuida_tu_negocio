@@ -66,7 +66,7 @@ Registro de cada iteración: qué se planeó, qué se entregó, qué se corrigi�
 - **Actividad del cronograma:** Actividad 9
 - **Planeado:** 14/11 – 27/11/2026 · **Real:** 09/11/2026 – en curso
 - **Objetivo:** Probar la plataforma en el celular y el computador del objetivo 2 y corregir lo necesario antes de llevarla a los microcomercios.
-- **Historias:** HU-19, HU-20, HU-31, HU-32, HU-33
+- **Historias:** HU-19, HU-20, HU-31, HU-32, HU-33, HU-34
 - **Entregables:** Pruebas de facilidad de uso (norma ISO/IEC 25010), prueba piloto del puntaje, guías para hacer copias de seguridad y una versión estable para la Fase 4.
 - **Evidencia:** Commit 9d1fc75 (guías) y pantalla «Guías» de la plataforma.
 - **Revisión:** El 09/11 se empezó antes de lo planeado con las guías (HU-19 y HU-31). El investigador revisó la primera versión de la pantalla y no le convenció; se le mostraron tres diseños (como la ruta, paso a paso y por secciones) y eligió el de la ruta, con un acceso rápido arriba para ir directo a otra guía. Luego pidió que se ordenaran por prioridad (HU-32): con diagnóstico, primero las de su ruta al 100 % y después de la función más débil a la más fuerte. Aprobó y se subió el mismo día. Faltan HU-20 y la prueba piloto del puntaje.

@@ -2,6 +2,15 @@
 
 Registro de la evolución de la plataforma para la trazabilidad del trabajo de grado.
 
+## v2.5.0 — Herramientas con ayuda oficial (13 nov. 2026)
+
+Cambios pedidos por el investigador; los revisó en capturas y en su computador antes de subirlos.
+
+- La pantalla «Catálogo» pasa a llamarse **«Herramientas»** en el menú, el título y la ruta al 100 % («Ver todas las herramientas»), porque se entiende mejor para el propietario. Subtítulo: «33 herramientas oficiales y accesibles para proteger tu negocio». En el documento se mantiene el término «catálogo». La dirección `/catalogo` no cambia.
+- **HU-34 (RF-06, RF-07):** 13 herramientas tienen un segundo botón **«Cómo usarla (ayuda oficial)»**, solo con páginas oficiales de cada empresa: Find Hub, Buscar de Apple, Revisión de contraseñas, Revisión de seguridad de Google, Google Authenticator, Navegación segura mejorada, Filtro de llamadas spam, Google Fotos, Bitwarden, Drive para computadoras, Have I Been Pwned y VirusTotal (en inglés) y Estado del sitio.
+- **HU-34:** las herramientas que tienen una guía escrita para ellas muestran **«Ver guía paso a paso»** (copia de WhatsApp, Google One, iCloud, OneDrive, dos pasos de WhatsApp, Google y Facebook, y Nequi). En la ruta al 100 % no se repite, porque ya enlaza la guía debajo de cada herramienta.
+- Sin segundo enlace por ahora, hasta encontrar una página oficial que lo respalde: Files (Carpeta segura), Gestor de contraseñas de Google, Fing, Avast, WOT y Brave.
+
 ## v2.4.3 — Botón de pánico de Nequi (12 nov. 2026)
 
 Cambios pedidos por el investigador al revisar la ficha de Nequi; los revisó en capturas antes de subirlos.
