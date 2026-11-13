@@ -2,6 +2,14 @@
 
 Registro de la evolución de la plataforma para la trazabilidad del trabajo de grado.
 
+## v2.5.1 — Textos de costo y consentimiento (13 nov. 2026)
+
+Ajustes pedidos por el investigador; los revisó en capturas y en su computador antes de subirlos.
+
+- «De pago» pasa a «de bajo costo», como dice el objetivo específico 2: Fing y Avast para Android («Gratis con funciones opcionales de bajo costo») y Avast para PC («Gratis (versión opcional de bajo costo)»). También en `supabase/seed.sql`.
+- Casilla de consentimiento al crear la cuenta, con un texto más corto y menos intimidante elegido por el investigador: «Autorizo el uso de mis respuestas de forma anónima para fines investigativos en la Universidad CESMAG.» Pendiente de revisar con el asesor, porque las cuentas tienen correo.
+- «Cómo funciona»: «Tus respuestas se usan solo para un trabajo de grado… sin publicar los datos de tu negocio» (antes decía «de forma anónima» y citaba la Ley 1581 de 2012). El investigador pidió quitar la mención de la ley en las pantallas porque se veía intimidante; la fecha del consentimiento sigue guardándose en la base de datos.
+
 ## v2.5.0 — Herramientas con ayuda oficial (13 nov. 2026)
 
 Cambios pedidos por el investigador; los revisó en capturas y en su computador antes de subirlos.

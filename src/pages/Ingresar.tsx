@@ -54,7 +54,7 @@ export default function Ingresar() {
         {registro && (
           <label className="flex items-start gap-3 text-[15px] leading-snug text-suave">
             <input type="checkbox" checked={acepto} onChange={(e) => setAcepto(e.target.checked)} className="mt-0.5 h-5 w-5 flex-none accent-[var(--tinta)]" />
-            <span>Autorizo el uso de mis respuestas para el trabajo de grado de la Universidad CESMAG, de forma anónima, según la Ley 1581 de 2012 de protección de datos personales.</span>
+            <span>Autorizo el uso de mis respuestas de forma anónima para fines investigativos en la Universidad CESMAG.</span>
           </label>
         )}
         {msg && <p role="status" className={`m-0 text-[16px] font-semibold ${msg.error ? 'text-naranja-texto' : 'text-verde-texto'}`}>{msg.t}</p>}
