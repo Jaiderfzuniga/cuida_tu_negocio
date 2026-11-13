@@ -2,6 +2,16 @@
 
 Registro de la evolución de la plataforma para la trazabilidad del trabajo de grado.
 
+## v2.6.0 — Bienvenida y consejos de la mascota (13 nov. 2026)
+
+Pedido por el investigador; lo revisó en capturas y en su computador antes de subirlo.
+
+- **HU-35 (RNF-02, RNF-03):** en la pantalla de inicio, la chica da la bienvenida en un globo: «¡Bienvenido a Escudo Digital! En cinco minutos sabrás qué tan protegido está tu negocio.» Se cierra con la × y vuelve a aparecer al pasar el mouse o tocarla.
+- **HU-35:** el robot da consejos al pasar el mouse o tocarlo: salta, muestra un globo y, al tocarlo otra vez, pasa al siguiente consejo. Dos consejos por pantalla (Cómo funciona, Cuestionario, Resultado, Ruta al 100 %, Herramientas, Guías y Mi avance).
+- El robot ahora también se ve en el celular en Herramientas, Cómo funciona, Mi avance y Resultado.
+- Con «menos movimiento» activado en el equipo, los globos aparecen sin animación.
+- Corrección: en computador, el cuerpo de la página tapaba el globo de la chica y la × no respondía.
+
 ## v2.5.1 — Textos de costo y consentimiento (13 nov. 2026)
 
 Ajustes pedidos por el investigador; los revisó en capturas y en su computador antes de subirlos.
