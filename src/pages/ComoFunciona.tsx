@@ -84,7 +84,7 @@ export default function ComoFunciona() {
           </div>
           <div>
             <h2 className={cierre}>Tus datos</h2>
-            <p className={textoCierre}>Tus respuestas se usan de forma anónima para un trabajo de grado de Ingeniería de Sistemas de la Universidad CESMAG, según la Ley 1581 de 2012.</p>
+            <p className={textoCierre}>Tus respuestas se usan solo para un trabajo de grado de Ingeniería de Sistemas de la Universidad CESMAG, sin publicar los datos de tu negocio, según la Ley 1581 de 2012.</p>
             <p className="m-0 mt-3 text-[18px] font-bold leading-[1.4]">Nunca te pediremos las claves de tu correo, Nequi o banco.</p>
           </div>
         </div>
