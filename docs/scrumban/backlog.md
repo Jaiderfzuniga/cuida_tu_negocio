@@ -39,5 +39,6 @@ Ejemplo: 10 de 12 negocios venden por WhatsApp y cobran por Nequi (H7) → RF-17
 | HU-30 | Como investigador, quiero un Excel con cada pregunta y la respuesta de cada negocio en cada intento. | Revisión del investigador (07/11) → Objetivo 4 | I5 | Hecho |
 | HU-31 | Como propietario, quiero guías para activar la verificación en dos pasos y para reconocer mensajes o enlaces falsos. | Revisión de requerimientos (RF-10 y RF-12 parciales) → RF-10, RF-12 | I6 | Hecho (09/11) |
 | HU-32 | Como propietario, quiero ver primero las guías más urgentes para mi negocio y llegar rápido a cualquier otra. | Revisión del investigador (09/11) → RF-07 | I6 | Hecho (09/11) |
+| HU-33 | Como propietario que cobra por Nequi, quiero saber cómo usar el botón de pánico y tener su enlace oficial aparte del de la clave dinámica, para bloquear mi cuenta si me roban el celular. | Revisión del investigador (12/11) → RF-10, RF-12 | I6 | Hecho (12/11) |
 
 Para agregar una historia: asígnale el siguiente código (HU-26…), enlázala a un requisito y ubícala en **Por hacer**.
