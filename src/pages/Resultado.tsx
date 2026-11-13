@@ -39,7 +39,7 @@ export default function Resultado() {
   return (
     <Pagina fantasma="RESULTADO" panel={
       <div className="flex flex-col gap-6 pc:mt-[3vh] pc:gap-[3.4vh]">
-        <Robot alto={120} className="solo-pc self-end" />
+        <Robot alto={120} className="self-end" consejos={["Tu ruta al 100 % empieza por tu punto más débil.", "Aunque saques 100 %, revisa la ruta: hay herramientas para mantener tu protección."]} />
         {FUNCIONES.map((f, k) => <Anillo3D key={f} funcion={f} valor={n[f]} retraso={k * 150} />)}
       </div>
     }>

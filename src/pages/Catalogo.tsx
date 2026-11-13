@@ -43,7 +43,7 @@ export default function Catalogo() {
         {lista.map((h) => <TarjetaHerramienta key={h.id} h={h} />)}
       </div>
       {!lista.length && <p className="mt-8 text-[17px] font-semibold">No hay herramientas con ese nombre.</p>}
-      <div className="mt-6 flex justify-end"><Robot alto={140} className="solo-pc" /></div>
+      <div className="mt-6 flex justify-end"><Robot alto={140} consejos={["¿No sabes por dónde empezar? Filtra por tu equipo: solo celular, solo PC o los dos.", "Toca una herramienta para ver para qué sirve y cómo usarla."]} /></div>
     </Pagina>
   );
 }

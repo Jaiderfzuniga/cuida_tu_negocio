@@ -115,7 +115,7 @@ export default function Guias() {
         {ORDEN.map((f) => (
           <div key={f}><div className={rotulo}>{f}</div><div className="font-display text-[34px] font-black" style={{ color: COLOR[f].texto }}>{lista.filter((g) => g.funcion === f).length}</div></div>
         ))}
-        <Robot alto={150} />
+        <Robot alto={150} consejos={["Sigue los pasos con calma. Si tu pantalla se ve distinta, abre la guía oficial del final.", "Una copia de seguridad hoy te ahorra un mal rato mañana."]} />
       </div>
     }>
       <h1 className="titulo titulo-inicio mt-4 text-[clamp(40px,5.2vw,84px)]">Tus guías</h1>

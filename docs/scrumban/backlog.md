@@ -41,5 +41,6 @@ Ejemplo: 10 de 12 negocios venden por WhatsApp y cobran por Nequi (H7) → RF-17
 | HU-32 | Como propietario, quiero ver primero las guías más urgentes para mi negocio y llegar rápido a cualquier otra. | Revisión del investigador (09/11) → RF-07 | I6 | Hecho (09/11) |
 | HU-33 | Como propietario que cobra por Nequi, quiero saber cómo usar el botón de pánico y tener su enlace oficial aparte del de la clave dinámica, para bloquear mi cuenta si me roban el celular. | Revisión del investigador (12/11) → RF-10, RF-12 | I6 | Hecho (12/11) |
 | HU-34 | Como propietario, quiero que cada herramienta me lleve, además de a descargarla, a la ayuda oficial o a la guía paso a paso que explica cómo usarla, para usarla sin depender de páginas no confiables. | Revisión del investigador (12/11) → RF-06, RF-07 | I6 | Hecho (13/11) |
+| HU-35 | Como propietario, quiero que la chica me dé la bienvenida y que el robot me dé consejos al pasar el mouse o tocarlo, para sentirme acompañado y saber qué hacer en cada pantalla. | Revisión del investigador (13/11) → RNF-02, RNF-03 | I6 | Hecho (13/11) |
 
 Para agregar una historia: asígnale el siguiente código (HU-26…), enlázala a un requisito y ubícala en **Por hacer**.

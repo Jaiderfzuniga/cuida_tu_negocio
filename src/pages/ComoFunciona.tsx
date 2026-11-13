@@ -34,8 +34,9 @@ export default function ComoFunciona() {
           <p className="subtitulo pc:max-w-[980px]">Te decimos qué tan protegido está tu negocio y con qué herramientas cubrir lo que le falta.</p>
           <p className="m-0 mt-3 max-w-[900px] text-[clamp(17px,1.4vw,20px)] leading-[1.38] text-suave">Es un autodiagnóstico: lo haces tú mismo, desde tu celular o computador, sin saber de tecnología y sin costo.</p>
         </div>
-        <Robot alto={190} className="solo-pc flex-none" />
+        <Robot alto={190} className="solo-pc flex-none" globo="abajo" consejos={["El diagnóstico toma unos cinco minutos y lo puedes hacer desde el celular.", "Las preguntas se dividen en Identificar, Proteger y Recuperar."]} />
       </div>
+      <div className="solo-movil mt-4 flex justify-end"><Robot alto={120} consejos={["El diagnóstico toma unos cinco minutos y lo puedes hacer desde el celular.", "Las preguntas se dividen en Identificar, Proteger y Recuperar."]} /></div>
 
       <section className="mt-10 pc:mt-11">
         <h2 className={seccion}>Tu camino en 5 pasos</h2>

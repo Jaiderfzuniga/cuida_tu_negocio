@@ -33,7 +33,7 @@ export default function Ruta() {
             <div><div className={rotulo}>Con {cuantas}</div><div className={dato} style={{ color: 'var(--acento)' }}>100 %</div></div>
           </>
         ) : <div className="text-[18px] font-bold">Tu negocio tiene muy buena protección.</div>}
-        <Robot alto={150} className="mt-2" />
+        <Robot alto={150} className="mt-2" consejos={["Empieza por la primera herramienta: es la que más puntos te suma.", "Cada herramienta tiene su sitio oficial. Descarga solo desde ahí."]} />
       </div>
     }>
       <h1 className="titulo titulo-inicio mt-4 text-[clamp(40px,5.2vw,84px)] pc:mt-5">{pasos.length ? 'Tu ruta al 100\u00a0%' : 'Tus herramientas'}</h1>
