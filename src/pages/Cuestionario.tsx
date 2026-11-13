@@ -52,7 +52,7 @@ export default function Cuestionario() {
         <div className="mt-3 text-[19px] font-semibold leading-[1.7] text-[var(--panel-suave)]">
           {FUNCIONES.map((f) => <div key={f}>{f} {conteo[f].hechas} de {conteo[f].total}</div>)}
         </div>
-        <Robot alto={130} className="mt-3 mr-16 self-end" />
+        <Robot alto={130} className="mt-3 mr-16 self-end" consejos={["Si no sabes la respuesta, elige «No sé». No pasa nada.", "Lee «¿Qué significa esto?», debajo de cada pregunta, si una palabra no es clara."]} />
       </div>
     }>
       <div className="mt-4 flex items-center justify-between gap-3 pc:mt-8">

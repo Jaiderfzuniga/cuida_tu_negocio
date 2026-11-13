@@ -25,7 +25,7 @@ export default function Historial() {
         </div>
         <div className="mt-3 text-[24px] font-extrabold leading-[1.25]">{falta > 0 ? `Te faltan ${falta} puntos para llegar al 100 %.` : '¡Llegaste al 100 %! Sigue revisando tus herramientas.'}</div>
         <div className="mt-6"><Link to={`/ruta/${ahora.id}`} className="btn btn-panel">Seguir mi ruta</Link></div>
-        <div className="mt-[6vh] flex justify-end"><Robot alto={150} className="solo-pc" /></div>
+        <div className="mt-[6vh] flex justify-end"><Robot alto={150} consejos={["Repite el diagnóstico después de usar las herramientas para ver cuánto subiste.", "Si tu nivel bajó, puedes volver a intentarlo sin perder el intento anterior."]} /></div>
       </div>
     ) : undefined}>
       <h1 className="titulo titulo-inicio mt-4 pc:mt-9">Mi avance</h1>

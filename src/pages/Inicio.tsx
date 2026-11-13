@@ -3,11 +3,13 @@ import { Pagina } from '../components/Pagina';
 import { Chica } from '../components/Robot';
 import { useSesion } from '../hooks/useSesion';
 
+const BIENVENIDA = '¡Bienvenido a Escudo Digital! En cinco minutos sabrás qué tan protegido está tu negocio.';
+
 export default function Inicio() {
   const { perfil, negocio } = useSesion();
   return (
     <Pagina fantasma="ESCUDO" extras={<>
-      <Chica className="chica-inicio solo-pc" />
+      <Chica className="chica-inicio solo-pc" mensaje={BIENVENIDA} />
       <div className="puntos-deco" aria-hidden="true"><i /><i /><i /><i /><i /></div>
       <div className="sello"><b className="text-[27px] font-extrabold leading-none">NIST</b><b className="text-[46px] font-black leading-none">CSF</b></div>
     </>}>
@@ -33,7 +35,7 @@ export default function Inicio() {
             </>
           )}
         </div>
-        <Chica className="chica-inicio solo-movil" />
+        <Chica className="chica-inicio solo-movil" mensaje={BIENVENIDA} />
       </div>
     </Pagina>
   );
