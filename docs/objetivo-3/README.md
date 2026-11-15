@@ -19,7 +19,7 @@ Este informe cuenta, en orden y con evidencias, cómo se ha trabajado el objetiv
 | Plan técnico, arquitectura y base de datos | Hecho | Sección VII; documento de arquitectura |
 | Cuestionario por Identificar, Proteger y Recuperar | Funciona; sustento y rúbrica del puntaje entregados, falta la prueba piloto (HU-17) | src/data/preguntas.ts; [sustento](sustento-puntaje.md); [rúbrica](rubrica-puntaje.md) |
 | Cálculo del nivel y motor de recomendaciones por reglas | Hecho, con 3 pruebas automáticas | src/lib; tests/motor.test.ts |
-| Catálogo de 33 herramientas con filtros | Hecho; enlaces oficiales completos (HU-18) | src/data/catalogo.json |
+| Catálogo de 37 herramientas con filtros | Hecho; enlaces oficiales completos (HU-18); 4 herramientas nuevas (HU-37) | src/data/catalogo.json |
 | Cuentas y base de datos conectadas | Hecho y probado con dos cuentas | Sección V-E |
 | Publicación en internet | Hecho. La página pública ya muestra el diseño nuevo | Sección VIII |
 | Nuevo diseño (HU-25) | Publicado (v2.2.1) y aprobado por el asesor el 06/11/2026 | Sección VI |
