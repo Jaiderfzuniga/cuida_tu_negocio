@@ -44,5 +44,6 @@ Ejemplo: 10 de 12 negocios venden por WhatsApp y cobran por Nequi (H7) → RF-17
 | HU-35 | Como propietario, quiero que la chica me dé la bienvenida y que el robot me dé consejos al pasar el mouse o tocarlo, para sentirme acompañado y saber qué hacer en cada pantalla. | Revisión del investigador (13/11) → RNF-02, RNF-03 | I6 | Hecho (13/11) |
 | HU-36 | Como propietario, quiero que mi cuenta pida una contraseña segura y que nadie más pueda ver mis datos. | Revisión de seguridad del investigador (14/11) → RF-16 | I6 | Hecho (14/11) |
 | HU-37 | Como propietario, quiero que el formulario de mi negocio use las mismas opciones de la encuesta y que la plataforma me recomiende guías oficiales para las apps que de verdad uso (TikTok, DaviPlata, Bancolombia). | Revisión del investigador (15/11) → RF-06, RF-10, RF-12 | I6 | Hecho (15/11) |
+| HU-38 | Como propietario, quiero filtrar las herramientas por el equipo donde las voy a usar (celular o computador) sin que se me escondan las que sirven en los dos. | Revisión del investigador (15/11) → RF-06 | I6 | Hecho (15/11) |
 
 Para agregar una historia: asígnale el siguiente código (HU-26…), enlázala a un requisito y ubícala en **Por hacer**.

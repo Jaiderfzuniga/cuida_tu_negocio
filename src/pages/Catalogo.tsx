@@ -5,7 +5,9 @@ import { TarjetaHerramienta } from '../components/TarjetaHerramienta';
 import { CATALOGO } from '../data/catalogo';
 import { FUNCIONES, type Dispositivo, type Funcion } from '../types';
 
-const EQUIPOS: [Dispositivo, string][] = [['celular', 'Solo celular'], ['pc', 'Solo PC'], ['ambos', 'PC y celular']];
+// «Celular» y «Computador» incluyen las herramientas que sirven en los dos equipos.
+const EQUIPOS: [Dispositivo, string][] = [['celular', 'Celular'], ['pc', 'Computador']];
+const sirveEn = (d: Dispositivo, eq: Dispositivo | null) => !eq || d === eq || d === 'ambos';
 
 const sinTildes = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 
@@ -13,7 +15,7 @@ export default function Catalogo() {
   const [f, setF] = useState<Funcion | null>(null);
   const [q, setQ] = useState('');
   const [eq, setEq] = useState<Dispositivo | null>(null);
-  const lista = CATALOGO.filter((h) => (!f || h.funcion === f) && (!eq || h.dispositivo === eq) && sinTildes(h.nombre + ' ' + h.uso).includes(sinTildes(q)));
+  const lista = CATALOGO.filter((h) => (!f || h.funcion === f) && sirveEn(h.dispositivo, eq) && sinTildes(h.nombre + ' ' + h.uso).includes(sinTildes(q)));
 
   return (
     <Pagina fantasma="HERRAMIENTAS">
@@ -35,7 +37,7 @@ export default function Catalogo() {
         <span className="solo-movil mt-2 w-full text-[16px] font-bold">¿En qué equipo la vas a usar?</span>
         {([[null, 'Todos los equipos'], ...EQUIPOS] as [Dispositivo | null, string][]).map(([v, t]) => (
           <button key={t} className="chip" onClick={() => setEq(v)} aria-pressed={eq === v}>
-            {t} · {CATALOGO.filter((h) => (!v || h.dispositivo === v) && (!f || h.funcion === f)).length}
+            {t} · {CATALOGO.filter((h) => sirveEn(h.dispositivo, v) && (!f || h.funcion === f)).length}
           </button>
         ))}
       </div>
@@ -43,7 +45,7 @@ export default function Catalogo() {
         {lista.map((h) => <TarjetaHerramienta key={h.id} h={h} />)}
       </div>
       {!lista.length && <p className="mt-8 text-[17px] font-semibold">No hay herramientas con ese nombre.</p>}
-      <div className="mt-6 flex justify-end"><Robot alto={140} consejos={["¿No sabes por dónde empezar? Filtra por tu equipo: solo celular, solo PC o los dos.", "Toca una herramienta para ver para qué sirve y cómo usarla."]} /></div>
+      <div className="mt-6 flex justify-end"><Robot alto={140} consejos={["¿No sabes por dónde empezar? Filtra por el equipo donde la vas a usar: celular o computador.", "Toca una herramienta para ver para qué sirve y cómo usarla."]} /></div>
     </Pagina>
   );
 }
