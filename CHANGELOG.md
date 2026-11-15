@@ -2,6 +2,14 @@
 
 Registro de la evolución de la plataforma para la trazabilidad del trabajo de grado.
 
+## v2.7.3 — Filtros por equipo y base de datos lista (15 nov. 2026)
+
+El investigador revisó la plataforma antes de empezar a usarla con los negocios (HU-38).
+
+- **Herramientas:** se quitó el filtro «PC y celular», que no le aportaba al propietario. Quedan «Todos los equipos», **«Celular»** (32) y **«Computador»** (19); las herramientas que sirven en los dos equipos aparecen en ambos filtros, para que ninguna quede escondida.
+- **Base de datos en línea:** se cargaron las 4 herramientas de la v2.7.0 (P-35 a P-38) y sus reglas, que solo estaban en `supabase/seed.sql`. Sin ellas, un negocio que usa DaviPlata, Bancolombia, TikTok o Instagram no podía guardar sus recomendaciones. La base quedó con las 37 herramientas.
+- **Datos de prueba:** se borraron las cuentas, negocios y diagnósticos de prueba. Solo queda la cuenta del investigador, para que el panel y el Excel tengan únicamente los negocios del estudio.
+
 ## v2.7.2 — Velocidad de carga (15 nov. 2026)
 
 El investigador revisó la velocidad con PageSpeed Insights (celular: 92 en rendimiento, LCP 3,3 s) y pidió optimizarla (RNF de rendimiento).
