@@ -25,7 +25,7 @@ export default function NuevaClave() {
         ) : (
           <form onSubmit={enviar} className="mt-6 flex flex-col gap-4">
             <label className="flex flex-col gap-2 text-sm font-semibold">Contraseña nueva
-              <input className="campo" type="password" required minLength={6} autoComplete="new-password" value={clave} onChange={(e) => setClave(e.target.value)} placeholder="Mínimo 6 caracteres" />
+              <input className="campo" type="password" required minLength={8} autoComplete="new-password" value={clave} onChange={(e) => setClave(e.target.value)} placeholder="Mínimo 8 caracteres" />
             </label>
             {msg && <p role="status" className={`m-0 text-sm font-semibold ${msg.error ? 'text-naranja-texto' : 'text-verde-texto'}`}>{msg.t}</p>}
             <button className="btn btn-primario">Guardar contraseña</button>

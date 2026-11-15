@@ -2,6 +2,15 @@
 
 Registro de la evolución de la plataforma para la trazabilidad del trabajo de grado.
 
+## v2.6.1 — Revisión de seguridad (14 nov. 2026)
+
+El investigador revisó qué tan protegida está la plataforma frente a alguien que quiera entrar sin permiso, en la base de datos Supabase, en el código y en la publicación (HU-36).
+
+- **Resultado:** no se encontraron fallas graves. Las 9 tablas tienen reglas de acceso (RLS): cada propietario solo ve su negocio y sus diagnósticos, y nadie puede darse el rol de investigador. La web usa solo la clave pública de Supabase; la clave secreta no está en el código ni en GitHub. Las contraseñas las guarda Supabase cifradas, fuera de las tablas de la plataforma. Los enlaces a las herramientas se abren sin dar control sobre la pestaña.
+- **Cambio:** la contraseña al crear la cuenta o una contraseña nueva pasa de 6 a **8 caracteres**. Al ingresar no se exige el mínimo, para que las cuentas creadas antes sigan entrando.
+- **En Supabase:** se subió el mínimo a 8 caracteres. La protección contra contraseñas filtradas (rechaza las que ya aparecieron en filtraciones públicas) no se pudo activar porque solo existe en el plan Pro de Supabase y el proyecto usa el plan gratuito.
+- El aviso del asesor de seguridad sobre `es_investigador()` se deja así a propósito: las reglas de acceso la necesitan y solo responde si la cuenta propia es de investigador.
+
 ## v2.6.0 — Bienvenida y consejos de la mascota (13 nov. 2026)
 
 Pedido por el investigador; lo revisó en capturas y en su computador antes de subirlo.

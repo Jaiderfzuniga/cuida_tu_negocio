@@ -215,10 +215,25 @@ El 2 de noviembre se simularon dos propietarios de prueba, que luego se borraron
 ### F. Etapa 6: Probar y dejar lista (en curso)
 
 - **Planeada:** del 14 al 27 de noviembre de 2026. Empezó antes, el 9 de noviembre.
-- **Historias:** HU-19, HU-31 y HU-32 (hechas); HU-20 (pruebas de uso con base en ISO/IEC 25010 [4]) y la prueba piloto del puntaje (HU-17), por hacer.
+- **Historias:** HU-19, HU-31, HU-32 y HU-36 (hechas); HU-20 (pruebas de uso con base en ISO/IEC 25010 [4]) y la prueba piloto del puntaje (HU-17), por hacer.
 - **9 de noviembre, guías:** se creó la pantalla «Guías» con 10 guías paso a paso (TABLA VI-B). Cada una sale de la página de ayuda oficial del servicio y la enlaza al final, por si los menús cambian [20]–[23].
 - **9 de noviembre, diseño:** la primera versión no le convenció al investigador. Se le mostraron tres diseños con capturas (como la ruta, paso a paso y por secciones) y eligió el de la ruta, con un acceso rápido arriba. Después pidió ordenarlas por prioridad (HU-32). Las aprobó y se subieron el mismo día (commit 9d1fc75).
+- **14 de noviembre, seguridad:** el investigador revisó qué tan protegida está la plataforma si alguien quiere entrar sin permiso (TABLA VI-C). No encontró fallas graves. Como mejora, subió la contraseña mínima de 6 a 8 caracteres en la plataforma y en Supabase (HU-36). La protección contra contraseñas filtradas no se pudo activar: solo está en el plan Pro de Supabase y el proyecto usa el plan gratuito.
 - **Entrega esperada:** una versión estable para la Fase 4.
+
+**TABLA VI-C. Revisión de seguridad (14 de noviembre)**
+
+| Qué se revisó | Qué se encontró | Resultado |
+|---|---|---|
+| Reglas de acceso de las 9 tablas (RLS) | Cada propietario solo ve y cambia su negocio, sus diagnósticos, respuestas y recomendaciones. El catálogo y las preguntas se pueden leer, pero solo el investigador los cambia | Cumple |
+| ¿Alguien puede darse el rol de investigador? | No. El rol se asigna solo al registrarse y ninguna regla permite cambiarlo | Cumple |
+| Claves de Supabase en el código y en GitHub | La web usa solo la clave pública; la clave secreta no aparece en ningún archivo | Cumple |
+| Contraseñas de los propietarios | Supabase las guarda cifradas, fuera de las tablas de la plataforma; nadie puede leerlas, ni el investigador | Cumple |
+| Largo mínimo de la contraseña | Era de 6 caracteres | Se subió a 8 |
+| Contraseñas filtradas | La protección está apagada; solo existe en el plan Pro y el proyecto usa el plan gratuito | No aplica (se compensa con el mínimo de 8 caracteres) |
+| Revisión automática de seguridad de Supabase | Dos avisos: el de contraseñas filtradas (fila anterior) y uno sobre `es_investigador()`: las reglas de acceso la necesitan y solo dice si la cuenta propia es de investigador | Avisos justificados |
+| Enlaces a las herramientas | Se abren en otra pestaña sin darle control a la página externa | Cumple |
+| Conexión | Vercel y GitHub Pages publican con HTTPS | Cumple |
 
 **TABLA VI-B. Guías de la plataforma**
 
@@ -450,6 +465,7 @@ Cada historia nace de una fuente concreta: un hallazgo del diagnóstico, el cat�
 | HU-28 | Como propietario, quiero volver a intentar el diagnóstico si mi nivel quedó igual o bajó, sin que se borre el intento. | Asesoría (06/11) → RF-16 | 5 | Hecho |
 | HU-29 | Como propietario, quiero descargar o imprimir mi resultado. | Revisión de requerimientos (RF-16 parcial) → RF-16 | 5 | Hecho |
 | HU-30 | Como investigador, quiero un Excel con cada pregunta y la respuesta de cada negocio en cada intento. | Revisión del investigador (07/11) → Objetivo 4 | 5 | Hecho |
+| HU-36 | Como propietario, quiero que mi cuenta pida una contraseña segura y que nadie más pueda ver mis datos. | Revisión de seguridad del investigador (14/11) → RF-16 | 6 | Hecho |
 
 ### C. Arquitectura por niveles
 
