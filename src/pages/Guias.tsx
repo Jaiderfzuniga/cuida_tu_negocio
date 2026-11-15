@@ -29,10 +29,14 @@ function leSirve(g: Guia, n: Negocio | null) {
 const corto = (g: Guia) => g.titulo
   .replace('Copia de WhatsApp en ', 'Copia de WhatsApp · ')
   .replace(' con Google One', '').replace(' con iCloud', '').replace(' con OneDrive', '')
-  .replace('Verificación en dos pasos de ', 'Dos pasos: ').replace('Verificación en 2 pasos de ', 'Dos pasos: ')
-  .replace('Autenticación en dos pasos de ', 'Dos pasos: ')
+  .replace('Verificación de seguridad y en dos pasos de ', 'Verificación en dos pasos: ')
+  .replace('Verificación en 2 pasos de ', 'Verificación en dos pasos: ')
+  .replace('Verificación en dos pasos de ', 'Verificación en dos pasos: ')
+  .replace('Autenticación en dos pasos de ', 'Verificación en dos pasos: ')
   .replace('Cómo reconocer un mensaje o enlace falso', 'Reconocer fraudes')
-  .replace('Clave dinámica y botón de pánico de Nequi', 'Nequi: clave y botón de pánico');
+  .replace('Clave dinámica y botón de pánico de Nequi', 'Nequi: clave y botón de pánico')
+  .replace('Proteger tu DaviPlata', 'DaviPlata: clave y bloqueo')
+  .replace('Clave Dinámica de Bancolombia', 'Bancolombia: Clave Dinámica');
 
 function Pasos({ g }: { g: Guia }) {
   const c = COLOR[g.funcion];

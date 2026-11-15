@@ -6,22 +6,43 @@ import { useSesion } from '../hooks/useSesion';
 import { guardarNegocio } from '../services/store';
 import type { Negocio as N, Plataforma } from '../types';
 
+/** Mismas opciones de la encuesta de diagnóstico inicial (OE1). */
 const PLATAFORMAS: [Plataforma, string][] = [
-  ['whatsapp', 'WhatsApp'], ['nequi', 'Nequi'], ['daviplata', 'Daviplata'], ['facebook', 'Facebook'],
-  ['instagram', 'Instagram'], ['correo', 'Correo electrónico'], ['banca', 'Banca en línea'],
+  ['whatsapp', 'WhatsApp'], ['nequi', 'Nequi'], ['daviplata', 'DaviPlata'], ['bancolombia', 'Bancolombia'],
+  ['facebook', 'Facebook'], ['instagram', 'Instagram'], ['tiktok', 'TikTok'], ['correo', 'Correo electrónico'],
 ];
-const TIPOS = ['Tienda', 'Papelería', 'Droguería', 'Panadería', 'Ropa y calzado', 'Restaurante o comidas', 'Ferretería', 'Peluquería', 'Otro'];
+const TIPOS = [
+  'Tienda de barrio / granero', 'Tienda de maquillaje y belleza', 'Papelería y variedades', 'Ropa y calzado', 'Café internet',
+  'Panadería / cafetería', 'Comidas rápidas', 'Droguería', 'Peluquería', 'Repuestos y accesorios',
+];
+const EMPLEADOS = ['1 (solo el propietario)', '2 – 3', '4 – 5'];
+/** Valores guardados con las opciones anteriores del formulario. */
+const EMPLEADOS_ANTES: Record<string, string> = { 'Solo yo': '1 (solo el propietario)', '2 a 3': '2 – 3' };
+
+/** Prepara un negocio ya guardado para el formulario actual. */
+function inicial(n: N | null): { f: N; otro: boolean } {
+  if (!n) return { f: { nombre: '', tipo: TIPOS[0], trabajadores: '2 – 3', celular: 'android', tienePc: false, plataformas: ['whatsapp'] }, otro: false };
+  return {
+    f: { ...n, trabajadores: EMPLEADOS_ANTES[n.trabajadores] ?? n.trabajadores, plataformas: n.plataformas.filter((p) => p !== 'banca') },
+    otro: !TIPOS.includes(n.tipo),
+  };
+}
 
 export default function Negocio() {
   const { perfil, negocio, setNegocio } = useSesion();
   const nav = useNavigate();
-  const [f, setF] = useState<N>(negocio ?? { nombre: '', tipo: 'Tienda', trabajadores: '2 a 3', celular: 'android', tienePc: false, plataformas: ['whatsapp'] });
+  const [f, setF] = useState<N>(() => inicial(negocio).f);
+  // «Otro»: el tipo de negocio lo escribe el propietario y se guarda tal cual (no la palabra «Otro»).
+  const [otro, setOtro] = useState(() => inicial(negocio).otro);
   const [error, setError] = useState('');
 
   async function enviar(e: FormEvent) {
     e.preventDefault();
     if (!perfil) return;
-    try { const g = await guardarNegocio(perfil, f); setNegocio(g); nav('/cuestionario'); }
+    if (!EMPLEADOS.includes(f.trabajadores)) { setError('Elige cuántas personas trabajan en el negocio.'); return; }
+    const tipo = f.tipo.trim();
+    if (!tipo) { setError('Escribe qué tipo de negocio es.'); return; }
+    try { const g = await guardarNegocio(perfil, { ...f, tipo }); setNegocio(g); nav('/cuestionario'); }
     catch (err) { setError((err as Error).message); }
   }
 
@@ -31,14 +52,29 @@ export default function Negocio() {
         <label className="etiqueta">Nombre del negocio
           <input className="campo" required value={f.nombre} onChange={(e) => setF({ ...f, nombre: e.target.value })} placeholder="Ej.: Tienda Don Pedro" />
         </label>
-        <div className="grid grid-cols-2 gap-3">
-          <label className="etiqueta">Tipo
-            <select className="campo" value={f.tipo} onChange={(e) => setF({ ...f, tipo: e.target.value })}>{TIPOS.map((t) => <option key={t}>{t}</option>)}</select>
+        <label className="etiqueta">Tipo de negocio
+          <select className="campo" value={otro ? 'Otro' : f.tipo}
+            onChange={(e) => {
+              const v = e.target.value;
+              setOtro(v === 'Otro');
+              setF({ ...f, tipo: v === 'Otro' ? '' : v });
+            }}>
+            {[...TIPOS, 'Otro'].map((t) => <option key={t}>{t}</option>)}
+          </select>
+        </label>
+        {otro && (
+          <label className="etiqueta aparecer">¿Qué tipo de negocio es?
+            <input className="campo" required autoFocus value={f.tipo} onChange={(e) => setF({ ...f, tipo: e.target.value })} placeholder="Ej.: Ferretería, veterinaria, miscelánea…" />
           </label>
-          <label className="etiqueta">Personas que trabajan
-            <select className="campo" value={f.trabajadores} onChange={(e) => setF({ ...f, trabajadores: e.target.value })}>{['Solo yo', '2 a 3', '4 a 10'].map((t) => <option key={t}>{t}</option>)}</select>
-          </label>
-        </div>
+        )}
+        <fieldset className="m-0 border-0 p-0">
+          <legend className="mb-2 text-[16px] font-extrabold">Número de empleados</legend>
+          <div className="flex flex-wrap gap-2">
+            {EMPLEADOS.map((t) => (
+              <button type="button" key={t} aria-pressed={f.trabajadores === t} className="chip" onClick={() => setF({ ...f, trabajadores: t })}>{t}</button>
+            ))}
+          </div>
+        </fieldset>
         <fieldset className="m-0 flex flex-col gap-2 border-0 p-0">
           <legend className="mb-2 text-[16px] font-extrabold">¿Qué usas en el negocio?</legend>
           <div className="flex flex-wrap gap-2">

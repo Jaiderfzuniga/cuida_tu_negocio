@@ -403,6 +403,73 @@
   "rol": "Primera opción (redes sociales)"
  },
  {
+  "id": "P-35",
+  "funcion": "Proteger",
+  "nombre": "TikTok – Verificación de seguridad y en dos pasos",
+  "dispositivo": "celular",
+  "url": "https://www.tiktok.com/support/faq_detail?category=web_privacy_user_safety&id=7543604780950624824",
+  "textoUrl": "Cómo proteger tu cuenta (soporte de TikTok)",
+  "marca": "tiktok.com",
+  "costo": "Gratis",
+  "espanol": true,
+  "accesibilidad": 4,
+  "uso": "En Perfil › Menú ☰ › Ajustes y privacidad › Seguridad y permisos está la «Verificación de seguridad»: desde ahí vinculas tu teléfono y tu correo, activas la verificación en dos pasos, revisas los dispositivos de confianza y la actividad de la cuenta. La verificación en dos pasos pide elegir al menos dos métodos: teléfono, correo, app de autenticación o contraseña.",
+  "subcategoria": "PR.AA-03",
+  "rol": "Primera opción (TikTok)"
+ },
+ {
+  "id": "P-36",
+  "funcion": "Proteger",
+  "nombre": "Instagram – Autenticación en dos pasos",
+  "dispositivo": "celular",
+  "url": "https://help.instagram.com/1582474155197965?locale=es_ES",
+  "textoUrl": "Cómo activarla (ayuda de Instagram)",
+  "marca": "instagram.com",
+  "costo": "Gratis",
+  "espanol": true,
+  "accesibilidad": 4,
+  "uso": "Pide un código además de la contraseña cuando alguien inicia sesión en un equipo nuevo. Se activa en Configuración › Centro de cuentas › Contraseña y seguridad › Autenticación en dos pasos: eliges la cuenta y el método (app de autenticación o mensaje de texto).",
+  "subcategoria": "PR.AA-03",
+  "rol": "Primera opción (Instagram)"
+ },
+ {
+  "id": "P-37",
+  "funcion": "Proteger",
+  "nombre": "DaviPlata – Clave, mensajes oficiales y bloqueo",
+  "dispositivo": "celular",
+  "url": "https://www.daviplata.com/consejos-de-seguridad-informatica",
+  "textoUrl": "Consejos de seguridad de DaviPlata",
+  "marca": "daviplata.com",
+  "costo": "Gratis",
+  "espanol": true,
+  "accesibilidad": 4,
+  "uso": "DaviPlata solo envía mensajes de texto desde los códigos 85888, 87718 y 89899, y correos solo desde el dominio @davivienda.com. Cambia tu clave con frecuencia: DaviPlata nunca te la pide por ningún medio ni te llama para devolverte el IVA o el 4 x 1.000. Si algo te parece raro o pierdes el celular, repórtalo con el botón «¿Necesitas ayuda?» de la app: DaviPlata no tiene línea telefónica.",
+  "subcategoria": "PR.AA-03",
+  "rol": "Primera opción (cobros por DaviPlata)"
+ },
+ {
+  "id": "P-38",
+  "funcion": "Proteger",
+  "nombre": "Bancolombia – Clave Dinámica y bloqueo",
+  "dispositivo": "celular",
+  "url": "https://www.bancolombia.com/centro-de-ayuda/canales/app-bancolombia",
+  "textoUrl": "Cómo inscribir la Clave Dinámica",
+  "marca": "bancolombia.com",
+  "logo": "www.bancolombia.com",
+  "costo": "Gratis",
+  "espanol": true,
+  "accesibilidad": 4,
+  "uso": "La Clave Dinámica es el código que confirma tus pagos en la app Mi Bancolombia; se inscribe con la opción «Inscribir Clave Dinámica». Si pierdes el celular donde está inscrita, desde otro celular entras a la app con tu usuario y clave y la bloqueas. Bancolombia nunca la pide por llamada, mensaje, correo ni WhatsApp.",
+  "subcategoria": "PR.AA-03",
+  "rol": "Primera opción (cobros por Bancolombia)",
+  "enlaces": [
+   {
+    "texto": "Bloquearla si pierdes el celular",
+    "url": "https://www.bancolombia.com/centro-de-ayuda/preguntas-frecuentes/que-hacer-en-caso-de-perdida-o-robo-celular"
+   }
+  ]
+ },
+ {
   "id": "P-30",
   "funcion": "Proteger",
   "nombre": "Teléfono de Google – Filtro de llamadas spam",

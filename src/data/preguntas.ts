@@ -2,7 +2,7 @@ import type { Pregunta } from '../types';
 
 /**
  * Cuestionario de la plataforma: 13 preguntas como máximo (4 Identificar, 5 Proteger, 4 Recuperar);
- * las que no aplican al negocio (sin computador, sin Nequi…) no se muestran.
+ * las que no aplican al negocio (sin computador, sin apps de pago…) no se muestran.
  * Derivado de los hallazgos H1–H12 del diagnóstico inicial (OE1).
  * BORRADOR: validar redacción con el asesor antes de la aplicación.
  * Puntos: 2 = práctica completa, 1 = parcial, 0 = no la tiene. «omitir» = no aplica (no cuenta).
@@ -77,20 +77,20 @@ export const PREGUNTAS: Pregunta[] = [
       { id: 'b', texto: 'Solo en algunas', puntos: 1 },
       { id: 'c', texto: 'No / no sé', puntos: 0 },
     ],
-    herramientas: ['P-16', 'P-17', 'P-06'], motivo: 'tus cuentas solo se protegen con la contraseña',
-    requiere: { plataformas: ['correo', 'facebook', 'instagram'] },
+    herramientas: ['P-16', 'P-17', 'P-36', 'P-35', 'P-06'], motivo: 'tus cuentas solo se protegen con la contraseña',
+    requiere: { plataformas: ['correo', 'facebook', 'instagram', 'tiktok'] },
   },
   {
     id: 'PR4', funcion: 'Proteger',
-    texto: '¿Usas la clave dinámica de Nequi y sabes dónde está el botón de pánico?',
-    ayuda: 'La clave dinámica cambia cada minuto; el botón de pánico bloquea la cuenta si te roban el celular.',
+    texto: '¿Proteges tus apps de pago con su clave y sabes cómo bloquearlas si pierdes el celular?',
+    ayuda: 'Nequi, DaviPlata y Bancolombia tienen una clave que solo debes conocer tú y una forma de bloquear la cuenta si te roban el celular.',
     opciones: [
-      { id: 'a', texto: 'Sí, las dos', puntos: 2 },
+      { id: 'a', texto: 'Sí, las dos cosas', puntos: 2 },
       { id: 'b', texto: 'Solo una', puntos: 1 },
       { id: 'c', texto: 'Ninguna', puntos: 0 },
     ],
-    herramientas: ['P-18'], motivo: 'cobras por Nequi sin sus protecciones activas',
-    requiere: { plataformas: ['nequi'] },
+    herramientas: ['P-18', 'P-37', 'P-38'], motivo: 'cobras por apps de pago sin sus protecciones activas',
+    requiere: { plataformas: ['nequi', 'daviplata', 'bancolombia'] },
   },
   {
     id: 'PR6', funcion: 'Proteger',
