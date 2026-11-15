@@ -79,7 +79,7 @@
   --color-naranja-texto: var(--naranja-texto);
   --color-ambar: var(--ambar);
   --color-pista: var(--pista);
-  --font-sans: 'Roboto Flex', system-ui, sans-serif;
+  --font-sans: 'Roboto Flex Variable', 'Roboto Flex', system-ui, sans-serif;
   --font-display: 'Montserrat', system-ui, sans-serif;
 }
 

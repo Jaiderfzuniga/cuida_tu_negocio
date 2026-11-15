@@ -6,4 +6,6 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   base: process.env.GITHUB_PAGES ? '/cuida_tu_negocio/' : '/',
   plugins: [react(), tailwindcss()],
+  // React y Supabase en archivos aparte: cambian poco, así el navegador los reutiliza entre versiones.
+  build: { rollupOptions: { output: { manualChunks: { react: ['react', 'react-dom', 'react-router-dom'], supabase: ['@supabase/supabase-js'] } } } },
 });
