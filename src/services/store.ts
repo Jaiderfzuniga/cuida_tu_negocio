@@ -75,6 +75,23 @@ export async function perfilActual(): Promise<Perfil | null> {
   return u ? { id: u.id, email: u.email, rol: u.rol } : null;
 }
 
+/** Perfil y negocio a la vez: las dos consultas a Supabase salen en paralelo (antes iban una tras otra). */
+export async function cargarSesion(): Promise<{ perfil: Perfil | null; negocio: Negocio | null }> {
+  if (supabase) {
+    const { data } = await supabase.auth.getSession();
+    const user = data.session?.user;
+    if (!user) return { perfil: null, negocio: null };
+    const [{ data: p }, { data: n }] = await Promise.all([
+      supabase.from('perfil').select('rol').eq('id', user.id).maybeSingle(),
+      supabase.from('negocio').select('*').eq('owner', user.id).maybeSingle(),
+    ]);
+    const perfil: Perfil = { id: user.id, email: user.email ?? '', rol: (p?.rol as Perfil['rol']) ?? 'propietario' };
+    return { perfil, negocio: n ? desdeFila(n) : null };
+  }
+  const perfil = await perfilActual();
+  return { perfil, negocio: perfil ? await miNegocio(perfil) : null };
+}
+
 // ───────── Negocio ─────────
 export async function miNegocio(perfil: Perfil): Promise<Negocio | null> {
   if (supabase) {

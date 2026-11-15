@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react';
 import type { Negocio, Perfil } from '../types';
-import { miNegocio, perfilActual } from '../services/store';
+import { cargarSesion } from '../services/store';
 import { supabase } from '../services/supabase';
 
 interface Ctx { perfil: Perfil | null; negocio: Negocio | null; cargando: boolean; refrescar: () => Promise<void>; setNegocio: (n: Negocio) => void }
@@ -13,9 +13,9 @@ export function SesionProvider({ children }: { children: ReactNode }) {
 
   const refrescar = useCallback(async () => {
     try {
-      const p = await perfilActual();
-      setPerfil(p);
-      setNegocio(p ? await miNegocio(p) : null);
+      const s = await cargarSesion();
+      setPerfil(s.perfil);
+      setNegocio(s.negocio);
     } finally {
       setCargando(false); // nunca dejar la pantalla en «Cargando…» si algo falla
     }

@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import chica from '../assets/chica.webp';
+import chica480 from '../assets/chica-480.webp';
+import chica720 from '../assets/chica-720.webp';
 import robot from '../assets/robot.webp';
 
 /**
@@ -56,6 +58,9 @@ export function Chica({ className, mensaje }: { className: string; mensaje?: str
         </div>
       )}
       <img src={chica} width={983} height={1442} className="block h-full w-full"
+        srcSet={`${chica480} 480w, ${chica720} 720w, ${chica} 983w`}
+        sizes="(min-width: 1180px) 46vw, min(100vw, 460px)"
+        fetchPriority="high" decoding="async"
         alt="Mujer con ruana colorida revisando en su celular candados y marcas de verificación" />
       <svg className="hologramas flotar" viewBox="0 0 983 1442" aria-hidden="true">
         {HOLOGRAMAS.map((h) => (
