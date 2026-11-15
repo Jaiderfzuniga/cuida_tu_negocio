@@ -54,7 +54,7 @@ src/
 ├── pages/        Pantallas (Inicio, Ingresar, Negocio, Cuestionario, Resultado, Ruta, Catálogo, Historial, Panel)
 ├── components/   Escudo 3D, anillos, logo de herramientas, tarjetas, diseño de página
 ├── lib/          puntaje.ts (nivel por función) y motor.ts (reglas y ruta al 100 %)
-├── data/         Cuestionario (13 preguntas como máximo) y catálogo (33 herramientas)
+├── data/         Cuestionario (13 preguntas como máximo) y catálogo (37 herramientas)
 ├── services/     Conexión con Supabase o modo demostración
 ├── hooks/        Sesión y tema claro/oscuro
 ├── styles/       Identidad visual

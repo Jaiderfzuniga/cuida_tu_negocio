@@ -4,7 +4,7 @@ import { PREGUNTAS } from '../data/preguntas';
 
 type Fila = { negocio: Negocio; diagnosticos: Diagnostico[] };
 
-const NOMBRE: Record<string, string> = { whatsapp: 'WhatsApp', nequi: 'Nequi', daviplata: 'Daviplata', facebook: 'Facebook', instagram: 'Instagram', correo: 'Correo electrónico', banca: 'Banca en línea' };
+const NOMBRE: Record<string, string> = { whatsapp: 'WhatsApp', nequi: 'Nequi', daviplata: 'DaviPlata', bancolombia: 'Bancolombia', facebook: 'Facebook', instagram: 'Instagram', tiktok: 'TikTok', correo: 'Correo electrónico', banca: 'Banca en línea' };
 const VERDE = 'FF0B7640', AZUL = 'FF1F5FD6', NARANJA = 'FFC2410C', NEGRO = 'FF14131A';
 const COLOR_F = { Identificar: VERDE, Proteger: AZUL, Recuperar: NARANJA } as const;
 const fecha = (iso: string) => new Date(iso).toLocaleDateString('es-CO', { day: '2-digit', month: '2-digit', year: 'numeric' });

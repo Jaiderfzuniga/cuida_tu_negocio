@@ -2,6 +2,18 @@
 
 Registro de la evolución de la plataforma para la trazabilidad del trabajo de grado.
 
+## v2.7.0 — Formulario igual a la encuesta y 4 herramientas nuevas (15 nov. 2026)
+
+El investigador comparó el formulario «Tu negocio» con la encuesta de diagnóstico inicial (objetivo 1) y pidió que usara las mismas opciones; lo revisó en capturas antes de subirlo (HU-37).
+
+- **Tipo de negocio:** las 10 opciones de la encuesta (Tienda de barrio / granero, Tienda de maquillaje y belleza, Papelería y variedades, Ropa y calzado, Café internet, Panadería / cafetería, Comidas rápidas, Droguería, Peluquería, Repuestos y accesorios) y «Otro». Con «Otro» aparece un campo obligatorio y se guarda lo que escribe el propietario. La columna `tipo` ya es texto libre: no hubo que cambiar la base de datos.
+- **Número de empleados:** «1 (solo el propietario)», «2 – 3» y «4 – 5», como en la encuesta. Los negocios guardados con «Solo yo» o «2 a 3» se convierten solos; los que tenían «4 a 10» deben elegir de nuevo.
+- **¿Qué usas en el negocio?:** WhatsApp, Nequi, DaviPlata, Bancolombia, Facebook, Instagram, TikTok y Correo electrónico. Sale «Banca en línea», que no tenía preguntas ni herramientas; entran Bancolombia (2 de 12 negocios en la encuesta) y TikTok (4 de 12). Instagram se deja aunque ningún negocio la marcó, por ser una red social de uso común para vender.
+- **4 herramientas nuevas en Proteger (PR.AA-03), con su logo e información de la fuente oficial:** P-35 TikTok – Verificación de seguridad y en dos pasos, P-36 Instagram – Autenticación en dos pasos, P-37 DaviPlata – Clave, mensajes oficiales y bloqueo, y P-38 Bancolombia – Clave Dinámica y bloqueo (con un segundo enlace para bloquearla si se pierde el celular). El catálogo pasa de 33 a **37 herramientas** (10 Identificar, 21 Proteger, 6 Recuperar). También en el Excel del catálogo del objetivo 2 y en `supabase/seed.sql`.
+- **3 guías nuevas:** «Proteger tu DaviPlata», «Clave Dinámica de Bancolombia» y «Verificación de seguridad y en dos pasos de TikTok». La de Facebook ahora también enlaza a la ayuda oficial de Instagram. En «Ir directo a», los accesos dicen «Verificación en dos pasos: …».
+- **Cuestionario:** la pregunta de verificación en dos pasos (PR3) también aparece si el negocio usa TikTok. La pregunta de Nequi (PR4) pasa a ser de apps de pago: «¿Proteges tus apps de pago con su clave y sabes cómo bloquearlas si pierdes el celular?», para Nequi, DaviPlata y Bancolombia. Pendiente de revisar con el asesor.
+- DaviPlata no tiene línea telefónica: según su página oficial de consejos de seguridad, todo se reporta con el botón «¿Necesitas ayuda?» de la app.
+
 ## v2.6.1 — Revisión de seguridad (14 nov. 2026)
 
 El investigador revisó qué tan protegida está la plataforma frente a alguien que quiera entrar sin permiso, en la base de datos Supabase, en el código y en la publicación (HU-36).

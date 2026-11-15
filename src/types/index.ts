@@ -3,7 +3,8 @@ export const FUNCIONES: Funcion[] = ['Identificar', 'Proteger', 'Recuperar'];
 
 export type Dispositivo = 'celular' | 'pc' | 'ambos';
 export type Celular = 'android' | 'iphone';
-export type Plataforma = 'whatsapp' | 'nequi' | 'daviplata' | 'facebook' | 'instagram' | 'correo' | 'banca';
+/** «banca» ya no se ofrece en el formulario; se conserva solo para negocios registrados antes. */
+export type Plataforma = 'whatsapp' | 'nequi' | 'daviplata' | 'bancolombia' | 'facebook' | 'instagram' | 'tiktok' | 'correo' | 'banca';
 
 export interface Herramienta {
   id: string;
@@ -14,6 +15,8 @@ export interface Herramienta {
   /** Texto del botón del enlace principal; si no hay, dice «Abrir <nombre>». */
   textoUrl?: string;
   marca: string;
+  /** Dominio del que se toma el logo, si el de la marca no publica su ícono (p. ej. www.bancolombia.com). */
+  logo?: string;
   costo: string;
   espanol: boolean;
   accesibilidad: number;

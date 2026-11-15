@@ -202,7 +202,10 @@ export const GUIAS: Guia[] = [
     ],
     frecuencia: 'Se activa una vez por cuenta. Si tienes Facebook e Instagram, actívala en las dos.',
     fuente: { nombre: 'Configuración de Facebook', url: 'https://www.facebook.com/settings' },
-    herramientas: ['P-17', 'P-06'],
+    otrasFuentes: [
+      { nombre: 'Ayuda de Instagram: autenticación en dos pasos', url: 'https://help.instagram.com/1582474155197965?locale=es_ES' },
+    ],
+    herramientas: ['P-17', 'P-36', 'P-06'],
   },
   {
     id: 'nequi',
@@ -231,6 +234,86 @@ export const GUIAS: Guia[] = [
       { nombre: 'Centro de ayuda de Nequi: bloquear si pierdes o roban tu celular', url: 'https://ayuda.nequi.com.co/hc/es/articles/35177946188941--C%C3%B3mo-bloquear-Nequi-si-pierdo-o-roban-mi-celular' },
     ],
     herramientas: ['P-18'],
+  },
+  {
+    id: 'daviplata',
+    funcion: 'Proteger',
+    titulo: 'Proteger tu DaviPlata',
+    para: 'Cuidar tu clave, reconocer los mensajes reales y reportar a tiempo si algo raro pasa o pierdes el celular.',
+    equipo: 'todos',
+    plataformas: ['daviplata'],
+    secciones: [
+      { titulo: 'Reconocer los mensajes reales', pasos: [
+        'DaviPlata solo te escribe por mensaje de texto desde los códigos 85888, 87718 y 89899. No respondas mensajes de otros números.',
+        'Sus correos solo llegan desde el dominio @davivienda.com.',
+        'DaviPlata nunca te llamará para devolverte el IVA o el 4 x 1.000, ni te pedirá claves o códigos por teléfono: si pasa, es un fraude.',
+        'Si te piden enviar plata para reclamar un premio, desconfía.',
+      ] },
+      { titulo: 'Cuidar tu clave', pasos: [
+        'Cambia tu clave con frecuencia y no se la digas a nadie: DaviPlata nunca te la pedirá por ningún medio.',
+        'No uses fechas importantes ni números seguidos.',
+      ] },
+      { titulo: 'Si algo te parece raro o pierdes el celular', pasos: [
+        'Bloquea la línea con tu operador.',
+        'Reporta lo que pasó con el botón «¿Necesitas ayuda?» de la app DaviPlata (puedes entrar desde otro celular).',
+      ] },
+    ],
+    frecuencia: 'DaviPlata no tiene línea telefónica ni clave dinámica como Nequi: todo se reporta desde el botón «¿Necesitas ayuda?» de la app.',
+    fuente: { nombre: 'DaviPlata: consejos de seguridad informática', url: 'https://www.daviplata.com/consejos-de-seguridad-informatica' },
+    herramientas: ['P-37'],
+  },
+  {
+    id: 'bancolombia',
+    funcion: 'Proteger',
+    titulo: 'Clave Dinámica de Bancolombia',
+    para: 'Confirmar tus pagos con un código que solo ves tú y bloquearlo si pierdes el celular.',
+    equipo: 'todos',
+    plataformas: ['bancolombia'],
+    secciones: [
+      { titulo: 'Inscribir la Clave Dinámica', pasos: [
+        'Abre la app Mi Bancolombia y elige «Inscribir Clave Dinámica».',
+        'Lee la información y toca «Comenzar».',
+        'Ponle un nombre a tu Clave Dinámica y toca «Continuar».',
+        'Espera 5 minutos y ya puedes usarla en la app.',
+      ] },
+      { titulo: 'Si pierdes el celular donde está inscrita', pasos: [
+        'Desde otro celular, entra a la app Mi Bancolombia con tu usuario y clave.',
+        'Bloquea tu Clave Dinámica.',
+        'Cambia tus datos de seguridad para que la clave te llegue por otro medio.',
+      ] },
+    ],
+    frecuencia: 'Bancolombia nunca te pedirá tu usuario, tus claves ni la Clave Dinámica por llamada, mensaje, correo o WhatsApp.',
+    fuente: { nombre: 'Bancolombia: inscribir la Clave Dinámica', url: 'https://www.bancolombia.com/centro-de-ayuda/canales/app-bancolombia' },
+    otrasFuentes: [
+      { nombre: 'Bancolombia: qué hacer si pierdes el celular con la Clave Dinámica', url: 'https://www.bancolombia.com/centro-de-ayuda/preguntas-frecuentes/que-hacer-en-caso-de-perdida-o-robo-celular' },
+    ],
+    herramientas: ['P-38'],
+  },
+  {
+    id: 'dos-pasos-tiktok',
+    funcion: 'Proteger',
+    titulo: 'Verificación de seguridad y en dos pasos de TikTok',
+    para: 'Evitar que roben la cuenta de TikTok con la que promocionas tus productos.',
+    equipo: 'todos',
+    plataformas: ['tiktok'],
+    secciones: [
+      { titulo: 'Revisar la verificación de seguridad', pasos: [
+        'En la app de TikTok, toca «Perfil» abajo y luego el botón Menú ☰ arriba.',
+        'Entra a «Ajustes y privacidad» > «Seguridad y permisos» > «Verificación de seguridad».',
+        'Completa las tareas que aparecen: vincular tu teléfono y tu correo, revisar los dispositivos de confianza y la actividad de la cuenta. Cada tarea lista queda con una marca verde.',
+      ] },
+      { titulo: 'Activar la verificación en dos pasos', pasos: [
+        'En «Seguridad y permisos», toca «Verificación en dos pasos».',
+        'Elige al menos dos métodos: teléfono, correo electrónico, app de autenticación o contraseña.',
+        'Toca «Activar» y escribe el código que te llegue por SMS o correo.',
+      ] },
+    ],
+    frecuencia: 'Se activa una vez. Cuando TikTok te avise de un dispositivo desconocido, revísalo en «Verificación de seguridad».',
+    fuente: { nombre: 'Soporte de TikTok: seguridad de la cuenta', url: 'https://www.tiktok.com/support/faq_detail?category=web_privacy_user_safety&id=7543604780950624824' },
+    otrasFuentes: [
+      { nombre: 'Soporte de TikTok: cómo configurar la verificación en dos pasos', url: 'https://support.tiktok.com/es/account-and-privacy/personalized-ads-and-data/how-your-phone-number-is-used-on-tiktok' },
+    ],
+    herramientas: ['P-35'],
   },
 
   // ───────── Identificar: reconocer fraudes (RF-12) ─────────
@@ -271,6 +354,7 @@ export function guiaDe(herramientaId: string, celular?: 'android' | 'iphone'): G
 const GUIA_PROPIA: Record<string, string> = {
   'R-05': 'copia-whatsapp-android', 'R-06': 'copia-android', 'R-07': 'copia-iphone', 'R-04': 'copia-computador',
   'P-09': 'dos-pasos-whatsapp', 'P-16': 'dos-pasos-google', 'P-17': 'dos-pasos-meta', 'P-18': 'nequi',
+  'P-35': 'dos-pasos-tiktok', 'P-36': 'dos-pasos-meta', 'P-37': 'daviplata', 'P-38': 'bancolombia',
 };
 export function guiaPropiaDe(herramientaId: string, celular?: 'android' | 'iphone'): Guia | undefined {
   if (herramientaId === 'R-05') return guiaDe(herramientaId, celular);

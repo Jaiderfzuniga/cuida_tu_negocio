@@ -5,7 +5,7 @@ import { maximos, maxPuntos, preguntasPara, puntosDe } from './puntaje';
 const SOLO_ANDROID = ['I-07', 'R-06', 'P-20', 'P-21', 'P-30', 'P-32'];
 const SOLO_IPHONE = ['I-08', 'R-07'];
 /** Herramientas que solo tienen sentido si el negocio usa esa plataforma. */
-const SEGUN_PLATAFORMA: Record<string, Negocio['plataformas'][number]> = { 'P-16': 'correo', 'P-17': 'facebook', 'P-18': 'nequi', 'P-09': 'whatsapp', 'R-05': 'whatsapp', 'I-09': 'whatsapp' };
+const SEGUN_PLATAFORMA: Record<string, Negocio['plataformas'][number]> = { 'P-16': 'correo', 'P-17': 'facebook', 'P-18': 'nequi', 'P-35': 'tiktok', 'P-36': 'instagram', 'P-37': 'daviplata', 'P-38': 'bancolombia', 'P-09': 'whatsapp', 'R-05': 'whatsapp', 'I-09': 'whatsapp' };
 
 /** ¿La herramienta sirve en los equipos del negocio? */
 export function compatible(h: Herramienta, n: Negocio): boolean {
