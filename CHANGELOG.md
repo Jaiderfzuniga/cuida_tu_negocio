@@ -2,6 +2,17 @@
 
 Registro de la evolución de la plataforma para la trazabilidad del trabajo de grado.
 
+## v2.7.2 — Velocidad de carga (15 nov. 2026)
+
+El investigador revisó la velocidad con PageSpeed Insights (celular: 92 en rendimiento, LCP 3,3 s) y pidió optimizarla (RNF de rendimiento).
+
+- **Fuentes:** Montserrat y Roboto Flex se sirven desde la propia plataforma (`@fontsource`) en vez de Google Fonts, y solo con los pesos que se usan. Ya no bloquean la primera pintura.
+- **Imagen de inicio:** la ilustración de la chica tiene versiones de 480 y 720 px; cada equipo descarga la que necesita (en celular baja de 150 KB a unos 60 KB) y se carga con prioridad.
+- **Caché:** los archivos de `/assets` se guardan un año en el navegador (`vercel.json`); quien vuelve a entrar no los descarga otra vez.
+- **Sesión:** las consultas del perfil y del negocio a Supabase salen al mismo tiempo (`cargarSesion`), no una tras otra.
+- **Código:** React y Supabase quedan en archivos aparte, que se reutilizan entre versiones.
+- **SEO:** se agrega `robots.txt` (PageSpeed marcaba 20 errores porque no existía).
+
 ## v2.7.1 — Regla del estudio en el panel del investigador (15 nov. 2026)
 
 - **Panel del investigador y Excel:** para el estudio se compara el diagnóstico inicial con el **primer** seguimiento (antes se tomaba el último). Los demás intentos quedan guardados y se muestran como evolución (por ejemplo, 43 % → 88 % → 90 %).
