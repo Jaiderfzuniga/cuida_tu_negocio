@@ -38,29 +38,39 @@ export async function exportarExcel(todas: Fila[]) {
     }
   };
 
-  // 1. Resumen: una fila por negocio con su diagnóstico inicial y el último.
+  // Etiqueta de cada intento según la regla del estudio.
+  const momento = (d: Diagnostico, ds: Diagnostico[]) =>
+    d.momento === 'pre' ? 'Diagnóstico inicial (estudio)' : d === ds.find((x) => x.momento === 'post') ? '1.er seguimiento (estudio)' : 'Seguimiento adicional';
+
+  // 1. Resumen: una fila por negocio con su diagnóstico inicial y su primer seguimiento (regla del estudio),
+  //    más el último intento y la evolución como dato complementario.
   const res = wb.addWorksheet('Resumen');
   res.columns = [
     { header: 'Negocio', width: 26 }, { header: 'Tipo', width: 16 }, { header: 'Trabajadores', width: 13 },
     { header: 'Plataformas', width: 26 }, { header: 'Computador', width: 12 }, { header: 'Intentos', width: 10 },
     { header: 'Inicial: Identificar', width: 13 }, { header: 'Inicial: Proteger', width: 13 }, { header: 'Inicial: Recuperar', width: 13 }, { header: 'Inicial: General', width: 13 },
-    { header: 'Último: Identificar', width: 13 }, { header: 'Último: Proteger', width: 13 }, { header: 'Último: Recuperar', width: 13 }, { header: 'Último: General', width: 13 },
-    { header: 'Cambio general', width: 13 }, { header: 'Estado', width: 16 },
+    { header: '1.er seguimiento: Identificar', width: 14 }, { header: '1.er seguimiento: Proteger', width: 14 }, { header: '1.er seguimiento: Recuperar', width: 14 }, { header: '1.er seguimiento: General', width: 14 },
+    { header: 'Cambio general (estudio)', width: 13 }, { header: 'Estado', width: 16 },
+    { header: 'Último intento: General', width: 13 }, { header: 'Evolución general (todos los intentos)', width: 34 },
   ];
   for (const { negocio: n, diagnosticos: ds } of filas) {
     const pre = ds.find((d) => d.momento === 'pre');
-    const post = [...ds].reverse().find((d) => d.momento === 'post');
+    const post = ds.find((d) => d.momento === 'post');
+    const ultimo = ds.length > 1 ? ds[ds.length - 1] : undefined;
     const v = (d: Diagnostico | undefined, k: keyof Diagnostico['niveles']) => (d ? d.niveles[k] / 100 : null);
     const r = res.addRow([n.nombre, n.tipo, n.trabajadores, n.plataformas.map((x) => NOMBRE[x] ?? x).join(', '), n.tienePc ? 'Sí' : 'No', ds.length,
       v(pre, 'Identificar'), v(pre, 'Proteger'), v(pre, 'Recuperar'), v(pre, 'general'),
       v(post, 'Identificar'), v(post, 'Proteger'), v(post, 'Recuperar'), v(post, 'general'),
       pre && post ? (post.niveles.general - pre.niveles.general) / 100 : null,
-      post ? 'Completo' : pre ? 'Falta diagnóstico final' : 'Sin diagnóstico']);
+      post ? 'Completo' : pre ? 'Falta diagnóstico final' : 'Sin diagnóstico',
+      v(ultimo, 'general'), ds.map((d) => `${d.niveles.general}%`).join(' → ')]);
     for (let c = 7; c <= 15; c++) { r.getCell(c).numFmt = c === 15 ? '+0%;-0%;0%' : '0%'; r.getCell(c).alignment = { horizontal: 'center' }; }
     r.getCell(16).font = { bold: true, color: { argb: post ? VERDE : 'FF805300' } };
+    r.getCell(17).numFmt = '0%'; r.getCell(17).alignment = { horizontal: 'center' };
   }
   cabecera(res);
   res.addRow([]);
+  res.addRow(['Para el estudio se compara el diagnóstico inicial con el primer seguimiento. El último intento y la evolución son datos complementarios.']).font = { italic: true, color: { argb: 'FF4C4A56' } };
   res.addRow(['Las preguntas y respuestas de cada negocio están en su propia hoja (pestañas de abajo).']).font = { italic: true, color: { argb: 'FF4C4A56' } };
   colorFuncion(res, { Identificar: 7, Proteger: 8, Recuperar: 9 });
   colorFuncion(res, { Identificar: 11, Proteger: 12, Recuperar: 13 });
@@ -79,7 +89,7 @@ export async function exportarExcel(todas: Fila[]) {
     ws.getCell('A2').value = `${n.tipo} · ${n.trabajadores} · ${n.plataformas.map((x) => NOMBRE[x] ?? x).join(', ')} · Computador: ${n.tienePc ? 'Sí' : 'No'}`;
     ws.getCell('A2').font = { color: { argb: 'FF4C4A56' } };
     const cab = ws.getRow(4);
-    cab.values = ['Función', 'Código', 'Pregunta', ...ds.map((d, i) => `Intento ${i + 1} · ${d.momento === 'pre' ? 'Diagnóstico inicial' : 'Seguimiento'} · ${fecha(d.fecha)}`)];
+    cab.values = ['Función', 'Código', 'Pregunta', ...ds.map((d, i) => `Intento ${i + 1} · ${momento(d, ds)} · ${fecha(d.fecha)}`)];
     cab.font = { bold: true, color: { argb: 'FFFFFFFF' } }; cab.height = 34;
     cab.alignment = { vertical: 'middle', horizontal: 'center', wrapText: true };
     cab.eachCell((c) => { c.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: NEGRO } }; });
@@ -107,7 +117,7 @@ export async function exportarExcel(todas: Fila[]) {
   // 3. Respuestas (todas juntas, con filtros): una fila por cada pregunta respondida, con la pregunta y la respuesta que puso el usuario.
   const rsp = wb.addWorksheet('Respuestas');
   rsp.columns = [
-    { header: 'Negocio', width: 24 }, { header: 'Intento', width: 9 }, { header: 'Momento', width: 18 }, { header: 'Fecha', width: 12 },
+    { header: 'Negocio', width: 24 }, { header: 'Intento', width: 9 }, { header: 'Momento', width: 27 }, { header: 'Fecha', width: 12 },
     { header: 'Función', width: 13 }, { header: 'Código', width: 9 }, { header: 'Pregunta', width: 62 }, { header: 'Respuesta del usuario', width: 34 }, { header: 'Puntos', width: 9 },
   ];
   for (const { negocio: n, diagnosticos: ds } of filas) {
@@ -115,7 +125,7 @@ export async function exportarExcel(todas: Fila[]) {
       for (const p of PREGUNTAS) {
         const o = p.opciones.find((x) => x.id === d.respuestas[p.id]);
         if (!o) continue; // las preguntas que no aplican al negocio no se le mostraron
-        const r = rsp.addRow([n.nombre, i + 1, d.momento === 'pre' ? 'Diagnóstico inicial' : 'Seguimiento', fecha(d.fecha), p.funcion, p.id, p.texto, o.texto, o.puntos]);
+        const r = rsp.addRow([n.nombre, i + 1, momento(d, ds), fecha(d.fecha), p.funcion, p.id, p.texto, o.texto, o.puntos]);
         r.alignment = { wrapText: true, vertical: 'top' };
         r.getCell(5).font = { bold: true, color: { argb: COLOR_F[p.funcion] } };
         r.getCell(9).alignment = { horizontal: 'center', vertical: 'top' };
@@ -130,13 +140,13 @@ export async function exportarExcel(todas: Fila[]) {
   // 4. Diagnósticos (una fila por intento): todos los intentos, con la respuesta en texto.
   const dia = wb.addWorksheet('Diagnósticos');
   dia.columns = [
-    { header: 'Negocio', width: 24 }, { header: 'Intento', width: 9 }, { header: 'Momento', width: 18 }, { header: 'Fecha', width: 12 },
+    { header: 'Negocio', width: 24 }, { header: 'Intento', width: 9 }, { header: 'Momento', width: 27 }, { header: 'Fecha', width: 12 },
     { header: 'Identificar', width: 12 }, { header: 'Proteger', width: 12 }, { header: 'Recuperar', width: 12 }, { header: 'General', width: 11 },
     ...PREGUNTAS.map((p) => ({ header: `${p.id}. ${p.texto}`, width: 30 })),
   ];
   for (const { negocio: n, diagnosticos: ds } of filas) {
     ds.forEach((d, i) => {
-      const r = dia.addRow([n.nombre, i + 1, d.momento === 'pre' ? 'Diagnóstico inicial' : 'Seguimiento', fecha(d.fecha),
+      const r = dia.addRow([n.nombre, i + 1, momento(d, ds), fecha(d.fecha),
         d.niveles.Identificar / 100, d.niveles.Proteger / 100, d.niveles.Recuperar / 100, d.niveles.general / 100,
         ...PREGUNTAS.map((p) => { const o = p.opciones.find((x) => x.id === d.respuestas[p.id]); return o ? `${o.texto} (${o.puntos})` : 'No aplica'; })]);
       for (let c = 5; c <= 8; c++) { r.getCell(c).numFmt = '0%'; r.getCell(c).alignment = { horizontal: 'center' }; }
