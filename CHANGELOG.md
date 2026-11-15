@@ -2,6 +2,11 @@
 
 Registro de la evolución de la plataforma para la trazabilidad del trabajo de grado.
 
+## v2.7.1 — Regla del estudio en el panel del investigador (15 nov. 2026)
+
+- **Panel del investigador y Excel:** para el estudio se compara el diagnóstico inicial con el **primer** seguimiento (antes se tomaba el último). Los demás intentos quedan guardados y se muestran como evolución (por ejemplo, 43 % → 88 % → 90 %).
+- En el Excel, el resumen tiene las columnas del 1.er seguimiento, el cambio general del estudio, el último intento y la evolución de todos los intentos. Cada intento se marca como «Diagnóstico inicial (estudio)», «1.er seguimiento (estudio)» o «Seguimiento adicional».
+
 ## v2.7.0 — Formulario igual a la encuesta y 4 herramientas nuevas (15 nov. 2026)
 
 El investigador comparó el formulario «Tu negocio» con la encuesta de diagnóstico inicial (objetivo 1) y pidió que usara las mismas opciones; lo revisó en capturas antes de subirlo (HU-37).
