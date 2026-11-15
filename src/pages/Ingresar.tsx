@@ -48,7 +48,7 @@ export default function Ingresar() {
           <input className="campo" type="email" required autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="tunegocio@correo.com" />
         </label>
         <label className="etiqueta">Contraseña para Escudo Digital
-          <input className="campo" type="password" required minLength={6} autoComplete={registro ? 'new-password' : 'current-password'} value={clave} onChange={(e) => setClave(e.target.value)} placeholder="Mínimo 6 caracteres" />
+          <input className="campo" type="password" required minLength={registro ? 8 : undefined} autoComplete={registro ? 'new-password' : 'current-password'} value={clave} onChange={(e) => setClave(e.target.value)} placeholder={registro ? 'Mínimo 8 caracteres' : 'Tu contraseña'} />
         </label>
         <p className="m-0 text-[16px] font-bold leading-snug">Crea una contraseña nueva solo para esta plataforma. Nunca te pediremos las claves de tu correo, Nequi o banco.</p>
         {registro && (
