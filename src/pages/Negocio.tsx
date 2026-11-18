@@ -2,6 +2,7 @@ import { useState, type FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Pagina } from '../components/Pagina';
 import { Chica } from '../components/Robot';
+import { ElegirTipo, TIPOS } from '../components/ElegirTipo';
 import { useSesion } from '../hooks/useSesion';
 import { guardarNegocio } from '../services/store';
 import type { Negocio as N, Plataforma } from '../types';
@@ -11,20 +12,18 @@ const PLATAFORMAS: [Plataforma, string][] = [
   ['whatsapp', 'WhatsApp'], ['nequi', 'Nequi'], ['daviplata', 'DaviPlata'], ['bancolombia', 'Bancolombia'],
   ['facebook', 'Facebook'], ['instagram', 'Instagram'], ['tiktok', 'TikTok'], ['correo', 'Correo electrónico'],
 ];
-const TIPOS = [
-  'Tienda de barrio / granero', 'Tienda de maquillaje y belleza', 'Papelería y variedades', 'Ropa y calzado', 'Café internet',
-  'Panadería / cafetería', 'Comidas rápidas', 'Droguería', 'Peluquería', 'Repuestos y accesorios',
-];
+/** Nombres de los tipos; «Otro» guarda lo que escriba el propietario. */
+const NOMBRES = TIPOS.map(([, t]) => t);
 const EMPLEADOS = ['1 (solo el propietario)', '2 – 3', '4 – 5'];
 /** Valores guardados con las opciones anteriores del formulario. */
 const EMPLEADOS_ANTES: Record<string, string> = { 'Solo yo': '1 (solo el propietario)', '2 a 3': '2 – 3' };
 
 /** Prepara un negocio ya guardado para el formulario actual. */
 function inicial(n: N | null): { f: N; otro: boolean } {
-  if (!n) return { f: { nombre: '', tipo: TIPOS[0], trabajadores: '2 – 3', celular: 'android', tienePc: false, plataformas: ['whatsapp'] }, otro: false };
+  if (!n) return { f: { nombre: '', tipo: NOMBRES[0], trabajadores: '2 – 3', celular: 'android', tienePc: false, plataformas: ['whatsapp'] }, otro: false };
   return {
     f: { ...n, trabajadores: EMPLEADOS_ANTES[n.trabajadores] ?? n.trabajadores, plataformas: n.plataformas.filter((p) => p !== 'banca') },
-    otro: !TIPOS.includes(n.tipo),
+    otro: !NOMBRES.includes(n.tipo),
   };
 }
 
@@ -52,16 +51,10 @@ export default function Negocio() {
         <label className="etiqueta">Nombre del negocio
           <input className="campo" required value={f.nombre} onChange={(e) => setF({ ...f, nombre: e.target.value })} placeholder="Ej.: Tienda Don Pedro" />
         </label>
-        <label className="etiqueta">Tipo de negocio
-          <select className="campo" value={otro ? 'Otro' : f.tipo}
-            onChange={(e) => {
-              const v = e.target.value;
-              setOtro(v === 'Otro');
-              setF({ ...f, tipo: v === 'Otro' ? '' : v });
-            }}>
-            {[...TIPOS, 'Otro'].map((t) => <option key={t}>{t}</option>)}
-          </select>
-        </label>
+        <ElegirTipo valor={f.tipo} otro={otro} alElegir={(v) => {
+          setOtro(v === 'Otro');
+          setF({ ...f, tipo: v === 'Otro' ? '' : v });
+        }} />
         {otro && (
           <label className="etiqueta aparecer">¿Qué tipo de negocio es?
             <input className="campo" required autoFocus value={f.tipo} onChange={(e) => setF({ ...f, tipo: e.target.value })} placeholder="Ej.: Ferretería, veterinaria, miscelánea…" />
