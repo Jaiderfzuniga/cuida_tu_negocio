@@ -2,6 +2,15 @@
 
 Registro de la evolución de la plataforma para la trazabilidad del trabajo de grado.
 
+## v2.7.5 — Desplegable propio para «Tipo de negocio» (18 nov. 2026)
+
+El investigador notó que la lista de «Tipo de negocio» se veía como la del sistema (Windows o el celular) y no como el resto de la página. Vio siete diseños y eligió un panel en dos columnas con íconos (HU-40).
+
+- **Tipo de negocio:** al tocar el campo se abre un panel con los 10 tipos de la encuesta en dos columnas, cada uno con su ícono, y «Otro (escribir)» abajo. Usa los bordes gruesos y la sombra del estilo «Papel», en modo claro y oscuro.
+- Se cierra al elegir, al tocar fuera o con la tecla Escape. «Otro» sigue abriendo el campo para escribir el tipo.
+- Los nombres no cambiaron, así que los negocios ya guardados siguen mostrando su tipo.
+- Archivos: `src/components/ElegirTipo.tsx` (nuevo), `src/pages/Negocio.tsx` y `src/styles/index.css`.
+
 ## v2.7.4 — Guías revisadas contra las páginas oficiales (17 nov. 2026)
 
 El investigador revisó que cada guía y cada herramienta repitieran lo que dice hoy su página oficial, con los mismos pasos y los mismos nombres de menú (HU-39).
