@@ -23,7 +23,7 @@ export interface Herramienta {
   uso: string;
   subcategoria: string;
   rol: string;
-  /** Enlaces oficiales adicionales (por ejemplo, el botón de pánico de Nequi). */
+  /** Enlaces oficiales adicionales (por ejemplo, cómo bloquear Nequi si pierdes el celular). */
   enlaces?: { texto: string; url: string }[];
 }
 

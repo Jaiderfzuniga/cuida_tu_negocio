@@ -2,6 +2,20 @@
 
 Registro de la evolución de la plataforma para la trazabilidad del trabajo de grado.
 
+## v2.7.4 — Guías revisadas contra las páginas oficiales (17 nov. 2026)
+
+El investigador revisó que cada guía y cada herramienta repitieran lo que dice hoy su página oficial, con los mismos pasos y los mismos nombres de menú (HU-39).
+
+- **Nequi:** la página oficial ya no habla del «botón de pánico» en nequi.com.co. Si roban o se pierde el celular, se ingresa a Nequi desde otro celular y se enlaza a ese equipo (así se cierra la sesión del anterior); si no se puede, se llama al (+57) 300 600 01 00, opción 3. La herramienta P-18 pasa a llamarse «Nequi – Clave dinámica y bloqueo».
+- **WhatsApp – verificación en dos pasos (P-09):** WhatsApp está cambiando el PIN de 6 dígitos por una contraseña. El enlace ahora va a la página con los pasos para activarla.
+- **Bancolombia (P-38):** el enlace para inscribir la Clave Dinámica redirigía a una página de publicidad; ahora va a la página de ayuda con los pasos. La guía agrega los otros canales de bloqueo y el cambio de la Clave Principal.
+- **Copia de WhatsApp (R-05):** opción «Copia de seguridad en la nube», el botón correcto para copiar ya («Realizar copia de seguridad») y un segundo enlace para restaurar; una copia de más de 120 días puede no restaurarse.
+- **Copia del celular Android:** la fuente era el soporte de ASUS; ahora es la Ayuda de Android de Google, con sus menús (Configuración › Servicios de Google › Todos los servicios › Copia de seguridad).
+- **Copia del iPhone (R-07):** nuevo enlace al soporte de Apple Colombia, con sus nombres («Respaldo en iCloud», «Respaldar este dispositivo»).
+- **Google (Gmail):** el menú ahora se llama «Seguridad y acceso».
+- **Facebook e Instagram (P-17, P-36):** el enlace de Facebook llevaba a su configuración; ahora va a la página de ayuda. Instagram usa su página de ayuda en español de Latinoamérica.
+- Cambios también en `supabase/seed.sql` y en la base de datos en línea (nombre, enlace y uso de P-09, P-17, P-18, P-36, P-38, R-05 y R-07).
+
 ## v2.7.3 — Filtros por equipo y base de datos lista (15 nov. 2026)
 
 El investigador revisó la plataforma antes de empezar a usarla con los negocios (HU-38).
