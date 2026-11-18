@@ -34,7 +34,7 @@ const corto = (g: Guia) => g.titulo
   .replace('Verificación en dos pasos de ', 'Verificación en dos pasos: ')
   .replace('Autenticación en dos pasos de ', 'Verificación en dos pasos: ')
   .replace('Cómo reconocer un mensaje o enlace falso', 'Reconocer fraudes')
-  .replace('Clave dinámica y botón de pánico de Nequi', 'Nequi: clave y botón de pánico')
+  .replace('Clave dinámica y bloqueo de Nequi', 'Nequi: clave y bloqueo')
   .replace('Proteger tu DaviPlata', 'DaviPlata: clave y bloqueo')
   .replace('Clave Dinámica de Bancolombia', 'Bancolombia: Clave Dinámica');
 
