@@ -4,7 +4,7 @@ Registro de la evolución de la plataforma para la trazabilidad del trabajo de g
 
 ## v2.7.6 — Botón para ver la contraseña (20 nov. 2026)
 
-El investigador notó que al crear la cuenta o ingresar no había forma de comprobar si la contraseña se había escrito bien. Pidió un botón para verla y revisó cómo quedaba antes de subirlo (HU-41).
+Se notó que al crear la cuenta o ingresar no había forma de comprobar si la contraseña se había escrito bien. Pidió un botón para verla y revisó cómo quedaba antes de subirlo (HU-41).
 
 - **Ojito en el campo de contraseña:** a la derecha del campo hay un botón con un ojo. Al tocarlo se ve lo escrito (el ojo queda tachado) y al tocarlo otra vez se vuelve a ocultar. Por defecto la contraseña sigue oculta.
 - Está en «Crear cuenta», «Ingresar» y «Nueva contraseña» (la del enlace de «Olvidé mi contraseña»), con el mismo aspecto en modo claro y oscuro, en el computador y en el celular.
