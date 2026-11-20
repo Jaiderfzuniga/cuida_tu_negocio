@@ -47,5 +47,6 @@ Ejemplo: 10 de 12 negocios venden por WhatsApp y cobran por Nequi (H7) → RF-17
 | HU-38 | Como propietario, quiero filtrar las herramientas por el equipo donde las voy a usar (celular o computador) sin que se me escondan las que sirven en los dos. | Revisión del investigador (15/11) → RF-06 | I6 | Hecho (15/11) |
 | HU-39 | Como propietario, quiero que cada guía diga lo mismo que la página oficial de la app, para seguir pasos que de verdad funcionan hoy. | Revisión del investigador (17/11) → RF-10, RF-12 | I6 | Hecho (17/11) |
 | HU-40 | Como propietario, quiero elegir el tipo de mi negocio en una lista clara, con íconos y del mismo estilo de la página, para encontrarlo rápido en el celular. | Revisión del investigador (18/11) → RNF-02, RNF-03 | I6 | Hecho (18/11) |
+| HU-41 | Como propietario, quiero poder ver la contraseña que escribo al crear mi cuenta o ingresar, para comprobar que la escribí bien. | Revisión del investigador (20/11) → RNF-02, RNF-03 | I6 | Hecho (20/11) |
 
 Para agregar una historia: asígnale el siguiente código (HU-26…), enlázala a un requisito y ubícala en **Por hacer**.
