@@ -6,7 +6,7 @@ Solo se usan tres funciones: **Identificar**, **Proteger** y **Recuperar** (esta
 | Función | Preguntas del cuestionario | Herramientas del catálogo | Dónde se ve |
 |---|---|---|---|
 | Identificar | 4: filtración de claves, sesiones abiertas, enlaces raros, ubicar el celular | 10 (ID.AM-01, ID.AM-02, ID.RA-01, ID.RA-03) | Verde · franja de arriba del escudo · primer anillo |
-| Proteger | 5: contraseñas, PIN de WhatsApp, verificación en dos pasos, Nequi, antivirus | 17 (PR.AA, PR.AT, PR.DS, PR.PS) | Azul · franja del medio · segundo anillo |
+| Proteger | 5: contraseñas, PIN de WhatsApp, verificación en dos pasos, Nequi, antivirus | 21 (PR.AA, PR.AT, PR.DS, PR.PS) | Azul · franja del medio · segundo anillo |
 | Recuperar | 4: copia de WhatsApp, copia del celular, archivos en la nube, saber recuperar | 6 (PR.DS-11, RC.RP-03) | Naranja · franja de abajo · tercer anillo |
 
 **En el código:**
